@@ -1,23 +1,23 @@
 class Solution:
     def findAllRecipes(self, recipes: List[str], ingredients: List[List[str]], supplies: List[str]) -> List[str]:
-        graph = defaultdict(lambda:[])
-        req = defaultdict(lambda:[])
+        
+        #Kahn Algo
+        g = defaultdict(list)
+        indegree = defaultdict(list)
         
         for (i, recipe) in enumerate(recipes):
             for ingredient in ingredients[i]:
-                graph[ingredient].append(recipe)
+                g[ingredient].append(recipe)
                 
-            req[recipe] = len(ingredients[i])
-            
-        stack = [supply for supply in supplies]
-        ans = []
+            indegree[recipe] = len(ingredients[i])
         
-        while stack: 
-            u = stack.pop()
-            for v in graph[u]:
-                req[v] -= 1
-                if req[v] == 0:
-                    stack.append(v)
-                    ans.append(v)
-                    
+        q = [sup for sup in supplies]
+        ans = []
+        while q:
+            x = q.pop()
+            for k in g[x]:
+                indegree[k] -= 1
+                if indegree[k] == 0:
+                    ans.append(k)
+                    q.append(k)
         return ans
