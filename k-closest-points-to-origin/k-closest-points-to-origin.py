@@ -6,7 +6,7 @@ class Solution:
         #one more thing, if every ans is going to be under root so ignore under root calc just see x1^2 + x2^2
         
         myheap = []
-        heapify(myheap)
+        #heapify(myheap)
         
         #max heap banana hai isliye - lagaya dist me
         for x,y in points:
