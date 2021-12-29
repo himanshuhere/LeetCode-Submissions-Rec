@@ -1,13 +1,3 @@
-"""
-# Definition for a Node.
-class Node:
-    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
-        self.val = val
-        self.left = left
-        self.right = right
-        self.next = next
-"""
-
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
         #easy peasy but hard on LC IB so see pepcoding video pls pls noice ques and acha 
@@ -38,3 +28,20 @@ class Solution:
             head = head.left
         return root
         
+        #bfs
+        if root == None: return None
+
+        q = deque([root])
+        while q:
+            prev = None
+            for _ in range(len(q)):
+                curr = q.popleft()
+                if prev != None:
+                    prev.next = curr
+                prev = curr
+
+                if curr.left != None:
+                    q.append(curr.left)
+                if curr.right != None:
+                    q.append(curr.right)
+        return root
