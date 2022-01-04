@@ -12,10 +12,10 @@ class Solution:
             q = int(b[n]) if n >= 0 else 0
             
             curr = p + q + carry
-            res = str(curr%2) + res     #imp to noticce
+            res += str(curr%2) 
             carry = curr // 2
             
             m -= 1
             n -= 1
             
-        return res if carry == 0 else "1" + res
+        return res[::-1] if carry == 0 else "1" + res[::-1]
