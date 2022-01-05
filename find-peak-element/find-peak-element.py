@@ -11,7 +11,7 @@ class Solution:
             if mid == 0 and nums[mid] > nums[mid + 1]:  return mid
             if mid == len(nums) - 1 and nums[mid] > nums[mid - 1]:  return mid   
             
-            if nums[mid - 1] < nums[mid] > nums[mid + 1]: return mid
+            if nums[mid - 1] < nums[mid] > nums[mid + 1]: return mid        #accessing mid, thus TEMPlate 1
             
             elif nums[mid] < nums[mid + 1]:
                 lo = mid + 1
