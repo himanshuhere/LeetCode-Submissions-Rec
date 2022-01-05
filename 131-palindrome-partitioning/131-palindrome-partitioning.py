@@ -2,7 +2,7 @@ class Solution:
     def partition(self, s: str) -> List[List[str]]:
         #check
         def isPalind(i, j, s):
-            while i <= j:
+            while i < j:
                 if s[i] != s[j]:
                     return False
                 i += 1
