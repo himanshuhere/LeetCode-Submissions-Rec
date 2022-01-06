@@ -31,9 +31,9 @@ class Solution:
                 index = midposition
             #we cant do it else if. after finding we have idnex then we wll check on left side
   
-            if nums[midposition] > target:      ###
-                high = midposition - 1
-            else:
+            if nums[midposition] <= target:      ###
                 low = midposition + 1
+            else:
+                high = midposition - 1
         return index
         
