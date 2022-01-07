@@ -1,7 +1,9 @@
 class Solution:
     def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
+        #o(log(n-k))
         lo = 0
         hi = len(arr) - k
+        
         #pls read notes pls
         #mid = leftmost ele of our solution range 1 to k
         while lo < hi:
@@ -15,7 +17,7 @@ class Solution:
         return arr[lo : lo + k]
     
     
-    #2 - soemthing wrong in logic
+    #2 - soemthing wrong in logic - heap is also brute sol
         
 #         h = []
         
