@@ -3,7 +3,7 @@ class Solution:
         lo = 0
         hi = len(arr) - k
         #pls read notes pls
-        
+        #mid = leftmost ele of our solution range 1 to k
         while lo < hi:
             mid = lo + (hi - lo)//2     #consider mid as start of our ans range 1-k
 			
