@@ -2,7 +2,7 @@ class Solution:
     def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
         #o(log(n-k))
         lo = 0
-        hi = len(arr) - k
+        hi = len(arr) - k       #mid or low should have k ele on their right side
         
         #pls read notes pls
         #mid = leftmost ele of our solution range 1 to k
