@@ -15,9 +15,7 @@ class Solution:
         
         while lo <= hi:
             mid = lo + (hi - lo // 2)
-            if letters[mid] == target:
-                lo = mid + 1
-            elif letters[mid] < target:
+            if letters[mid] < target:
                 lo = mid + 1
             else:
                 res = letters[mid]
