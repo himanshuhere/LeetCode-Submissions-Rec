@@ -7,31 +7,24 @@ class Solution:
         while lo < hi:
             mid = lo + (hi - lo)//2     #consider mid as start of our ans range 1-k
 			
-            if x <= arr[mid]:
-                hi = mid
-            elif x >= arr[mid + k]:
+            if x - arr[mid] > arr[mid+k] - x:
                 lo = mid + 1
+            else:
+                hi = mid
                 
-            elif arr[mid] < x < arr[mid + k]:
-                if x - arr[mid] > arr[mid + k] - x: #which is close side
-                    lo = mid + 1
-                else:
-                    hi = mid
-                
-        return arr[lo : hi + k]
+        return arr[lo : lo + k]
     
     
     #2 - soemthing wrong in logic
         
-#         myheap = [[]]
+#         h = []
         
 #         for i in arr:
-#             heapq.heappush(myheap, [abs(i - x), i])
-#             if len(myheap) > len(arr) - k:
-#                 ans.append(heapq.heappop(myheap)[1]
-        
+#             heapq.heappush(h, (-abs(i - x), i))
+#             if len(h) > k:
+#                 heapq.heappop(h)
 #         ans = []
-#         for i in myheap:
-#             ans.append(i[1])
+#         for x,y in h:
+#             ans.append(y)
         
 #         return ans
