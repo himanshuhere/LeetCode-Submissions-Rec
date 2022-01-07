@@ -7,9 +7,8 @@ class Solution:
 
     #Fixed Sampling - o(n) / o(n)
     def __init__(self, head: Optional[ListNode]): 
-	    self.list = head
 	    res = [] 
-	    node = self.list
+	    node = head
 	    while node:             # Storing all the values by iterating over the LinkedList
 		    res.append(node.val)
 		    node = node.next  
