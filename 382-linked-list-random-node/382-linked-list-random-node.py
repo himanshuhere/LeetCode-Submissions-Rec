@@ -18,8 +18,8 @@ class Solution:
     def getRandom(self) -> int:
         # The choices() method returns a list with the randomly selected element from the specified sequence.
         # As we want in range of 0 to n - 1
-	    return self.res[random.random()*len(self.res)] 
-        #return random.choice(self.res)
+	    #return self.res[random.random()*len(self.res)] 
+        return random.choice(self.res)
     
     
     
