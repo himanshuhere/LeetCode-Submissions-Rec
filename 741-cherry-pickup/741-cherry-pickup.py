@@ -19,7 +19,7 @@ class Solution:
             lookup_key = (x1, y1, x2, y2)
             if lookup_key in lookup: return lookup[lookup_key]
             
-			# pick your cherries
+			# pick your cherries - instead making 0 pick for one
             if x1 == x2 and y1 == y2:
                 cherries = grid[x1][y1]
             else:
