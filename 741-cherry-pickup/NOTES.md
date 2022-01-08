@@ -1,5 +1,6 @@
 #no DFS - when two person same time, use DP kind of DP and DFS mix see
 #pls see n understand how could you work two dfs on same space simultaneously
+#Asumption - going down (making 1 to 0) then coming up. Better go down for both and see if same place then pick once cherries else sum same thing actually
 N = len(grid)
 lookup = {}
 def solve(x1, y1, x2, y2):
