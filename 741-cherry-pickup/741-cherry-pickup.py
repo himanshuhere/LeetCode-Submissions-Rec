@@ -9,7 +9,7 @@ class Solution:
         def solve(x1, y1, x2, y2):
             # check if we reached bottom right corner
             if x1 == N-1 and y1 == N-1: 
-                return grid[x1][y1] if grid[x1][y1] != -1 else float("-inf")
+                return grid[x1][y1]
             
             # out of the grid and thorn check
             if x1 == N or y1 == N or x2 == N or y2 == N or grid[x1][y1] == -1 or grid[x2][y2] == -1: 
