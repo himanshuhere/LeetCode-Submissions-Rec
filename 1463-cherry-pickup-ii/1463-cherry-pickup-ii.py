@@ -1,5 +1,6 @@
 class Solution:
     def cherryPickup(self, grid: List[List[int]]) -> int:
+        #first see cherry pick
         m, n = len(grid), len(grid[0])
         self.memo = {}
         return max(self.dfs(grid,0,0,0,n - 1), 0)
