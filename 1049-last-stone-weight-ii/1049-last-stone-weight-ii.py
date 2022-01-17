@@ -23,9 +23,8 @@ class Solution:
         n = len(arr)
         s=0
         s=sum(arr)
-        
+        #subset sum T/F
         dp=[[False for j in range(s+1)] for i in range(n+1)]
-        
         for i in range(n+1):
             for j in range(s+1):
                 if i==0 and j==0:   dp[i][j]=True
