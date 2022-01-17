@@ -18,16 +18,22 @@ class Solution:
     #here target = s1 = target(diff)+sum(arr)//2
         
         s1 = (sum(nums)+target)//2
-        if target > sum(nums) or (sum(nums)-target)%2==1:
+        if target > sum(nums) or s1%2==1:
             return 0
         
         t = [[0 for _ in range(s1+1)] for _ in range(len(nums)+1) ]
         
-        t[0][0] = 1
-        for i in range(1, len(nums)+1):
+        for i in range(len(nums)+1):
             for j in range(s1+1):
-                if nums[i-1] <= j:
+                if i==0 and j==0:   t[i][j] = 1
+                elif i==0:  t[i][j] = 0
+                elif j==0:  t[i][j] = 1
+                elif nums[i-1] == 0:     #if zero in arr dont take it
+                    t[i][j] = t[i-1][j]
+                elif nums[i-1] <= j:
                     t[i][j] = t[i-1][j-nums[i-1]] + t[i-1][j]
                 else:
                     t[i][j] = t[i-1][j]
-        return t[-1][-1]
+        
+        cnt = nums.count(0)
+        return t[-1][-1]*pow(2, cnt)
