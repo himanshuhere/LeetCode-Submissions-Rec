@@ -17,18 +17,16 @@ class Solution:
         # s1 - s2 = target, this and since s1+s2 = sum(arr) and cancelling eq will give us s1 = target(diff)+sum(arr)//2 , so just find out "count subsets with sum as target"
     #here target = s1 = target(diff)+sum(arr)//2
         
-        s1 = (target+sum(nums))//2
-        if target > sum(nums) or target+sum(nums)%2==1:
+        s1 = (sum(nums)+target)//2
+        if target > sum(nums) or (sum(nums)-target)%2==1:
             return 0
         
         t = [[0 for _ in range(s1+1)] for _ in range(len(nums)+1) ]
         
-        for i in range(len(nums)+1):
+        t[0][0] = 1
+        for i in range(1, len(nums)+1):
             for j in range(s1+1):
-                if i==0 and j==0:   t[i][j] = 1
-                elif i==0:  t[i][j] = 0
-                elif j==0:  t[i][j] = 1
-                elif nums[i-1] <= j:
+                if nums[i-1] <= j:
                     t[i][j] = t[i-1][j-nums[i-1]] + t[i-1][j]
                 else:
                     t[i][j] = t[i-1][j]
