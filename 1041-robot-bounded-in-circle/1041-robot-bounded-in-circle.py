@@ -15,5 +15,5 @@ class Solution:
                 x += dir[di][0]
                 y += dir[di][1]
         
-        #check back in origin with north face
+        #check back in origin then circle or if not north face
         return x==0 and y==0 or di!=0
