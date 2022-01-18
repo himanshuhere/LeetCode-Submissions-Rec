@@ -17,3 +17,5 @@ class Solution:
     # addinf 0 to both end is a clever move to ignore handling edge cases but its a reasonable trade off with 
         # making a copy of array while adding Os, either we cud also handle edge cases if dont want
         # to make new copy. like if i+1>len(flowerbed)?0:a[i+1] i-1<0?0:a[i-1] 
+        
+        #if (i == 0 or f[i-1] == 0) and (f[i] == 0) and  (i == len(f)-1 or f[i+1] == 0):
