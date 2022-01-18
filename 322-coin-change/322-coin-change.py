@@ -1,20 +1,20 @@
 class Solution:
     def coinChange(self, coins: List[int], amt: int) -> int:
         #Unbounded knapsack
-#         @lru_cache(None)
-#         def f(i, amt):
-#             if amt == 0:
-#                 return 0
-#             if i == -1:
-#                 return math.inf
+        @lru_cache(None)
+        def f(i, amt):
+            if amt == 0:
+                return 0
+            if i == -1:
+                return math.inf
             
-#             if coins[i] <= amt: 
-#                 return min(1 + f(i, amt-coins[i]), f(i-1,amt))
-#             else:               
-#                 return f(i-1, amt)
+            if coins[i] <= amt: 
+                return min(1 + f(i, amt-coins[i]), f(i-1,amt))
+            else:               
+                return f(i-1, amt)
             
-#         ans = f(len(coins)-1, amt)
-#         return ans if ans < math.inf else -1
+        ans = f(len(coins)-1, amt)
+        return ans if ans < math.inf else -1
         
         n = len(coins)
         t = [[0 for _ in range(amt+1)] for _ in range(n+1)]
