@@ -7,6 +7,7 @@ class Solution:
                 return 1
             if i == -1:
                 return 0
+            #if amt < 0:  return 0 and remove if else
             if coins[i] <= amt:
                 return f(i, amt-coins[i]) + f(i-1,amt)
             else:
