@@ -1,5 +1,6 @@
 class Solution:
     def coinChange(self, coins: List[int], amt: int) -> int:
+        #pls check some previous success accepted submission too, i have written 1d array code there
         #Unbounded knapsack
         @lru_cache(None)
         def f(i, amt):
