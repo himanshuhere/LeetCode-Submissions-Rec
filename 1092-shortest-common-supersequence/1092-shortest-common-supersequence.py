@@ -36,6 +36,7 @@ class Solution:
                         res += str2[j - 1]
                         j -= 1
             print(res)
+            #only one while will run
             while i > 0:
                 res += str1[i - 1]
                 i -= 1
