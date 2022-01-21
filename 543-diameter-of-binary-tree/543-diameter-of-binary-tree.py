@@ -18,7 +18,7 @@ class Solution:
             r = dfs(root.right)
             
             #Induction/calc
-            self.res = max(self.res, l + r) #if this root then,take ans in res and pass temp and see what recur has
+            self.res = max(self.res, l + r) #keep updating max diameter, here in LC edges counts thus l+r else for nodes it is 1+l+r, make sure to clear wthis
             return 1 + max(l, r)        
         
         self.res = 0
