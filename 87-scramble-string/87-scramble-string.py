@@ -11,8 +11,8 @@ class Solution:
         @lru_cache(None)
         def mcm(s1, s2):
             #if len(s1) != len(s2):  return False    #non necesarry
-            if s1 == s2:
-                return True
+            if len(s1)==len(s2)==1:
+                return s1==s2
             if sorted(s1) != sorted(s2):
                 return False
             
