@@ -10,11 +10,11 @@ class Solution:
         def dfs(root):
             if not root:
                 return 0
-            l, r = max(dfs(root.left), 0), max(dfs(root.right), 0)
+            l, r = dfs(root.left), dfs(root.right)
             
             #Induction
             self.res = max(self.res, l + r + root.val)
-            return root.val + max(l, r)
+            return max(root.val + max(l, r), root.val, 0)
         
         self.res = -math.inf
         dfs(root)
