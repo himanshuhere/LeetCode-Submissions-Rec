@@ -14,7 +14,7 @@ class Solution:
             
             #Induction
             self.res = max(self.res, l + r + root.val)
-            return max(root.val + max(l, r), root.val, 0)
+            return max(root.val + max(l, r), 0)
         
         self.res = -math.inf
         dfs(root)
