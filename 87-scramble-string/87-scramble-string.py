@@ -16,8 +16,7 @@ class Solution:
             
             if len(s1)==len(s2)==1:     #more branches but o(1) transaction
                 return s1==s2
-            if sorted(s1) != sorted(s2):
-                return False
+    
             
             n = len(s1)     #or s2 any length
             for k in range(1, n):
