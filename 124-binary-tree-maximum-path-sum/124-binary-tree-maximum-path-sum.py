@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
-        
+        #just like aditya diameter concept will lil focus on cases as HARD it is
         def dfs(root):
             if not root:
                 return 0
