@@ -5,21 +5,21 @@ class Solution:
         #n=15, ---> n = 1, 4, 9
         #yes
         
-#         @lru_cache(None)
-#         def f(n):
-#             if n == 0:
-#                 return False
-#             if n == 1:
-#                 return True
+        @lru_cache(None)
+        def f(n):
+            if n == 0:
+                return False
+            if n == 1:
+                return True
             
-#             j = 1
-#             while j*j <= n:
-#                 if f(n - j*j) == False:   #Bob won there so now with this one step we can make alice won
-#                     return True
-#                 j += 1
-#             return False
+            j = 1
+            while j*j <= n:
+                if f(n - j*j) == False:   #Bob won there so now with this one step we can make alice won
+                    return True
+                j += 1
+            return False
         
-#         return f(n)
+        return f(n)
     
     
     
