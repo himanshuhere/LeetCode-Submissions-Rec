@@ -25,7 +25,7 @@ class Solution:
                 #r = (dist, price, row,col)
                 heapq.heappush(ans, (r, [row, col])) 
             
-            for dr, dc in ((0,1),(1,0),(-1,0),(0,-1)):
+            for dr, dc in ((-1,0),(0,-1),(0,1),(1,0)):
                 q.append((row+dr, col+dc, dist+1))
         
         
