@@ -22,7 +22,7 @@ class Solution:
             seen.add((row, col))
             r = rank(row, col, grid[row][col], dist) 
             if pricing[0] <= grid[row][col] <= pricing[1]:
-                
+                #r = (dist, price, row,col)
                 heapq.heappush(ans, (r, [row, col])) 
             
             for dr, dc in ((0,1),(1,0),(-1,0),(0,-1)):
