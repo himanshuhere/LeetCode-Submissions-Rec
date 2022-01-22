@@ -23,10 +23,10 @@ class Solution:
             r = rank(row, col, grid[row][col], dist) 
             if pricing[0] <= grid[row][col] <= pricing[1]:
                 
-                heapq.heappush(ans, (r, (row, col))) 
+                heapq.heappush(ans, (r, [row, col])) 
             
             for dr, dc in ((0,1),(1,0),(-1,0),(0,-1)):
                 q.append((row+dr, col+dc, dist+1))
         
         
-        return [(x[0], x[1]) for _, x in heapq.nsmallest(k, ans)]
+        return [x for _, x in heapq.nsmallest(k, ans)]
