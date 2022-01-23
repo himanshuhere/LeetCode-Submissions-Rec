@@ -1,6 +1,7 @@
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
         #will start from top and bottom and left and right, and keep checking opp condition and will fill two sets for two ocean. Intersectiong on thosetwo will be our ans
+        #In a naive approach, we would have to consider each cell and find if it is reachable to both the oceans by checking if it is able to reach - 1. top or left edge(atlantic) and, 2. bottom or right edge (pacific). This would take about O((mn)^2), which is not efficient.
         r, c = len(heights), len(heights[0])
         
         def dfs(i, j, vis, prev):
