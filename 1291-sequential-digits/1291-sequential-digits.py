@@ -13,22 +13,20 @@ class Solution:
 #         return ans
         
     #2
-#         def f(n):
-#             if low <= n <= high:
-#                 res.append(n)
-#                 return
+        def f(x):
+            if low <= x <= high:
+                res.append(x)
             
-#             if n > high:
-#                 return
-            
-#             last = n%10
-#             if last < 9:
-#                 f(n*10 + (last+1))
+            last_num = x % 10
+            if last_num != 9:
+                new = x * 10 + last_num + 1
+                if new <= high:
+                    f(new)
         
-#         res = []
-#         for i in range(1, 10):
-#             f(i)
-#         return res
+        res = []
+        for i in range(1, 10):
+            f(i)
+        return sorted(res)
     
     #3 bfs
         arr = [x for x in range(1, 10)]
