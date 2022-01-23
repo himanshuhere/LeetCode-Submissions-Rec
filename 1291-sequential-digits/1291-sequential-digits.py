@@ -35,11 +35,14 @@ class Solution:
         q = deque(arr)
         res = []
         while q:
+            print(q)
             x = q.popleft()
             if low <= x <= high:
                 res.append(x)
                 
             last_num = x % 10
             if last_num != 9:
-                q.append(x * 10 + last_num + 1)
+                new = x * 10 + last_num + 1
+                if new > high:  continue
+                q.append(new)
         return res
