@@ -26,7 +26,7 @@ class Solution:
         res = []
         for i in range(1, 10):
             f(i)
-        return sorted(res)
+        return sorted(res)      #bfs me uniforma hota generation to sorted nh karna pdta
     
     #3 bfs
         arr = [x for x in range(1, 10)]
