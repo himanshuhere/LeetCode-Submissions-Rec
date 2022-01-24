@@ -1,5 +1,6 @@
 class Solution:
     def minReorder(self, n: int, conn: List[List[int]]) -> int:
+        #bc it worked i was just tryig, literarrly i created two graphs g and gg, g has two way connection while gg have directed as given. i am running BFS on undirected gg but checking g and making sure to make edges to 0 back on every layer see also and run on diagram you will get
         g = defaultdict(list)
         gg = defaultdict(list)
         for u,v in conn:
@@ -17,7 +18,6 @@ class Solution:
                     if k not in vis:
                         if x not in gg[k]:
                             ans+=1
-                            
                         q.append(k)
                         vis.add(k)
         return ans
