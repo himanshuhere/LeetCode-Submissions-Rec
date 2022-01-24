@@ -6,21 +6,22 @@ class Solution:
         #total = O(r*c*4^len(word)) #Bruh HUGE 
         
         r, c = len(board), len(board[0])
-        vis = set()
-        def dfs(i, j, ind):
+        #vis = set()
+        def dfs(i, j, ind, vis):
             if ind == len(word):
                 return True
             if i<0 or j<0 or i>=r or j>=c or board[i][j]!=word[ind] or (i,j) in vis:
                 return False
             
             vis.add((i,j))
-            res = dfs(i+1, j, ind+1) or dfs(i, j+1, ind+1) or dfs(i-1, j, ind+1) or dfs(i, j-1, ind+1)
+            res = dfs(i+1, j, ind+1, vis) or dfs(i, j+1, ind+1, vis) or dfs(i-1, j, ind+1, vis) or dfs(i, j-1, ind+1, vis)
             vis.remove((i,j))        #backtrack
             return res
         
         for i in range(r):
             for j in range(c):
-                if dfs(i, j, 0):
+                vis = set()
+                if dfs(i, j, 0, vis):
                     return True
         return False
             
