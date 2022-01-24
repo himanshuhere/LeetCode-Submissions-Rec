@@ -6,13 +6,13 @@ class Solution:
         rank = [1]*(n+1)
         
         def find(n):
-            while par[n] != par[par[n]]:
-                par[n] = par[par[n]]
-            return par[n]
+#             while par[n] != par[par[n]]:
+#                 par[n] = par[par[n]]
+#             return par[n]
             
-            # if p[n] == n:
-            #     return p[n]
-            # return find(p[n])
+            if par[n] == n:
+                return par[n]
+            return find(par[n])
         
         def union(a, b):
             p1, p2 = find(a), find(b)
