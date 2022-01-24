@@ -16,7 +16,7 @@ class Solution:
                 x = q.popleft()
                 for k in g[x]:
                     if k not in vis:
-                        if x not in gg[k]:
+                        if x not in gg[k]:  #only here checking directed given else undirected
                             ans+=1
                         q.append(k)
                         vis.add(k)
