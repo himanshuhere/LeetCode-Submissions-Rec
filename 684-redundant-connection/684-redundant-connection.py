@@ -1,6 +1,6 @@
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
-        
+        #why union-find, because once n nodes are done connected with n-1 edges after that union will make sure to return false saying already is connnected somehow then that is redundant connection so return that. Actually there always will be one connected componect in  graph thats y union find is working. see lil trick and tweek
         n = len(edges)
         par = [i for i in range(n+1)]
         rank = [1]*(n+1)
