@@ -29,3 +29,4 @@ class Solution:
         return res
             
         #Prims vs BFS dijktra, while loop condition should be based on visited set as we are pushing every neighbours again for all nodes looking for min one, thus minHeap can have v^2 nodes max. BFS used to have V only. 
+        #minheap operation is logV. thus o(v^2*logv) = v^2 comes while forming those edges in two for loops see
