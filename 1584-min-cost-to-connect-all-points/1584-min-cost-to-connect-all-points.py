@@ -19,7 +19,7 @@ class Solution:
         res = 0
         while len(vis) < n:
             cost, i = heapq.heappop(h)
-            if i in vis:
+            if i in vis:            #same vertice could come again maybe having smaller weight see - (1,2) then (2, 2)
                 continue
             res += cost
             vis.add(i)
