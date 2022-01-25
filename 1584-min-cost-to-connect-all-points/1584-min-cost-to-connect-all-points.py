@@ -29,5 +29,5 @@ class Solution:
         return res
             
         #Prims vs BFS dijktra, while loop condition should be based on visited set as we are pushing every neighbours again for all nodes looking for min one, thus minHeap can have v^2 nodes max. BFS used to have V only. 
-        #minheap operation is logV. thus o(v^2*logv) = v^2 comes while forming those edges in two for loops see
+        #minheap operation is logV. thus o(v^2*logv) = v^2 comes while forming those edges in two for loops see, confirm on TC m kinda confuse now
         #in kruskal we sort edges, then connect through union find. number of times union will run we gonna add cost to res. as sorting will make sure to give smaleest edges first
