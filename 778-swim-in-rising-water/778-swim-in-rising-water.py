@@ -7,7 +7,7 @@ class Solution:
         vis = set()
         vis.add((0,0))
         res = 0
-        while True:
+        while minH:
             t, r, c = heapq.heappop(minH)
             res = max(res, t)
             if r == N-1 and c == N-1:
