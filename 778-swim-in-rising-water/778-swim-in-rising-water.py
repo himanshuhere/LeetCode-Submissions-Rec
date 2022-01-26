@@ -9,9 +9,8 @@ class Solution:
         res = 0
         while minH:
             t, r, c = heapq.heappop(minH)
-            res = max(res, t)
             if r == N-1 and c == N-1:
-                return res
+                return t
             for dx, dy in dir:
                 newr, newc = r+dx, c+dy
                 if newr < 0 or newr >= N or newc < 0 or newc >= N or (newr, newc) in vis:
