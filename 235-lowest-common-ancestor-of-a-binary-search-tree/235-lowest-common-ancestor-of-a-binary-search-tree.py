@@ -43,3 +43,5 @@ class Solution:
 
             return root
         return lca(root, p, q)
+    
+    #TC O(H)
