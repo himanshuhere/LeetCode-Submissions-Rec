@@ -7,8 +7,9 @@ class Solution:
         def children(wheel):
             res = []
             for i in range(4):
-                digit = str((int(wheel[i]) + 1) % 10)
+                digit = str((int(wheel[i]) + 1) % 10)   
                 res.append(wheel[:i] + digit + wheel[i+1:])
+                
                 digit = str((int(wheel[i]) + 10 - 1) % 10)
                 res.append(wheel[:i] + digit + wheel[i+1:])
             return res    
