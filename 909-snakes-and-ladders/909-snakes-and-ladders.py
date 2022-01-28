@@ -11,6 +11,7 @@ class Solution:
         vis = set()
         q = deque()
         q.append((1, 0))
+        vis.add(1)
         
         while q:
             num, moves = q.popleft()
