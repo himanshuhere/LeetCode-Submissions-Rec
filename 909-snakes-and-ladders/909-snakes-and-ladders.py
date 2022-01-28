@@ -7,6 +7,8 @@ class Solution:
                 return n-1-r, c
             else:
                 return n-1-r, n-1-c
+        
+        #why n-1-r for row, because as per our calc we done 0th row from bottom, but in given ques it is from start so our r will be actual n-r-1. and for c it depends on direction.
             
         vis = set()
         q = deque()
