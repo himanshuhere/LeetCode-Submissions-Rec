@@ -1,9 +1,14 @@
+class TrieNode:
+    def __init__(self):
+        self.childs = {}
+        self.end = False
+
 class WordDictionary:   #Trie
 
     def __init__(self):
         self.childs = {}
         self.end = False
-
+        #self.root = TrieNode()
     def addWord(self, word: str) -> None:
         
         for ch in word:
