@@ -15,7 +15,7 @@ class Solution:
         
         dir = [[1,0], [0,1], [-1,0], [0,-1]]
         #Bfs multi source
-        while q and fresh:
+        while q and fresh:          #either queue else fresh, one sould be present
             for _ in range(len(q)):
                 r, c = q.popleft()
                 
