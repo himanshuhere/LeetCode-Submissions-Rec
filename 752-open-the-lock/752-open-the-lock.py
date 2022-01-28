@@ -14,7 +14,7 @@ class Solution:
             return res    
                 
         q = deque()
-        visit = set(deadends)
+        visit = set(deadends)   #Better use same vis set if deadends are blocker
         #dead = set(deadends)
         q.append(["0000", 0]) # [wheel, turns]
         while q:
