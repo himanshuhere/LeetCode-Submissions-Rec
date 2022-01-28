@@ -1,5 +1,6 @@
 class Solution:
     def longestIncreasingPath(self, mat: List[List[int]]) -> int:
+        #DP + DFS 
         R, C = len(mat), len(mat[0])
         
         @lru_cache(None)            #this dp memoization will save time
