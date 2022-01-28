@@ -15,11 +15,10 @@ class Solution:
         
         while q:
             num, moves = q.popleft()
-            r, c = numToPos(num)
             
+            r, c = numToPos(num)
             if board[r][c] != -1:       #update num if snake or ladder
-                num = board[r][c]
-                
+                num = board[r][c]    
             if num == n*n:
                 return moves
             
