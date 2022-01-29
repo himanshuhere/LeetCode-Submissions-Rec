@@ -1,5 +1,7 @@
 class Solution:
     def criticalConnections(self, n: int, connections: List[List[int]]) -> List[List[int]]:
+        #brute to remove each edges and do bfs and check is all connected - o(e+v)*e
+        #Tarzan algo = only dfs cost = o(v+e)
         #bridges in graph 
         adj = defaultdict(list)
         for u,v in connections:
@@ -7,9 +9,9 @@ class Solution:
             adj[v].append(u)
             
         #time of entry/insertion into the dfs for this nod
-        
         vis = set()
         res = []
+        
         def dfs(node, par):
             tin[node] = timer[0]
             low[node] = timer[0]
@@ -24,6 +26,7 @@ class Solution:
                     low[node] = min(low[node], low[k])
                     if tin[node] < low[k]:      #see mere cur node k time of ins se k ka low kam hoga ya equal hoga to k kahi se mere tak aa sakta hai, but actual me usko lower ya equal value kahi aur se mili hai jaha se rasta hai kuki gaya to mere se hai to iska k ka tin and low mere se ek jada hi hoga agar kam hai to update hua hai kahi adjacent node se means bridge imp nhi hai but agar bada hai to sale ko koi aur rasta nhi mila kato bc.
                         res.append([node, k])   #bridge
+                        
                 else:   #k in vis, thus it is a cycle. Cant be bridge do only low updation here
                     low[node] = min(low[node], low[k])
         
