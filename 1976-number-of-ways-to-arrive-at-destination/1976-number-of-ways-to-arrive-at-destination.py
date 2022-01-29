@@ -22,9 +22,11 @@ class Solution:
                 if d + curdist < dist[k]:
                     dist[k] = d + curdist
                     heappush(h, ([dist[k], k]))
+                    #take the parent ways
                     ways[k] = ways[node]
                     
                 elif d + curdist == dist[k]:
+                    #means, already found shortest from some otherpath, add both
                     ways[k] = ways[k] + ways[node]
                     
         return ways[-1]%mod
