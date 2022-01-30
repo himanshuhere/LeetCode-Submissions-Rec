@@ -5,7 +5,13 @@ class Solution:
         nums[:] = nums[n-k:] + nums[:n-k]
         return nums
     
-    
+    #brute with o(n) extra
+        # res = [None]*n
+        # for i in range(n):
+        #     res[i] = nums[(i+k)%n]
+        # return res
+        
+        #best
 #         for i in range(k):    #this will lead time limit
 #             self.rotatebyone(nums)
 #         return nums   
