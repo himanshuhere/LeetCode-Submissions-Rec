@@ -5,7 +5,7 @@ class Solution:
         map_ = defaultdict(int)
         res = 0
         sum_ = 0
-        map_[0] = 1
+        map_[0] = 1     #dont know why this works but this worked
         for num in nums:
             sum_ += num
             if sum_ - k in map_:
