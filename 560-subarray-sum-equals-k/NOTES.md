@@ -1,1 +1,3 @@
-​
+* **Brute Force** : make all possible sub arrays( you can use kadane's) and find all feasible solution with sum zero/k(there is one gfg problem with sume zero) and return max and wud lead n^2 //** see soulution**
+* **Optimized** : nlogn : n for iter and logn for searching in hashmap and N for hashmap. YES we need hashmap to reduce TC.
+https://www.youtube.com/watch?v=xmguZ6GbatA&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=23
