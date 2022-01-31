@@ -35,7 +35,7 @@ class Solution:
                 headB = headB.next
             return headA
         def twoPointer():
-            if not headA or not headB:  return None
+            if not headA or not headB:  return None #see notes best one
             a, b = headA, headB
             while a != b:
                 if not a:
