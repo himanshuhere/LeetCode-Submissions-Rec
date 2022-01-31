@@ -7,31 +7,46 @@
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
         #lenght one
-        m, n = 0, 0
-        cura, curb = headA, headB
-        while cura:
-            m += 1
-            cura = cura.next
-        while curb:
-            n += 1
-            curb = curb.next
-        
-        #diff in etra dist is abs(m-n)
-        diff = abs(m-n)
-        
-        if m > n:
-            while diff:
+        def one():
+            m, n = 0, 0
+            cura, curb = headA, headB
+            while cura:
+                m += 1
+                cura = cura.next
+            while curb:
+                n += 1
+                curb = curb.next
+
+            #diff in etra dist is abs(m-n)
+            diff = abs(m-n)
+
+            if m > n:
+                while diff:
+                    headA = headA.next
+                    diff -= 1
+            else:
+                while diff:
+                    headB = headB.next
+                    diff -= 1
+
+            #now travel at same rate
+            while headA != headB:
                 headA = headA.next
-                diff -= 1
-        else:
-            while diff:
                 headB = headB.next
-                diff -= 1
-            
-        #now travel at same rate
-        while headA != headB:
-            headA = headA.next
-            headB = headB.next
-        return headA
-            
-        
+            return headA
+        def twoPointer():
+            if not headA or not headB:  return None
+            a, b = headA, headB
+            while a != b:
+                if not a:
+                    a = headB
+                else:
+                    a = a.next
+                
+                if not b:
+                    b = headA
+                else:
+                    b = b.next
+            return a
+        return twoPointer()
+
