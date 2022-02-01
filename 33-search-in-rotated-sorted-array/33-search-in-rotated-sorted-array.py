@@ -13,7 +13,7 @@ class Solution:
             
             # inflection point to the right. Left is strictly sorted
             if A[lo] <= A[mid]:
-                if A[lo] <= target < A[mid]: #if in left
+                if A[lo] <= target <= A[mid]: #if in left
                     hi = mid - 1
                 else:
                     lo = mid + 1      #if in right
