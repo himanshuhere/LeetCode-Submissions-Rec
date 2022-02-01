@@ -1,5 +1,6 @@
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        #variable sliding window
         sm= 0
         i,j =0,0
         ans =math.inf
