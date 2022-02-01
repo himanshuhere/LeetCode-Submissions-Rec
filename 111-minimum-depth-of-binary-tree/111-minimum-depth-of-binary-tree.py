@@ -12,8 +12,11 @@ class Solution:
         def dfs(root):
             if not root:
                 return math.inf
-            if not root.left and not root.right:        #this is very imp
+            
+            if not root.left and not root.right:        #this is very imp, as leaf will return inf from both side thus min will be inf only and will pass to higher level uptp the root
                 return 1
+            
             l, r = dfs(root.left), dfs(root.right)
             return 1 + min(l, r)
+        
         return dfs(root)
