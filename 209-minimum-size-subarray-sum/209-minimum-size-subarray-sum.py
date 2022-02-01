@@ -17,3 +17,6 @@ class Solution:
                 j+=1
             #j+=1
         return ans if ans!=math.inf else 0
+    
+    #can also b done usinf binary search on ans range = [1, len]
+    #feasible will be finding max sum for k widnow-fixed sliding window
