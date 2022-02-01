@@ -10,7 +10,7 @@ class Solution:
                 c+=1
                 
             while c==3:
-                ans += len(s) - j       #imp
+                ans += len(s) - j       #imp to notice
                 if s[i] in m:
                     m[s[i]] -= 1
                     if m[s[i]]==0:
