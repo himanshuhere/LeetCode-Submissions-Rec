@@ -1,5 +1,6 @@
 class Solution:
     def longestSubarray(self, nums: List[int]) -> int:
+        #variable sliding window
         ones = 0
         ans = 0
         i, j = 0, 0
