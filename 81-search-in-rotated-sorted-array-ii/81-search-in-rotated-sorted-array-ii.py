@@ -24,6 +24,7 @@ class Solution:
                     l = mid + 1
                 else:
                     r = mid - 1
-            else:
+            else:                   #this is for eliminating duplicate else same as I. see find minimum in roated sorted array II
                 l += 1
+                
         return False
