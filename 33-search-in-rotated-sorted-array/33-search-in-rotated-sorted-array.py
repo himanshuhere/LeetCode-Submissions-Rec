@@ -5,6 +5,7 @@ class Solution:
         if n == 0: return -1
         
         #why basic template of lo <= hi and mid-1 and mid+1, because its a search BS algo, we find at mid we return bcs we have target to search, ques like min max upper bound lower etc arent exact target so we focus on eliminating and returning lo, keep in mind direct search where you write if A[mid] == target: return mid, will based on basic template only.
+        #same if duplicates, make if else < and > then else lo+=1 if dealing with lo and mid else hi -= 1, to discard duplicates
         
         lo, hi = 0, n - 1
         while lo <= hi:
