@@ -13,14 +13,14 @@ class Solution:
             
             # inflection point to the right. Left is strictly sorted
             if A[lo] <= A[mid]:
-                if A[lo] <= target <= A[mid]: #if in left
+                if A[lo] <= target < A[mid]: #if in left
                     hi = mid - 1
                 else:
                     lo = mid + 1      #if in right
                     
             # inflection point to the left of me. Right is strictly increasing
             else:
-                if A[mid] <= target <= A[hi]:    #if in right
+                if A[mid] < target <= A[hi]:    #if in right
                     lo = mid + 1
                 else:
                     hi = mid - 1         #if in left
