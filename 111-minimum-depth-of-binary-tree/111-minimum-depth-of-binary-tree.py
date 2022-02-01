@@ -12,7 +12,7 @@ class Solution:
         def dfs(root):
             if not root:
                 return math.inf
-            if not root.left and not root.right:
+            if not root.left and not root.right:        #this is very imp
                 return 1
             l, r = dfs(root.left), dfs(root.right)
             return 1 + min(l, r)
