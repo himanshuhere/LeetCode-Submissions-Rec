@@ -22,7 +22,7 @@ class Solution:
             if A[mid] < A[hi]:        #means, this plus elements on left can be ans, so take this too
                 hi = mid
                 
-            elif A[mid] < A[hi]:      
+            elif A[mid] > A[hi]:      
                 lo = mid + 1
             
             else:   #=== case
