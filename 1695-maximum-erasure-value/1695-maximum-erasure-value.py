@@ -11,8 +11,10 @@ class Solution:
             subsum += nums[j]
             if m[nums[j]] == 1:
                 count += 1
+                
             if count == (j-i+1):
                 ans = max(ans, subsum)
+                
             while count < (j-i+1):
                 #ans = max(ans, subsum)
                 if nums[i] in m:
@@ -20,7 +22,9 @@ class Solution:
                     if m[nums[i]] == 0:
                         count -= 1
                 subsum -= nums[i]
+                
                 i+=1
             j += 1
+            
         return ans
                 
