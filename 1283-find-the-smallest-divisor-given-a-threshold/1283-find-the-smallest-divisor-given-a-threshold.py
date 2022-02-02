@@ -14,7 +14,6 @@ class Solution:
                 sm += num//div          #if not use ceil
                 if num%div != 0:
                     sm+=1
-    
             return sm <= threshold
         
         
