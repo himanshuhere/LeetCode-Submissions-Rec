@@ -10,7 +10,7 @@ class Solution:
             m[s[j]] +=1 
             
             window = j-i+1
-            if window - max(m.values()) <= k:
+            if window - max(m.values()) <= k:       #greedy
                 ans = max(ans, j-i+1)
                 
             if window - max(m.values()) > k:
