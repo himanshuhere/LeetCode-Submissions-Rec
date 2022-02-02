@@ -19,3 +19,4 @@ class Solution:
                 i += 1
             j += 1
         return ans
+#window - max(m.values()), we want to long the string so we should look for replacing the least count chars in window, so that we can save more k for others, use k less and raise yuour widnow size thats y
