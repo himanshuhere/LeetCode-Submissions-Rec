@@ -13,7 +13,7 @@ class Solution:
             if window - max(m.values()) <= k:       #greedy
                 ans = max(ans, j-i+1)
                 
-            if window - max(m.values()) > k:
+            elif window - max(m.values()) > k:
                 if s[i] in m:
                     m[s[i]] -=1 
                 i += 1
