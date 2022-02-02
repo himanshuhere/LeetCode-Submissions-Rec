@@ -8,7 +8,7 @@ class Solution:
             
             return h <= hour
         
-        lo, hi = 1, 100000000
+        lo, hi = 1, 100000000           #10^7
         while lo < hi:
             mid = lo + (hi-lo)//2
             if(blackBox(mid)):
