@@ -5,6 +5,7 @@ class Solution:
         #yes would have its medium really you think thats easy, so it asked to take the ceil valuem and sum(arr) would be not equal if we take ciel for diff elememts, i mean len or sum or ciel etc they will change the sum for every element, so o(n) is there for every element. Now save other n, use BINARY SEARCH ON ANSWERS
         #answer - what? a devisor, whats the range? as per contraint 1 <= nums[i] <= 106
         #so min is  1, do we need 10^6 for max, mah because for every array max value is enought after that sum is always be smaller range = [1 - max(A)] lets do
+        #TC - O(nLog(max(nums)))
         
         def blackBox(div):
             sm = 0
