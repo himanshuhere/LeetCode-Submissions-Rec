@@ -1,5 +1,6 @@
 class Solution:
     def maximumUniqueSubarray(self, nums: List[int]) -> int:
+        #variable sliding window
         m = defaultdict(int)
         ans = 0
         i, j = 0, 0
