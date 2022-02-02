@@ -10,7 +10,7 @@ class Solution:
             sm = 0
             for num in nums:
                 # sm += ceil(num/div)
-                sm += num//div
+                sm += num//div          #if not use ceil
                 if num%div != 0:
                     sm+=1
     
