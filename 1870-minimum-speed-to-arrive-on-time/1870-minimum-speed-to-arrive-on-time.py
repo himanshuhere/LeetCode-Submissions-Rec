@@ -4,7 +4,7 @@ class Solution:
             h = 0
             for i in range(len(dist)-1):
                 h += ceil(dist[i]/s)
-            h += dist[-1]/s     #we dont need tp wait afte this, so optimizing out hours
+            h += dist[-1]/s     #we dont need to wait afte this, so optimizing our hours
             
             return h <= hour
         
