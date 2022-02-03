@@ -12,7 +12,7 @@ class Solution:
             if i > 0 and nums[i]==nums[i-1]: continue
                 
             for j in range(i+1, N):
-                if nums[j]==nums[j-1] and i!=j-1: continue
+                if j > i+1 and nums[j]==nums[j-1]: continue
                 l = j+1
                 r = N-1
                 
