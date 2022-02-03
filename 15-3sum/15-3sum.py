@@ -1,5 +1,7 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
+        #two sum with one extra loop wud have amny issue has there have uniqueness and here duplicates
+        #this is the best
         nums.sort()        
         n = len(nums)
         res = []    
