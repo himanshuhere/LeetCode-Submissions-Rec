@@ -2,6 +2,27 @@ class Solution:
     def trap(self, height: List[int]) -> int:
     #pls see notes all solution., understand the intuition, extention of prefix/suffix
     #crux = min(lmax, rmax)-current_height
+        #1 understading intuition here
+        n = len(height)
+        l, r = 0, n-1
+        lmax, rmax = 0, 0
+        res = 0
+        while l < r:
+            #updates maxes
+            if height[l] > lmax:    lmax = height[l]
+            if height[r] > rmax:    rmax = height[r]
+        
+            #compute water on curr pillar
+            if lmax < rmax:
+                res += lmax - height[l]
+                l+=1
+            else:
+                res += rmax - height[r]
+                r-=1
+        return res
+        
+        
+        #2 striver
         n = len(height)
         le, ri = 0, n - 1
         lmax = rmax = 0
