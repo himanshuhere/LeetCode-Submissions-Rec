@@ -2,6 +2,7 @@ class Solution:
     def judgeSquareSum(self, c: int) -> bool:
         #two pointer, c will give TLE. since numbers are sorted kinda two pointer works.
         #make sure to use int(sqrt), else was giving wrong answer
+        #0 is valid so keep at lo like 0, 10 = 100
         
         lo, hi = 0, int(sqrt(c))
         while lo <= hi:
