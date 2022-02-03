@@ -18,3 +18,4 @@ class Solution:
             boats+=1
         return boats
                 
+        #at last, l==r for odd people. weights of same person will get added and fark nhi pdta solution will not get affected as whatever answer will be one boat is going to go. so fine. else u can write one condition l==r, boats++
