@@ -9,5 +9,5 @@ class Solution:
         for c in nums3 :
             for d in nums4 :
                 if -(c+d) in hashtable :
-                    count += hashtable[-c-d]
+                    count += hashtable[-(c+d)]
         return count
