@@ -2,7 +2,8 @@ class Solution:
     def trap(self, height: List[int]) -> int:
     #pls see notes all solution., understand the intuition, extention of prefix/suffix
     #crux = min(lmax, rmax)-current_height
-        #1 understading intuition here
+        
+        #1 understading intuition here, better
         n = len(height)
         l, r = 0, n-1
         lmax, rmax = 0, 0
@@ -20,6 +21,9 @@ class Solution:
                 res += rmax - height[r]
                 r-=1
         return res
+        
+        
+        
         
         
         #2 striver
