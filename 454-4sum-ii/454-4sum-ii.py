@@ -32,7 +32,7 @@ class Solution:
         count = 0
         for i in m1:
             if -i in m2:
-                count += (m1[i]*m2[-i])
+                count += (m1[i]*m2[-i])     #ways
         return count
                 
         
