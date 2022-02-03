@@ -3,6 +3,8 @@ class Solution:
         #bhcnho kese mene adhe min me ek bar me bana diya solution
         #kabhi kabhi khud pe bharosa nhi hota
         #sorting+two pointer
+        
+        #atmost two people on boats, thus either l and r or only r
         A = sorted(people)
         l, r = 0, len(A)-1
         boats=0
