@@ -10,7 +10,7 @@ class Solution:
         while le < ri:
             
             if height[le] < height[ri]:    #making sure right is max that left, thus we can store water
-                if height[le] >= lmax: lmax = height[le]
+                if height[le] >= lmax: lmax = height[le]    #it is 0 zero water then
                 else: ans += lmax - height[le]
                 le += 1
                 
