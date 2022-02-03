@@ -1,7 +1,8 @@
 class Solution:
     def minPairSum(self, nums: List[int]) -> int:
+        #sorting + two pointer
         ans = 0
-        nums = sorted(nums)
+        nums = sorted(nums)     #make sure to sort
         l, r = 0, len(nums)-1
         while l<r:
             ans = max(ans, nums[l]+nums[r])
