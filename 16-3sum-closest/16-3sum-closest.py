@@ -5,6 +5,7 @@ class Solution:
         res = A[0] + A[1] + A[2]
         
         A= sorted(A)
+        #skipping duplicates will boost performance
         for i in range(len(A)-2):
             l, r = i+1, len(A)-1
             
