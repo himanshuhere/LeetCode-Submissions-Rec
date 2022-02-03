@@ -5,17 +5,17 @@ class Solution:
         #two size hashmap for last two arrays o(n^2)/o(n^2)
         
         #1
-#         hashtable = {}
-#         for a in nums1:
-#             for b in nums2 :
-#                 hashtable[a+b] = hashtable.get(a+b, 0) + 1
+        hashtable = {}
+        for a in nums1:
+            for b in nums2 :
+                hashtable[a+b] = hashtable.get(a+b, 0) + 1
                 
-#         count = 0         
-#         for c in nums3 :
-#             for d in nums4 :
-#                 if -(c+d) in hashtable :
-#                     count += hashtable[-(c+d)]
-#         return count
+        count = 0         
+        for c in nums3 :
+            for d in nums4 :
+                if -(c+d) in hashtable :
+                    count += hashtable[-(c+d)]
+        return count
     
     
         #2 create map for arr1 and arr2 and map2 for arr3 and arrr4. look for negative in map2 and if get multiplye with current ways
