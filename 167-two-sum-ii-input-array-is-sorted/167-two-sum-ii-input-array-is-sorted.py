@@ -1,5 +1,6 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        #sorted thus no map, just two pointer
         
         lo, hi = 0, len(nums)-1
         while lo < hi:
