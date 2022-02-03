@@ -3,7 +3,7 @@ class Solution:
     #pls see notes all solution., understand the intuition, extention of prefix/suffix
     #crux = min(lmax, rmax)-current_height
         
-        #1 understading intuition here, better
+        #1 understading intuition here, better - 2022/feb
         n = len(height)
         l, r = 0, n-1
         lmax, rmax = 0, 0
