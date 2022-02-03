@@ -2,6 +2,7 @@ class Solution:
     def judgeSquareSum(self, c: int) -> bool:
         #two pointer, c will give TLE. since numbers are sorted kinda two pointer works.
         #make sure to use int(sqrt), else was giving wrong answer
+        
         lo, hi = 0, int(sqrt(c))
         while lo <= hi:
             cur = lo*lo + hi*hi
@@ -12,4 +13,6 @@ class Solution:
             else:
                 return True
         return False
-                
+            
+        #Time complexity is O(sqrt(c)), space complexity is O(1).
+
