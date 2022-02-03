@@ -1,5 +1,7 @@
 class Solution:
     def numRescueBoats(self, people: List[int], limit: int) -> int:
+        #bhcnho kese mene adhe min me ek bar me bana diya solution
+        #kabhi kabhi khud pe bharosa nhi hota
         A = sorted(people)
         l, r = 0, len(A)-1
         boats=0
