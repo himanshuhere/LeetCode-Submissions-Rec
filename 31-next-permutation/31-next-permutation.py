@@ -4,17 +4,17 @@ class Solution:
         #creating all perm will lead n!
         #we ll find next perm using smart tricky intuition explained in above link
         
-        ind1 = ind2 = len(nums)-1
+        ind1 = len(nums)-2
         
         #1 - find smaller ele from right
-        while ind1 > 0 and nums[ind1-1] >= nums[ind1]:
+        while ind1 >= 0 and nums[ind1] >= nums[ind1+1]:
             ind1 -= 1
-        if ind1 == 0:               #nums are in descending order, edge case
+        if ind1 == -1:               #nums are in descending order, edge case
             nums.reverse()
             return 
         
         #2 fing bigger first element that ind1
-        ind1 = ind1 - 1                
+        ind2 = len(nums)-1                
         while nums[ind2] <= nums[ind1]:
             ind2 -= 1
            
