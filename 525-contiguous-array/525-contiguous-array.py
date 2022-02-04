@@ -20,7 +20,7 @@ class Solution:
         return ans
         
         
-        
+        #hmap = {0:-1} means at starting count is 0 but when at index 0th, it will be either -1 or 1 not be 0, but we need indexing for 0 count too, thus we ll consider 0 was at -1th index when we had not started. Bas itna dhyan rakho treat 0 as -1 and 1 as 1, bas
         
         
         
