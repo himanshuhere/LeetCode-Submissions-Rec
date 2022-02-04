@@ -6,8 +6,10 @@ class Solution:
                 i += 1
                 j -= 1
             else:
+                #check for right i = i+1, or left j=j-2. any one true will fine
                 return self.pal(s, i+1, j) or self.pal(s, i, j-1)
-        return True
+            
+        return True     #it was already a palindrom
         
 
     
