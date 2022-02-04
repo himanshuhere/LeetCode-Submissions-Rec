@@ -6,21 +6,23 @@ class Solution:
         
         ind1 = ind2 = len(nums)-1
         
+        #1 - find smaller ele from right
         while ind1 > 0 and nums[ind1-1] >= nums[ind1]:
             ind1 -= 1
-        
-        if ind1 == 0:   # nums are in descending order, edge case
+        if ind1 == 0:               #nums are in descending order, edge case
             nums.reverse()
             return 
-    
-        k = ind1 - 1    # find the last "ascending" position
         
-        while nums[ind2] <= nums[k]:
+        #2 fing bigger first element that ind1
+        ind1 = ind1 - 1                
+        while nums[ind2] <= nums[ind1]:
             ind2 -= 1
-            
-        nums[k], nums[ind2] = nums[ind2], nums[k] #swap those twos/done with prefix part
+           
+        #swap them
+        nums[ind1], nums[ind2] = nums[ind2], nums[ind1] 
         
-        l, r = k+1, len(nums)-1  # reverse the second part
+        #reverse the numbers after ind1
+        l, r = ind1+1, len(nums)-1  # reverse the second part
         while l < r:
             nums[l], nums[r] = nums[r], nums[l]
             l +=1 ; r -= 1
