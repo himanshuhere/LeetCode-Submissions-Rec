@@ -28,19 +28,20 @@ class Solution:
         
         def get_swap_count(nums, nums0) -> int:
             count = 0
-            for i in range(len(nums)):
+            i = 0
+            while i < len(nums):
                 if nums[i] != nums0[i]:
                     
-                    index = i + 1
-                    while nums0[index] != nums[i]:
-                        index += 1
+                    j = i + 1
+                    while nums0[j] != nums[i]:
+                        j += 1
 
                     # print(i, index)
-                    while index != i:
-                        nums0[index], nums0[index-1] = nums0[index-1], nums0[index]
-                        #print("after swap: ", ("").join(nums0))
+                    while i < j:
+                        nums0[j], nums0[j-1] = nums0[j-1], nums0[j]
                         count += 1
-                        index -= 1
+                        j -= 1
+                i += 1  
             return count
         
         
