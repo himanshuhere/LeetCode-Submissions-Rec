@@ -1,11 +1,11 @@
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
-        #pls see notes, it is kind of ques u need to know first to solve it in o(n) else o(n^2) of trying every subarray is there left
+        #pls see notes,it is kind of ques u need to know first to solve it in o(n)else o(n^2) of trying evry subarry is there left
         #buy sell stock - I, kinda have intuition here pls see notes for images behind simple logic
         
         count = 0
         ans = 0
-        hmap = {0:-1}
+        hmap = {0:-1}      #index before 0 is -1, thus for 0 it is -1, so 0-(-1) is 1, thats good for 0th , else start with 1 also
         
         for i in range(len(nums)):
             if nums[i] == 1:
@@ -18,6 +18,12 @@ class Solution:
             else:
                 hmap[count] = i
         return ans
+        
+        
+        
+        
+        
+        
         
         
 #         looks like variable sliding window, but blv me 400 nearly test cases ran but not alll why, because you cant decide actually where to strech and where to shrink the window, yes some test cases will fail if you chose to do one of the things, so if you cant make decision on shrink/strech kaha ka sliding variable window hua leave
