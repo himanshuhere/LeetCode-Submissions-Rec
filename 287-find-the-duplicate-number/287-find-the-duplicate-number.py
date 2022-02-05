@@ -14,11 +14,11 @@ class Solution:
                 
                 #ye abs ne bahot dimag khaya
         
-        
+
         #there is one more official one, but since we have done it in o(n) by our own algo yes cool, so better keep this in mind its cool also
         #baki dekh lo
         #How can we prove that at least one duplicate number must exist in nums?
-
+   
         
         #Floyd's Tortoise and Hare (Cycle Detection)
         slow = fast = nums[0]
@@ -33,3 +33,28 @@ class Solution:
             slow = nums[slow]
             fast = nums[fast]
         return slow
+
+    
+    #bit masking using bit set
+#     seen = 0
+#     for num in nums:
+#         if seen & (1 << num):
+#             return num
+#         seen |= 1 << num
+            
+            
+#     class bset:
+#         def __init__(self):
+#             self.seen = 0            #0000..00
+    
+#         def add(self, n):
+#             self.seen = self.seen | (1<<n)
+        
+#         def remove(self, n):
+#             self.seen = self.seen & ~(1<<n)
+        
+#         def printt(self):
+#             for bitindex in range(64):
+#                 if self.seen & (1 << bitindex):
+#                     print(bitindex)
+    
