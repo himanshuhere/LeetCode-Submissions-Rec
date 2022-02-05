@@ -10,20 +10,21 @@ class Solution:
         
     #2 O(nlogk) still otimized
         h = []
-        for i in lists:
-            if i:
-                heapq.heappush(h, (i.val, i))   #only first node, since inner arr itself sorted
+        for each_head in lists:
+            if each_head:
+                heapq.heappush(h, (each_head.val, each_head))   #only first node, since inner arr itself sorted
         
-        head = tail = ListNode(0)
+        dummy = head = ListNode(0)
         while h:
-            node = heapq.heappop(h)[1]
-            tail.next = node
-            tail = tail.next
+            x = heapq.heappop(h)[1]
+    
+            if x.next:
+                heapq.heappush(h, (x.next.val, x.next))
             
-            if node.next:
-                heapq.heappush(h, (node.next.val, node.next))
+            head.next = x
+            head = head.next
 
-        return head.next
+        return dummy.next
     
     
     #1 o(nlogk)
