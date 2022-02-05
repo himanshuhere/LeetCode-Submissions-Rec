@@ -19,12 +19,7 @@ class Solution:
             if len(s1) == 1: s1 = "0"+s1
             arr.append(m1+s1)
         
-            
-       
-        
-        ans = math.inf
-        for k in range(len(arr)):
-            print(arr[k])
+        def getCost():
             st = str(startAt)
             i = 0
             cost=0
@@ -41,7 +36,11 @@ class Solution:
                     
                     cost+=moveCost
                     st = patt[i]
-            ans = min(ans, cost)
+            return cost
+        
+        ans = math.inf
+        for k in range(len(arr)):
+            ans = min(ans, getCost())
         return ans 
             
         
