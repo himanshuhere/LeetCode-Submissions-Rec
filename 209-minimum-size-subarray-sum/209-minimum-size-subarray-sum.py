@@ -17,7 +17,7 @@ class Solution:
         return maxlen if maxlen!=math.inf else 0
     
     #negative ele me kaam nhi hoga babu fir kese karoge bolo bool bol radha bol solution hpga k nahi, hoga
-    #ek kam karo min ele nikalo, sabse negative wala hoga, ab sare elements me usko add kardo. target me b. now apply sliding window
+    #ek kam karo min ele nikalo, sabse negative wala hoga, ab sare elements me uska abs() add karna add kardo. target me b. now apply sliding window
     
     
     
