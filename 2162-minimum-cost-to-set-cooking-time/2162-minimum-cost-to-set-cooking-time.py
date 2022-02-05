@@ -4,25 +4,19 @@ class Solution:
         # if ts == 6008:
         #     return 65817
         
-        m, s = str(ts//60), str(ts%60)
-        mm = m
         arr = []
-        #print(m, s)
         
-        if len(m) == 1:
-            m = "0"+m
-        if len(s) == 1:
-            s = "0"+s
+        m, s = str(ts//60), str(ts%60)
         if int(m) <= 99 and int(s)<=99:
+            if len(m) == 1: m = "0"+m
+            if len(s) == 1: s = "0"+s
             arr+=[m+s]
         
         
         m1, s1 = str(int(m)-1), str(int(s)+60)
         if int(m1) <= 99 and int(s1)<=99:
-            if len(m1) == 1:
-                m1 = "0"+m1
-            if len(s1) == 1:
-                s1 = "0" + s1
+            if len(m1) == 1: m1 = "0"+m1
+            if len(s1) == 1: s1 = "0"+s1
             arr.append(m1+s1)
         
             
