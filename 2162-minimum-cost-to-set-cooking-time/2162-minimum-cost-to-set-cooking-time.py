@@ -21,19 +21,16 @@ class Solution:
         
         def getCost():
             st = str(startAt)
-            i = 0
-            cost=0
-            patt= str(int(arr[k]))
+            patt= str(int(arr[k]))  #to discard initial zeroes if there
             
+            cost=0
+            i = 0
             while i < len(patt):
             
                 if st == patt[i]:
-                    #print("push")
                     cost += pushCost
                     i+=1
-                else:
-                    #print("move")
-                    
+                else:                    
                     cost+=moveCost
                     st = patt[i]
             return cost
