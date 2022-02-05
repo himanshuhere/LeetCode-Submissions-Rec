@@ -13,12 +13,12 @@ class Solution:
             m = "0"+m
         if len(s) == 1:
             s = "0"+s
-        if int(m) <= 99:
+        if int(m) <= 99 and int(s)<=99:
             arr+=[m+s]
         
         
         m1, s1 = str(int(m)-1), str(int(s)+60)
-        if int(s1) <= 99:
+        if int(m1) <= 99 and int(s1)<=99:
             if len(m1) == 1:
                 m1 = "0"+m1
             if len(s1) == 1:
