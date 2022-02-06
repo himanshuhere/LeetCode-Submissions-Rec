@@ -13,3 +13,5 @@ class Solution:
                 i+=2
                 j-=2
         return nums
+    
+    #cud ve done i=0, j=len-1, also but uske liye len cal karke odd even hisab laga k j ko aage piche place karna hota then j-=2 har bar baki pichli wli parity 1 jese hi karna 
