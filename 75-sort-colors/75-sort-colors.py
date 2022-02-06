@@ -18,7 +18,7 @@ class Solution:
                 mid += 1
             elif nums[mid] == 2:
                 nums[mid], nums[j] = nums[j], nums[mid]
-                j -= 1              #dont inc mid, might possible 2,2 hi swap huye let mid be there
+                j -= 1              #dont inc mid, might possible 2,2 hi swap huye or 0 agya ho mid me end se usko i se swap bhi karna hai isliye let mid be there
             else:
                 mid += 1
         
