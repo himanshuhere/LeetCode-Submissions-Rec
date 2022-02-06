@@ -1,19 +1,18 @@
 class Solution:
-    def removeDuplicates(self, A: List[int]) -> int:
-        #we gonna do it in same array
-        
-        #brute force is n logn for maintaing a set and puching ele and remove from them to array back
-        #this is n , 1 with two pointer approach
-        if len(A) == 0: return 0
-        
-    
-        i, j = 0, 0
-        
-        while j < len(A):
-            if A[i] == A[j]:
-                j += 1
-            else:
+    def removeDuplicates(self, nums: List[int]) -> int:
+
+        #Remove Duplicates from Sorted Array I
+        i = 0
+        for num in nums:
+            if i < 1 or num > nums[i-1]:
+                nums[i] = num
                 i += 1
-                A[i], A[j] = A[j], A[i]
-                j += 1
-        return i + 1
+        return i
+        
+        #80. Remove Duplicates from Sorted Array II
+        i = 0
+        for num in nums:
+            if i < 2 or num > nums[i-2]:
+                nums[i] = num
+                i += 1
+        return i
