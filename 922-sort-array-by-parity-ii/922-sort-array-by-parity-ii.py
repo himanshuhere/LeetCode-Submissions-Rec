@@ -1,5 +1,6 @@
 class Solution:
     def sortArrayByParityII(self, nums: List[int]) -> List[int]:
+        #two pointer approach
         #even at 0. odd at 1. move two both aage
         i, j = 0, 1
         while i < len(nums) and j < len(nums):
