@@ -11,7 +11,7 @@ class Solution:
         
 
         fast = slow = head
-        for _ in range(n):
+        for _ in range(n):          #1<=n<=size
             fast = fast.next
             
         if not fast:            #need to handle, if no dummy created for slow,fast before head
@@ -20,6 +20,7 @@ class Solution:
         while fast.next:
             fast = fast.next
             slow = slow.next
+            
         slow.next = slow.next.next
         return head
         
