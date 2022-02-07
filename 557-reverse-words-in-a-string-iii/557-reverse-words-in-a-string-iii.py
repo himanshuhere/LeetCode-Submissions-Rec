@@ -25,5 +25,10 @@ class Solution:
         ans += cur
         return ans
         
+        
+        #ls = s.split(' ')
+        # for i in range(len(ls)):
+        #     ls[i] = ls[i][::-1]
+        # return ' '.join(ls)
                 
             
