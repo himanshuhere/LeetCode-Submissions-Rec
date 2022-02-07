@@ -1,5 +1,5 @@
 class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+    def merge(self, A: List[List[int]]) -> List[List[int]]:
 #         intervals = sorted(intervals)   #first key toh sorted, for second key we keep max element see
 #         ans = []
 #         i = 0
@@ -26,19 +26,32 @@ class Solution:
 #         return ans
     
         #2 shorter version of same logic
-        intervals = sorted(intervals)   
-        ans = []
-        i = 0
-        while i < len(intervals):
-            j = i
-            seckey = intervals[i][1]        
-            while j < len(intervals)-1 and seckey >= intervals[j+1][0]:
-                j += 1
-                seckey = max(seckey, intervals[j][1])
+#         intervals = sorted(intervals)   
+#         ans = []
+#         i = 0
+#         while i < len(intervals):
+#             j = i
+#             seckey = intervals[j][1]        
+#             while j < len(intervals) - 1 and seckey >= intervals[j+1][0]:
+#                 j += 1
+#                 seckey = max(seckey, intervals[j][1])
                     
-            ans.append([intervals[i][0], seckey])
-            i = j
-            i += 1
+#             ans.append([intervals[i][0], seckey])
+#             i = j
+#             i += 1
             
+#         return ans
+    
+    #3 smooth version code, got from discussion
+        A = sorted(A)
+        i = 0
+        ans = []
+        ans.append(A[0])
+        
+        for i in range(1, len(A)):
+            if ans[-1][1] >= A[i][0]:
+                ans[-1][1] = max(ans[-1][1], A[i][1])
+            else:
+                ans.append(A[i])
         return ans
     
