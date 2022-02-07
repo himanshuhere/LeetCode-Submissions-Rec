@@ -11,7 +11,7 @@ class Solution:
         
         last = head                 #we ll need it aage
         n = 1
-        while last.next:
+        while last.next:            #last next cuz last next chaye humko bacha k rakhne ka
             last = last.next
             n += 1
         
