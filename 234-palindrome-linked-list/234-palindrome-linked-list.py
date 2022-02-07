@@ -7,13 +7,13 @@ class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:        
         #More smart approach
         
+        #find the mid node
         fast = slow = head
-        # find the mid node
         while fast and fast.next:
             fast = fast.next.next
             slow = slow.next
             
-        # reverse the second half
+        #reverse the second half
         prev = None
         curr = slow
         while curr:
@@ -23,8 +23,8 @@ class Solution:
             curr = temp
         head1 = prev
             
-        # compare the first and second half nodes
-        while head1: # while head1 and head:
+        #compare the first and second half nodes
+        while head1: #while head1 and head:
             if head1.val != head.val:
                 return False
             head1 = head1.next
