@@ -16,7 +16,6 @@ class Solution:
         while i < len(A) and A[i][0] <= new[1]:
             new[1] = max(new[1], A[i][1])
             i+=1
-        
         ans.append(new)
         
         #add the rest part
@@ -26,3 +25,10 @@ class Solution:
         
         
         return ans
+    
+#or second step
+        # while i < len(A) and A[i][0] <= new[1]:
+        #     new[0] = min(new[0], A[i][0])
+        #     new[1] = max(new[1], A[i][1])
+        #     i+=1
+        # ans.append(new)
