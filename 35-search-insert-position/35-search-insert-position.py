@@ -19,4 +19,6 @@ class Solution:
                 r = mid - 1
         return l
         #it is so gooood that BS always land left at pos where target ele should be, wow u did nothing
+        #bcs target is greatest, then l will sarakte sarakte last me pahuch jayega
+        #now target is smallest, r sarakte sarakte l pe jayega l 0 me hi rahega, aur boom
                 
