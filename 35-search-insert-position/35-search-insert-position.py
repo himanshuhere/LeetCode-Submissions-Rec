@@ -19,5 +19,4 @@ class Solution:
                 r = mid - 1
         return l
         #it is so gooood that BS always land left at pos where target ele should be, wow u did nothing
-        #2
                 
