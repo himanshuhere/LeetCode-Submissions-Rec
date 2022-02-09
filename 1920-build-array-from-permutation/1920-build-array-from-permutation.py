@@ -7,3 +7,5 @@ class Solution:
         for i in range(len(nums)):
             nums[i] = nums[i]//n
         return nums
+    
+    #this is working as 1--n shold be in n lenght. try some test cases
