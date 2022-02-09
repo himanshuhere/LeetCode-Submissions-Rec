@@ -1,17 +1,6 @@
 class Solution:
     def findPairs(self, nums: List[int], k: int) -> int: 
-        nums.sort()
-        ans = 0
-        i, j = 0, 1
-        while j < len(nums):
-            while j < len(nums)-1 and nums[j] == nums[j+1]:
-                j+=1
-            while i < j-1 and nums[i] + k < nums[j]:
-                i+=1
-            if nums[i] + k == nums[j]:
-                ans +=1
-            j += 1
-        return ans
+        
             
         ans = 0
         s = Counter(nums)
@@ -32,3 +21,18 @@ class Solution:
             if (k > 0 and i + k) in c or (k == 0 and c[i] > 1):
                 res += 1
         return res
+    
+    
+        #two
+        nums.sort()
+        ans = 0
+        i, j = 0, 1
+        while j < len(nums):
+            while j < len(nums)-1 and nums[j] == nums[j+1]:
+                j+=1
+            while i < j-1 and nums[i] + k < nums[j]:
+                i+=1
+            if nums[i] + k == nums[j]:
+                ans +=1
+            j += 1
+        return ans
