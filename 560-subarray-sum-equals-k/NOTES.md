@@ -11,6 +11,3 @@ for num in nums:
 sum_ += num
 if sum_ - k in map_:
 res += map_[sum_ - k]
-#fill map
-map_[sum_] += 1
-return res
