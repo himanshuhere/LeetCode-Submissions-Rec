@@ -17,3 +17,5 @@ class Solution:
                 
         return ans
                 
+        
+        #whiles origin pe hi chalege like 01 ya 10, else k liye nhi 
