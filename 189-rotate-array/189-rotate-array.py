@@ -15,6 +15,11 @@ class Solution:
         reversed(k, n-1)
         
         
+        #nums = ----->---->      [1,2,3,4, 5,6,7]
+        #nums = <----<-----      [7,6,5, 4,3,2,1]
+        #nums = -----><-----     [5,6,7, 4,3,2,1]
+        #nums = ---->---->       [5,6,7, 1,2,3,4]
+        
         
         # n = len(nums)
         # k = k % n       #imp to focus, if k is more rotation than n
