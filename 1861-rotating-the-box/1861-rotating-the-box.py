@@ -18,12 +18,10 @@ class Solution:
                     box[i][j], box[i][empty] = box[i][empty], box[i][j]
                     empty -= 1
                     
-        return zip(*box[::-1])
-#         ans = []
-#         for i in range(R):
-#             row = []
-#             for j in range(C-1, -1, -1):
-#                 row.append(box[i][j])
-#             ans.append(row)
-#         return ans
+        #return zip(*box[::-1])
+        box2 = [[None]*R for _ in range(C)]
+        for i in range(R):
+            for j in range(C-1, -1, -1):
+                box2[j][R-i-1] = box[i][j]
+        return box2
                 
