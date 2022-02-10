@@ -21,7 +21,7 @@ class Solution:
                     
             # inflection point to the left of me. Right is strictly increasing
             else:
-                if A[mid] < target <= A[hi]:    #if in right
+                if A[mid] <= target <= A[hi]:    #if in right
                     lo = mid + 1
                 else:
                     hi = mid - 1         #if in left
