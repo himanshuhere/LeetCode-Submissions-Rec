@@ -5,7 +5,7 @@ class Solution:
         map_ = defaultdict(int)
         res = 0
         sum_ = 0
-        map_[0] = 1     #dont know why this works but this worked
+        map_[0] = 1     #dont know why this works but this worked--means sum 0 is 1 there, if you doint take any presum means subarray from 0th iundex to here at i
         for num in nums:
             sum_ += num
             if sum_ - k in map_:
@@ -14,3 +14,5 @@ class Solution:
             #fill map
             map_[sum_] += 1
         return res
+    
+    #nlogn
