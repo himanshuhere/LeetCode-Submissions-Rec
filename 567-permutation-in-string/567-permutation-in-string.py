@@ -1,5 +1,6 @@
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
+        #bhenchod sliding window tha ye toh, like find anagram of first in second fuckk 3 ghante de diye yaaar ques recognize nhi ho rha
         #sorting and then n^2
         #map 
         #both dint work, kuki order kharab ho rha s2 ka
