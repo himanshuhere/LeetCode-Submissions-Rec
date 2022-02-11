@@ -2,8 +2,7 @@ class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
         #sorting and then n^2
         #map 
-        #both dint work, kuki order kharab ho rha s2 ka 
-        
+        #both dint work, kuki order kharab ho rha s2 ka
         
         #hints
         # Obviously, brute force will result in TLE. Think of something else.
@@ -14,15 +13,38 @@ class Solution:
         # What about hash table? An array of size 26?
         
         #brute
-        s1 = sorted(s1)
+#         s1 = sorted(s1)
         
-        m, n = len(s1), len(s2)
+#         m, n = len(s1), len(s2)
         
-        for i in range(0, n-m+1):
-            st = sorted(s2[i: i+m])
-            if st == s1:
-                return True
+#         for i in range(0, n-m+1):
+#             st = sorted(s2[i: i+m])
+#             if st == s1:
+#                 return True
+#         return False
+    
+        #sliding window
+        k = len(s1)
+        hmap = Counter(s1)
+        count = len(hmap)
+        
+        i, j = 0, 0
+        while j < len(s2):
+            if s2[j] in hmap:
+                hmap[s2[j]] -= 1
+                if hmap[s2[j]] == 0:
+                    count -= 1
+            if j-i+1 == k:
+                if count == 0:
+                    return True
+                if s2[i] in hmap:
+                    hmap[s2[i]] += 1
+                    if hmap[s2[i]] == 1:
+                        count += 1
+                i+=1
+            j+=1
         return False
-
+        
+        
         
         
