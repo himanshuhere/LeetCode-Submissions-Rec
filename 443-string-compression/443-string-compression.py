@@ -9,7 +9,7 @@ class Solution:
                 cnt += 1
                 j += 1
             
-            chars[i] = curchar  #redundnt
+            chars[i] = curchar
             i += 1
             
             #if count is 1 (count allwyas be >= 1), dont add it else add it unit wise
