@@ -16,7 +16,7 @@ class Solution:
                 if stop == target:
                     return res
                 for bus in g[stop]:
-                    if bus in vis:  continue
+                    if bus in vis:  continue    #if bus alrdy vis, means all stops alrdy added to q
                     vis.add(bus)
                     for st in routes[bus]:
                         q.append(st)
