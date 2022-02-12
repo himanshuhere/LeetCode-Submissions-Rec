@@ -4,27 +4,27 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def reverseList(self, head: ListNode) -> ListNode:
-        prev = None
-        curr = head
-        while curr:
-            temp = curr.next            
-            curr.next = prev
-            prev = curr            
-            curr = temp
-        return prev
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        #key:   tmp ---> cur.next ---> prev ---> cur ---> tmp .. so onn
+#         pre = None
+#         cur = head
+#         while cur:
+#             tmp = cur.next
+#             cur.next = pre
+#             pre = cur
+#             cur = tmp
+#         return pre
     
         #recursive
-        if not head:
-            return head
-        
-        def reverse(node):
-            if (node.next == None):
-                return node
-
-            node1 = reverse(node.next)
-            node.next.next = node
-            node.next = None
-            return node1
+        def rev(head):
+            if not head or not head.next:
+                return head
+            head1 = rev(head.next)
             
-        return reverse(head)
+            #let me do my part or reversal
+            head.next.next = head
+            head.next = None
+            
+            return head1
+        
+        return rev(head)
