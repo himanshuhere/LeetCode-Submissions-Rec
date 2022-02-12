@@ -22,4 +22,6 @@ class Solution:
                         q.append(st)
             res+=1
         return -1
+    
+    #pehle vis stops pe lagaya to 44/45 passed, then bus pe lagaya kuki ek bus me travel to dont catch it unnnecerry visist. then passed
             
