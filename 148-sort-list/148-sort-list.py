@@ -25,16 +25,13 @@ class Solution:
     
     def merge(self, l, r):
         dummy = head1 = ListNode(0)
-        
         while l and r:
             if l.val <= r.val:
                 head1.next = l
                 l = l.next
             else:
                 head1.next = r
-                r = r.next
-                
+                r = r.next    
             head1 = head1.next
-            
         head1.next = l or r
         return dummy.next
