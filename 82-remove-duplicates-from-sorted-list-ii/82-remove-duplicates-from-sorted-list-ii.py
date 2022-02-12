@@ -6,6 +6,8 @@
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         #two pointer approach
+        #maine likha pura LL maine kiya arrray samjh k two pointer
+        
         dummy = ListNode(None)
         dummy.next = head
         pre = dummy
