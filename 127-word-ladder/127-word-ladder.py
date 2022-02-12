@@ -1,33 +1,34 @@
 class Solution:
-    def ladderLength(self, begin: str, end: str, wordList: List[str]) -> int:
+    def ladderLength(self, beg: str, end: str, words: List[str]) -> int:
         #BFS neetcode
-        if end not in wordList:
+        if end not in words:
             return 0
         
-        graph = collections.defaultdict(list)
-        for word in wordList:
-            for j in range(len(word)):
-                pattern = word[:j] + "*" + word[j+1:]       #skip j and add wildcard
-                graph[pattern].append(word)
-        #yes theremight be multiple duplicacy in graph but dnt worry while BFS visisted will handle
+        g = defaultdict(list)
+        #[key, val] = [patter wildcard* , word]
         
-        vis = set([begin])
-        q = deque([begin])
-        res = 1
+        for word in words:
+            for i in range(len(word)):
+                patt = word[:i] + "*" + word[i+1:]
+                g[patt].append(word)
+        print(g)
         
+        #BFS, will rise from origin and see the shortest way to final word
+        q = deque([beg])
+        vis = set([beg])        #needed as might be multiple duplicate words/patt
+        level = 1               #count this word you added to new as one
         while q:
             for _ in range(len(q)):
                 word = q.popleft()
                 
                 if word == end:
-                    return res
+                    return level
                 
-                for j in range(len(word)):
-                    pattern = word[:j] + "*" + word[j+1:]
-                    for neiWord in graph[pattern]:
-                        if neiWord not in vis:
-                            vis.add(neiWord)
-                            q.append(neiWord)
-            res += 1            #one level +
-        
+                for i in range(len(word)):
+                    patt = word[:i] + "*" + word[i+1:]
+                    for nei in g[patt]:
+                        if nei not in vis:
+                            vis.add(nei)
+                            q.append(nei)
+            level += 1
         return 0
