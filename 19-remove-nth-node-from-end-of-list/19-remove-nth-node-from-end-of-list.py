@@ -23,4 +23,7 @@ class Solution:
             
         slow.next = slow.next.next
         return head
+    
+    #and lets say you did this, your left/slow will be at exact node which needs to be deleted, so prev nooo? so one thing start with dummy and park slow/left at dummy so left will be always behind the target node.
+    #Dummy is always use full to handle many edge cases easily
         
