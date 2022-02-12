@@ -24,4 +24,5 @@ class Solution:
         return -1
     #res is actually no of busses travelled
     #pehle vis stops pe lagaya to 44/45 passed, then bus pe lagaya kuki ek bus me travel to dont catch it unnnecerry visist. then passed
+    #actually bus ya stop kisi ka b visisted valid hai but agar dono k liye do vis bana do aur dono ko maintain karo to TC optimize ho jayegi, kher yaha bus wala vis accept hogya
             
