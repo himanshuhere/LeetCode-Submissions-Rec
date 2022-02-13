@@ -16,6 +16,8 @@ class Solution:
         #so it is reduced to finding the number of subsets with diff as target
         # s1 - s2 = target, this and since s1+s2 = sum(arr) and cancelling eq will give us s1 = target(diff)+sum(arr)//2 , so just find out "count subsets with sum as target"
     #here target = s1 = target(diff)+sum(arr)//2
+    
+    #yes it gets reduced to s1-s2=target problem, on solvig the eq we get s1 = target+sum/2, count them thats all
         
         s1 = (sum(nums)+target)//2
         if target > sum(nums) or s1%2==1:
