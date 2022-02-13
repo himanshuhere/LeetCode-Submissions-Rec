@@ -12,11 +12,14 @@ class Solution:
             
             #take
             if i > 0 and not preChosen and nums[i] == nums[i-1]:  return 
+            
             tmp.append(nums[i])
             sub(i+1, tmp, True)
             tmp.pop()
             
-            
+        # // If the previous number is same as current number i.e., if nums[i - 1] == nums[i], 
+        # // and if previous number was chosen(i.e., choosePre is true),
+        # // then dont re-include the current number because it would then be a duplicate
             
             
             
