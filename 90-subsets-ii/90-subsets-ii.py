@@ -6,6 +6,7 @@ class Solution:
             if i == n:
                 ans.append(tmp[:])
                 return
+            
             #no take
             sub(i+1, tmp, False)
             
@@ -14,6 +15,8 @@ class Solution:
             tmp.append(nums[i])
             sub(i+1, tmp, True)
             tmp.pop()
+            
+            
             
             
             
