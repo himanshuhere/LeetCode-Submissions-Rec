@@ -6,14 +6,14 @@ class Solution:
         res = []
         dic = Counter(nums)
         
-        max_heap = []
+        h = []
         for key, val in dic.items():
-            heappush(max_heap, (val, key))   
-            if len(max_heap) > k:
-                heappop(max_heap)
+            heappush(h, (val, key))   
+            if len(h) > k:
+                heappop(h)
         
         
-        return [key for _, key in max_heap]   
+        return [key for _, key in h]   
         
 
         
