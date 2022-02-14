@@ -14,12 +14,12 @@ class Solution:
 
         n = len(nums)
         
-        hm1, hm2 = [(k, h1[k]) for k in h1.keys()],  [(k, h2[k]) for k in h2.keys()]
-
-        hm1, hm2 = sorted(hm1, key=lambda x:x[1], reverse=True), sorted(hm2, key=lambda x:x[1], reverse=True)
-        for i in hm1:
-            for j in hm2:
+        hs1 = sorted(h1.items(), key=lambda x:x[1], reverse=True)
+        hs2 = sorted(h2.items(), key=lambda x:x[1], reverse=True)
+        
+        for i in hs1:           #if pehle hi mil gye to badiya verna karte rho try
+            for j in hs2:
                 if i[0] !=j[0]:
                     return n - i[1] - j[1]
                 
-        return n // 2
+        return n // 2               #ye case esa hoga 1,1,1,1,1,1 all same, so better make any even odd index any number
