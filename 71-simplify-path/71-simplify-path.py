@@ -14,4 +14,7 @@ class Solution:
                     stack.pop()
             else:
                 stack.append(p)
+                
         return '/' + '/'.join(stack)
+    
+    #this could also be done without split. just maintain a cur string and keep adding until "/", then operate and make curr blank again'.
