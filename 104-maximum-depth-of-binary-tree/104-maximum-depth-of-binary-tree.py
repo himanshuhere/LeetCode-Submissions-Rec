@@ -6,10 +6,13 @@
 #         self.right = right
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-#         def f(root):
-#             if not root:    return 0
-#             return 1 + max(f(root.left), f(root.right))
-#         return f(root)
+        def f(root):
+            if not root:    return 0
+            return 1 + max(f(root.left), f(root.right))
+        return f(root)
+        
+    
+        #BFS
         if not root:
             return 0
         q = deque([[root, 1]])
