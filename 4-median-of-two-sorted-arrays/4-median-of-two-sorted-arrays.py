@@ -29,7 +29,7 @@ class Solution:
         
         n1 = len(nums1)
         n2 = len(nums2)
-        if n1 > n2:
+        if n1 > n2:             #thats y O(log(min(n1,n2)))
             return self.findMedianSortedArrays(nums2, nums1)
         
         inf = math.inf
