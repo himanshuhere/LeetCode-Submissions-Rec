@@ -15,7 +15,7 @@ class MyStack:
         for _ in range(len(self.q1)-1):
             x = self.q1.popleft()
             self.q2.append(x)
-            self.topp = x
+            self.topp = x           #top will take the last value
             
         popped = self.q1.popleft()
         self.q1, self.q2 = self.q2, self.q1
