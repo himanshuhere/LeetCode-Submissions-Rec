@@ -7,14 +7,13 @@ class Solution:
 
         st = []
         for num in asteroids:
-            flag = "push"
             
             while st and num < 0 and st[-1] > 0:
                 diff = num + st[-1]
                 
-                if diff < 0:            #num is bigger
+                if diff < 0:                #num is bigger
                     st.pop()
-                elif diff > 0:          #stack has top value bigger let it be and dont push
+                elif diff > 0:              #stack has top value bigger let it be and dont push
                     num = 0                 #use num only, flag has scope issues, num can be 0 as given cant be 0
                 else:
                     st.pop()
