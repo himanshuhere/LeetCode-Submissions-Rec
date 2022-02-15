@@ -14,3 +14,5 @@ class Solution:
         
         #now map nums1 to nums2 direct like direct
         return [dic[nums1[i]] for i in range(len(nums1))]
+    
+    #thoda confusing hai but pehle proper ngr nikal k map me nums2 dal k etc kiya then socha ku ngr array banana map me direct mapping kar dete hai ki kis element k bad kon sa arha nums2 me, then nums1 se check kare lenge
