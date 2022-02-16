@@ -14,7 +14,7 @@ class Solution:
             
         st = []
         for i in range(n-1, -1, -1):
-            while st and arr[st[-1]] > arr[i]:      #kahi bhi ek jagah <=/>= chalega bas ek
+            while st and arr[st[-1]] > arr[i]:      #kahi bhi ek jagah <=/>= chalega bas ek, verna lenght jada ho jayegi dono end se
                 st.pop()
             nsr[i] = st[-1] - i if st else n - i
             st.append(i)
