@@ -7,7 +7,7 @@ class Solution:
         #in single loop, will calculate both see
         for i in range(n):
             #nsl
-            while st and arr[st[-1]] >= arr[i]:
+            while st and arr[st[-1]] >= arr[i]:     #only <= lagane se submit hua
                 st.pop()
             nsl[i] = i - st[-1] if st else i + 1         #distance
             st.append(i)
