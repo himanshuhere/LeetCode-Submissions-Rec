@@ -20,7 +20,7 @@ class Solution:
         #     st.append(i)
         # return r
         
-        #2
+        #2 wihtout converting
         n = 0
         cur = head
         while cur:
