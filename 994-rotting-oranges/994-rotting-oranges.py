@@ -24,6 +24,7 @@ class Solution:
                     
                     if nr<0 or nr==R or nc<0 or nc==C or grid[nr][nc] != 1:
                         continue
+                        
                     grid[nr][nc] = 2            #MOST IMP STEP, else TLE
                     q.append([nr, nc])
                     fresh -= 1
