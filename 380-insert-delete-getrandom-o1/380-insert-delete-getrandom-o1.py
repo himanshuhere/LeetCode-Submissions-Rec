@@ -33,7 +33,7 @@ class RandomizedSet:
         self.a[idx] = last
         self.m[last] = idx
         
-        self.a.pop()
+        self.a.pop()            #ye bhul hi gaya tha isliye wrong ans
         del self.m[val]
         self.n -= 1
         return True
