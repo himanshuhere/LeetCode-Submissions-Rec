@@ -40,7 +40,7 @@ class Solution:
 #             cur = cur.next
 #         return r
     
-        #3 without cal lenght, issue was we need right size initialization, lets see hack without lrnght
+        #3 without calculting lenght, issue was we need right size initialization, lets see hack without lenght
         
         cur = head
         r = []              #hack
