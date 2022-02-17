@@ -31,4 +31,8 @@ class Solution:
             time += 1
 
         return time if fresh == 0 else -1
-                
+    
+    
+    #Two ways : keep "while q and fresh:" and "return time if fresh == 0 else -1"
+    #or else keep "" leave rehne de dhyan de dekh lo
+            
