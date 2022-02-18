@@ -28,14 +28,14 @@ class Solution:
             return num if num != "" else "0"    #
     
     #STACK see we need to remove first dip we get, and keep removing with k--, we also need to keep doing it for k only. 
+    
         st = []
-        
         for i in range(len(num)):
             while k and (st and st[-1] > num[i]):
                 st.pop()
                 k -= 1
             
-            #for leading zero, leading can only be when stack is empty and zero comes
+            #for leading zero, leading can only be when stack is empty and zero comes, not adding zero will not cause issue in operation as smaller tha zero we cant get
             if not st and num[i] == "0":    continue
             st.append(num[i])
         
