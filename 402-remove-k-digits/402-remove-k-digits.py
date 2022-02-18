@@ -1,5 +1,7 @@
 class Solution:
     def removeKdigits(self, num: str, k: int) -> str:
+        #Actual MONOTONIC STACK
+        
         #Brute pls code like your brain thinks, your brain will pick out first lets say k=1
         # 1432219
         # remove every ele once and you ll get = (432219, 132219, 142219, 143219, 143219, 143229, 143221)
