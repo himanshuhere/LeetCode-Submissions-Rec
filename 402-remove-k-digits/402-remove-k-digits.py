@@ -15,8 +15,7 @@ class Solution:
                 while i < len(num)-1 and num[i] <= num[i+1]:    #<= imp
                     i += 1
                 #num.pop(i)
-                num = num[:i] + num[i+1:]
-
+                num = num[:i] + num[i+1:]       #it will remove last for cases like 12345 or 1111
                 k -= 1
 
             #trim
