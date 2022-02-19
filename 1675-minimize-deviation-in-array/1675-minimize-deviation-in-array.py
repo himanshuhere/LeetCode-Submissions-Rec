@@ -1,16 +1,17 @@
 class Solution:
     def minimumDeviation(self, nums: List[int]) -> int:
+        #part 1 - make all odds even
         heap = []
-        diff = math.inf
-        
         for num in nums:
             if num % 2 == 0:
                 heappush(heap, -num)
             else:
                 heappush(heap, -num*2)
         
+        
+        #part 2 - reduce deviation til you can
+        diff = math.inf
         _min = -max(heap)
-
         while True:
             _max = -heappop(heap)
             diff = min(diff, _max-_min)
@@ -22,6 +23,8 @@ class Solution:
             _min = min(_min, _max//2)
 
         return diff
+    
+    #NlogN*logM = maybe bcs M is say max number, and nlogn max for heap at moment
         
         
             
