@@ -1,13 +1,6 @@
 class Solution:
     def removeCoveredIntervals(self, inter: List[List[int]]) -> int:
-        # inter = sorted(inter)
-        # print(inter)
-        # c=0
-        # for i in range(len(inter)-1):
-        #     if inter[i][0] <= inter[i+1][0] and inter[i][1] <= inter[i+1][1]:
-        #         continue
-        #     c += 1
-        # return c
+
         #just like other intervals problem i ddi till today. first key basis me sort karke kaam ho jata tha. merge me second key ko running time maintain karte the while me min dekhte hu min hi rakhte the.
         #is ques me actual me issue ye hai ki [3,6] cover hota hai [2,8], me but [[5, 12], [0, 10]]
 #isme nhi chal rha
@@ -23,3 +16,6 @@ class Solution:
             else:
                 prev = inter[i]
         return len(inter) - culprits
+    
+    # even after, found overlapping we need to update prev[1] with max of curent and kicking out value. why dint we do that. See end is alredy opp sorted so first end will be max, and it willbe in prev[1]
+    #MAKE SURE TO WELL VERSED WITH 1.MERGE INT/2.INSERT INT/3.REMOVE COVERED INT
