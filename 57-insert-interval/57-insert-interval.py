@@ -1,5 +1,7 @@
 class Solution:
     def insert(self, A: List[List[int]], new: List[int]) -> List[List[int]]:
+        #List is already sorted thus only o(N)
+        #ask if not sorted, we can sort on start and apply our merge algo directly - nlogn
         i = 0
         ans=[]
         
