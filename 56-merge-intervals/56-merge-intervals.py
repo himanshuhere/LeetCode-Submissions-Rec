@@ -4,7 +4,7 @@ class Solution:
     # If a overlaps b (i.e. b.start <= a.end), we need to merge them into a new interval c such that:
     # c.start = a.start
     # c.end = max(a.end, b.end)
-    #since sorted on first key, we need to check only second now. do test case graphical
+    #since sorted on first key, we need to check only second now. do test case graphical - o(nlogn)
         n = len(intervals)
         ans = []
         
