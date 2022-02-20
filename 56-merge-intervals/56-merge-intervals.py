@@ -11,6 +11,7 @@ class Solution:
         intervals = sorted(intervals)       #sort on first key
         start = intervals[0][0]
         end = intervals[0][1]
+        
         for i in range(1, n):
             if intervals[i][0] <= end:      #overlapping
                 end = max(end, intervals[i][1])
@@ -22,4 +23,6 @@ class Solution:
         ans.append([start, end])
         return ans
                 
+        
+        #lets say if only ask to check if overlap present. Do same but return True after if condition
     
