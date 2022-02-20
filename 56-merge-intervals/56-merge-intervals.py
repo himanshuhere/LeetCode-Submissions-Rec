@@ -54,7 +54,8 @@ class Solution:
 #   meetings.sort((a,b) => a[0]-b[0])
   
 #   let rooms = [meetings[0]]
-  
+  #getEarliest = minHeap()
+    
 #   for(let i = 1; i < meetings.length; i++) {
 #     let earliestRoom = getEarliest(rooms)
 #     let currentTime = meetings[i]
