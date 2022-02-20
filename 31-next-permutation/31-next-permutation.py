@@ -3,18 +3,18 @@ class Solution:
         #https://www.youtube.com/watch?v=LuLCLgMElus pls watch pls pls
         #creating all perm will lead n!
         #we ll find next perm using smart tricky intuition explained in above link
-        
+        #ex = 45321, 645321, 54321, 12345(imp one 45 will swap)
         
         #1 - find smaller ele from right
-        ind1 = len(nums)-2
+        ind1 = len(nums) - 2
         while ind1 >= 0 and nums[ind1] >= nums[ind1+1]:
             ind1 -= 1
         if ind1 == -1:               #nums are in descending order, edge case
             nums.reverse()
             return 
         
-        #2 fing bigger first element that ind1
-        ind2 = len(nums)-1                
+        #2 fing bigger first element than ind1
+        ind2 = len(nums) - 1                
         while nums[ind2] <= nums[ind1]:
             ind2 -= 1
            
