@@ -20,7 +20,7 @@ class Solution:
         hi = len(nums)-1        #now dont need to reset lo
         
         while lo < hi:
-            mid = lo + (hi - lo) // 2 + 1
+            mid = lo + (hi - lo) // 2 + 1       #mid biased to right
             if nums[mid] > target:
                 hi = mid - 1
             else:
