@@ -24,7 +24,7 @@ class Solution:
         #6. end while
         
         
-        
+        #WITHOUT MODIFYING --->
         #there is one more official one, but since we have done it in o(n) by our own algo yes cool, so better keep this in mind its cool also
         #baki dekh lo
         #How can we prove that at least one duplicate number must exist in nums?
