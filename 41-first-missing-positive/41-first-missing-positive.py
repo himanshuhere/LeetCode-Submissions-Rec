@@ -6,6 +6,7 @@ class Solution:
         i = 0 
         while i < n:
             j = nums[i] - 1
+            #if (nums[i] > 0 and nums[i] <= n) and nums[i] != nums[j]:
             if (nums[i]-1 >= 0 and nums[i]-1 < n) and nums[i] != nums[j]:
                 nums[i], nums[j] = nums[j], nums[i]
             else:
