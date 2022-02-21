@@ -3,6 +3,7 @@ class Solution:
         #simple cyclic sort dikha kare jab b ye range 1-n array ki ho. 
         #try out, after cyclic sort, all culpprits will have wrong position. karke ikatthe dedo bc
         
+        #CYCLIC SORT
         n = len(nums)
         i = 0
         while i < n:
@@ -21,3 +22,4 @@ class Solution:
         return ans
             
             
+    #at worst cyclci sort can lead o(n) + o(n-1), maybe we ll keep standing at i=0 for n-1 times, but at every swap. atleast on ele reaches to correct position. So then n iteration just i++. so max 2n
