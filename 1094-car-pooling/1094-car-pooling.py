@@ -16,3 +16,8 @@ class Solution:
         return True
         
         #apan ne map me sare points dal diye bina bhed bhav ke ki kon start hai kon end, chadna utarna sab rakha hai har point ka bas usme map me hi loop mar diye sort karke. Bas
+        
+        #Same exactly
+#         Maximum CPU Load (hard)
+
+# We are given a list of Jobs. Each job has a Start time, an End time, and a CPU load when it is running. Our goal is to find the maximum CPU load at any time if all the jobs are running on the same machine. - same concept think aur kese ques ban sakte hai iss concept me kuki karne wale intervals ka logiv lagaye ge but this map with sorting is so easy 
