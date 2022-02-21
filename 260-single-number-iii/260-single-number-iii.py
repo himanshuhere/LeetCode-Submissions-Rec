@@ -9,6 +9,7 @@ class Solution:
         for num in nums:
             n1xn2 ^= num
         
+        #Get the last set bit
         right = 1
         while n1xn2 & right == 0:
             right = right << 1
