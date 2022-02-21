@@ -5,11 +5,23 @@ class Solution:
         #1 5 7 8, say i = 3, A[i] = 8, => A[i] - i+1 ==> 8-3+1==>4, 4 number missing there 
         #thats true see,  2 3 4 6 are missing. we ll use same logic see
         
-        lo, hi = 0, len(arr)-1
-        while lo <= hi:
+        # lo, hi = 0, len(arr)-1
+        # while lo <= hi:
+        #     mid = lo + (hi - lo)//2
+        #     if arr[mid] - (mid+1) < k:
+        #         lo = mid + 1
+        #     else:
+        #         hi = mid - 1
+        # return lo + k       #missing number
+    
+    
+    
+    #update
+        lo, hi = 0, len(arr)
+        while lo < hi:
             mid = lo + (hi - lo)//2
             if arr[mid] - (mid+1) < k:
                 lo = mid + 1
             else:
-                hi = mid - 1
+                hi = mid 
         return lo + k       #missing number
