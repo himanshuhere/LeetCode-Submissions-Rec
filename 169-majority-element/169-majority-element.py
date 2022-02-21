@@ -12,8 +12,12 @@ class Solution:
         for num in nums:
             if count == 0:
                 mcandidate = num
-            if num == mcandidate: count += 1
-            else: count -= 1
+                count += 1
+            elif num == mcandidate: 
+                count += 1
+            else: 
+                count -= 1
+                
         return mcandidate
         #if count of mcandidate not >= n/2 means it is not maj cadidate and then there is no maj candidate here since algo is guranteed 
     
