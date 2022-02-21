@@ -18,6 +18,7 @@ class Solution:
             
         return n + 1
     #1, 2, 1243 = ans 3, | 1,3,435 = 2. you see always smallest pos missing number can be only under lenght of array always. just apply cyclic sort or sort nlog and keep checking 1 2 3 4 5 6 etc if not n+1 is the ans
+    #Solution set [1, n+1]
     
         #This problem follows the Cyclic Sort pattern and shares similarities with Find the Missing Number with one big difference. In this problem, the numbers are not bound by any range so we can have any number in the input array.
 
