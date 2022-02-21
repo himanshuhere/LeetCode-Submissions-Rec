@@ -23,5 +23,7 @@ class Solution:
 #However, we will follow a similar approach though as discussed in Find the Missing Number to place the numbers on their correct indices and ignore all numbers that are out of the range of the array (i.e., all negative numbers and all numbers greater than or equal to the length of the array). Once we are done with the cyclic sort we will iterate the array and the first index that does not have the correct number will be the smallest missing positive number!
 
         #Okay how CYCLIC SORT, see quest wants smallest positive number right. we can skip all negatives, but but since data is not sorted we dont have all negatives on the left side right. Cool. but if we apply CYCLIC SORT(Lil modification), then we can atleast be confirm about the small window [start at smallest positive numbers to some extent] then after that out of bound +ve will start. Believe me if we find any thing wrong in our window that is SMALLEST POS missing, because window is starting from there only no, if not first after window is the ans. BELIEVE me it works.
+    
+    #goto this https://leetcode.com/problems/kth-missing-positive-number/
         
         
