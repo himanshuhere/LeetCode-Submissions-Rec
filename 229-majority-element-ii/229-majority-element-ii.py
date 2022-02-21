@@ -17,7 +17,7 @@ class Solution:
             elif count2 == 0:
                 candidate2, count2 = n, 1
             else:
-                count1, count2 = count1 - 1, count2 - 1
+                count1, count2 = count1 - 1, count2 - 1     #teesra aaya to dono decremnt hoge
         
         #Now need to check, if both appears more than n/3
         count1 = count2 = 0
