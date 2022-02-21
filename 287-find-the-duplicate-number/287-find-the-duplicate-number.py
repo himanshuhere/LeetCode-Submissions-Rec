@@ -14,7 +14,17 @@ class Solution:
                 
                 #ye abs ne bahot dimag khaya
         
-
+        #can also be done using CYCLIC SORT - statement se lag rha na
+        #see algo
+        #1. while i < n
+        #2. if nums[i] - 1 != i: do 
+        #3. if nums[i] != nums[nums[i]-1]: do SWAP
+        #4. else:   this is repeat. return this
+        #5. else(first if ka): i++
+        #6. end while
+        
+        
+        
         #there is one more official one, but since we have done it in o(n) by our own algo yes cool, so better keep this in mind its cool also
         #baki dekh lo
         #How can we prove that at least one duplicate number must exist in nums?
