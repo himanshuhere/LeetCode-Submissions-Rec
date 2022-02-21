@@ -5,6 +5,7 @@ class Solution:
         for p,u,v in trips:
             m[u] += p
             m[v] += -p
+        
         A = sorted(m)
         
         curc = 0
