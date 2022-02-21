@@ -7,7 +7,7 @@ class Solution:
             return []
         
         count1, count2, candidate1, candidate2 = 0, 0, None, None
-        for n in nums:
+        for n in nums:             #if elif elif jaruri hai verna can1, can2 bc ek ko hi pakd sakte h
             if n == candidate1:
                 count1 += 1
             elif n == candidate2:
