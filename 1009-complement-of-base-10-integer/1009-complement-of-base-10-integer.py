@@ -1,5 +1,10 @@
 class Solution:
     def bitwiseComplement(self, n: int) -> int:
+        #Using XOR property
+        #number ^ complement = all_bits_set
+        #so, complement = number ^ all_bits_set
+        #we just need a mask with all 1s. lets say 010^111=101 thats what we want. 
+        
         if n == 0:
             return 1
         
@@ -9,7 +14,8 @@ class Solution:
         while tmp:
             tmp = tmp >> 1
             c += 1
-        mask = (1 << c) - 1
+        
+        mask = (1 << c) - 1     #all_bit_set = pow(2, c) - 1 = 1<<c - 1
         return n ^ mask
     
 #         ans = ''
