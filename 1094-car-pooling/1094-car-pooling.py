@@ -15,4 +15,4 @@ class Solution:
                 return False
         return True
         
-        
+        #apan ne map me sare points dal diye bina bhed bhav ke ki kon start hai kon end, chadna utarna sab rakha hai har point ka bas usme map me hi loop mar diye sort karke. Bas
