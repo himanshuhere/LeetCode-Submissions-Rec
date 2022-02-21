@@ -12,8 +12,8 @@ class Solution:
         for num in nums:
             if count == 0:
                 mcandidate = num
-                count += 1
-            elif num == mcandidate: 
+                
+            if num == mcandidate: 
                 count += 1
             else: 
                 count -= 1
