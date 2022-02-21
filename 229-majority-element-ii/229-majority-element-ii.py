@@ -26,8 +26,9 @@ class Solution:
                 count1 += 1
             elif n == candidate2:
                 count2 += 1
+                
         ans = []
-        if count1 > len(nums)//3:
+        if count1 > len(nums)//3:       #that appear more than ⌊ n/3 ⌋ times.
             ans.append(candidate1)
         if count2 > len(nums)//3:
             ans.append(candidate2)
