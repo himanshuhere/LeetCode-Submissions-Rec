@@ -36,7 +36,7 @@ class Solution:
             prev = None
             for _ in range(len(q)):
                 curr = q.popleft()
-                if prev != None:       #har level ka pehla node prev=none hoga, uske alag conncection bangea
+                if prev:       #har level ka pehla node prev=none hoga, uske alag conncection bangea
                     prev.next = curr
                 prev = curr
 
