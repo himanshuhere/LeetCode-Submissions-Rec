@@ -8,9 +8,7 @@ class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         def f(root):
             if not root:    return 0
-            return 1 + max(f(root.left), f(root.right))
-        return f(root)
-        
+            return 1 + max(f(root.left), f(root.right))        
     
         #DFS 2 
         def dfs(root):
@@ -27,8 +25,11 @@ class Solution:
         
         def bfs(root):
             #will use bfs. bfs will always reach the first leaf first and return.
+            if not root:
+                return 0
+            
             q = deque([root])
-            h = 1
+            h = 0
             while q:
                 for _ in range(len(q)):
                     x = q.popleft()
@@ -44,3 +45,6 @@ class Solution:
         return bfs(root)
     
     #Maximum depth of binary tree - We will follow a similar approach. Instead of returning as soon as we find a leaf node, we will keep traversing for all the levels, incrementing maximumDepth each time we complete a level.
+    
+    #Minimum for minimum, return h as soon as you get leaf.
+    #for max. keep updating max
