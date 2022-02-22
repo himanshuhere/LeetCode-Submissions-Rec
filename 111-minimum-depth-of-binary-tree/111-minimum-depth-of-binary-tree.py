@@ -38,3 +38,5 @@ class Solution:
             return 0
         #return dfs(root)
         return bfs(root)
+    
+    #Maximum depth of binary tree - We will follow a similar approach. Instead of returning as soon as we find a leaf node, we will keep traversing for all the levels, incrementing maximumDepth each time we complete a level.
