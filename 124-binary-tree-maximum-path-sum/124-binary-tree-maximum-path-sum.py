@@ -10,7 +10,7 @@ class Solution:
         def dfs(root):
             if not root:
                 return 0
-            l = max(dfs(root.left), 0)
+            l = max(dfs(root.left), 0)      #ignore negative sum
             r = max(dfs(root.right), 0)
             
             #Induction
