@@ -19,7 +19,7 @@ class Solution:
                 r -= 1
                 
         return image
-    
+    #invert bit = 1^bit or 1-bit
     
     #kuch mat karo, u know do iter nhi karna to sidha rough me input likho niche output likho, nowu ll see diff. pehle tum in output bit compare karoge dekhoge kahi 0-0 1-1 hai to kahi 0-1 1-0, dikkat hai ab vertical compare to nhi nikal rha kcuh now see horizotal kese two pointer jese(ye idea kaha se aaya bhai reverse se revsere ignore mat karo time bachao but dont ignore) 
     #clear ho jayega ki i==j hai to invert kardo bits (1-n or 1^n) agar i!=j to wesa rehne do, 2-3 test case me dekho.
