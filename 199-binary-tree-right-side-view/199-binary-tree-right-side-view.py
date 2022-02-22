@@ -17,10 +17,8 @@ class Solution:
             if level == len(res):
                 res.append(root.val)
             
-            if root.right:
-                dfs(root.right, level+1)
-            if root.left:
-                dfs(root.left, level+1)
+            dfs(root.right, level+1)
+            dfs(root.left, level+1)
         
         def bfs(root):
             if not root:
@@ -37,8 +35,9 @@ class Solution:
                         q.append(x.left)
                     if x.right:
                         q.append(x.right)
-            
-        bfs(root)
+        
+        dfs(root, 0)
+        #bfs(root)
         return res
     
     
