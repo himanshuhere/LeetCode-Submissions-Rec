@@ -22,5 +22,21 @@ class Solution:
             if root.left:
                 dfs(root.left, level+1)
         
-        dfs(root, 0)
+        def bfs(root):
+            if not root:
+                return None
+            
+            q = deque([root])
+            while q:
+                size = len(q)
+                for i in range(size):
+                    x = q.popleft()
+                    if i == size-1:       #last node of this level
+                        res.append(x.val)
+                    if x.left:
+                        q.append(x.left)
+                    if x.right:
+                        q.append(x.right)
+            
+        bfs(root)
         return res
