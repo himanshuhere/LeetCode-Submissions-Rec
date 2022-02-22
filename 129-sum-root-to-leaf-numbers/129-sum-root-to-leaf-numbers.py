@@ -8,15 +8,13 @@ class Solution:
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
         def helper(root, cur):
             if not root:
-                return
+                return 0
             if not root.left and not root.right:
                 cur = cur*10 + root.val
-                self.res += cur
-                return
+                return cur
             
-            helper(root.left, cur*10+root.val)
-            helper(root.right, cur*10+root.val)
+            return helper(root.left, cur*10+root.val) + helper(root.right, cur*10+root.val)
         
         self.res = 0
-        helper(root, 0)
-        return self.res
+        return helper(root, 0)
+        #return self.res
