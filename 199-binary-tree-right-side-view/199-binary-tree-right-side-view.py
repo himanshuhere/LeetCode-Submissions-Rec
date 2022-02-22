@@ -28,7 +28,7 @@ class Solution:
             
             q = deque([root])
             while q:
-                size = len(q)       #this is imp, kuki len(q) kahi b use karna sahinhi hai size change hoyta h uska
+                size = len(q) #this is imp, kuki len(q) kahi b use karna sahinhi hai size change hota h uska
                 for i in range(size):
                     x = q.popleft()
                     if i == size-1:       #last node of this level
@@ -40,3 +40,7 @@ class Solution:
             
         bfs(root)
         return res
+    
+    
+    #see, bfs me i==n-1 ki jagah i==0 kar dete aur rifhr pehle left child bad me dalte to bhi chalta.
+    #bfs me same isi tarah ulta karke left view b ho jata
