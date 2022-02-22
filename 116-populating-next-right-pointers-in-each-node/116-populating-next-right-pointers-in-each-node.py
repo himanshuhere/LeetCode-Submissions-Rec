@@ -45,3 +45,5 @@ class Solution:
                 if curr.right != None:
                     q.append(curr.right)
         return root
+
+    #We can follow the same BFS approach. The only difference is that while traversing a level we will remember the previous node to connect it with the current node.
