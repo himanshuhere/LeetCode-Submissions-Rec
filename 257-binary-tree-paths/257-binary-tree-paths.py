@@ -18,7 +18,7 @@ class Solution:
             dfs(root.right, path+"->"+str(root.val))
             
         ans = []
-        if not root.left and not root.right:
+        if not root.left and not root.right:        #edge 
             return [str(root.val)]
         
         dfs(root.left, str(root.val))
