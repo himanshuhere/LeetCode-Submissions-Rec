@@ -26,3 +26,5 @@ class Solution:
     
     #This problem follows the Binary Tree Path Sum pattern and shares the algorithmic logic with Tree Diameter. We can follow the same DFS approach. The only difference will be to ignore the paths with negative sums. Since we need to find the overall maximum sum, we should ignore any path which has an overall negative sum.
     #0 is making sure of any ndoe to any node thing, like kadane if normal way giving neg ans, leave and start a new beginning with 0. if not 0 it will give leaf to leaf ans. think and learn
+    #0 means if any my subtree giving me -ve, better i will not consider it. i will only return my value which can be -ve or +ve but will be bigger than adding more -ve value to it. Whole idea is this only
+    #Imagine all the tree with -ves nodes and only one positive, you will return path lenght 1 as only one has the max sum 
