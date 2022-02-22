@@ -28,7 +28,7 @@ class Solution:
             
             q = deque([root])
             while q:
-                size = len(q)
+                size = len(q)       #this is imp, kuki len(q) kahi b use karna sahinhi hai size change hoyta h uska
                 for i in range(size):
                     x = q.popleft()
                     if i == size-1:       #last node of this level
