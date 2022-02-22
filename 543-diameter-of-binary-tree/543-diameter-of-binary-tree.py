@@ -18,9 +18,18 @@ class Solution:
             r = dfs(root.right)
             
             #Induction/calc
-            self.res = max(self.res, l + r) #keep updating max diameter, here in LC edges counts thus l+r else for nodes it is 1+l+r, make sure to clear wthis
+            self.res = max(self.res, l + r) #keep updating max diameter, here in LC edges counts thus l+r else for nodes it is 1+l+r, make sure to be clear wthis
             return 1 + max(l, r)        
         
         self.res = 0
         dfs(root)
         return self.res
+    
+    
+    
+    #
+#     def dfs(root):
+#             if not root:
+#                 return 0   
+#             return 1 + max(l, r)   
+#this is height code, we fill height to every node while coming back from recursion, at that time since we wud have heights, we can smartly calculate diamter and can capture it. will save time o(n) else o(n^2)
