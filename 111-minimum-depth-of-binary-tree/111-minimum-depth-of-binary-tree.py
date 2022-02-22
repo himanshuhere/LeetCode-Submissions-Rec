@@ -19,4 +19,20 @@ class Solution:
             l, r = dfs(root.left), dfs(root.right)
             return 1 + min(l, r)
         
-        return dfs(root)
+        def bfs(root):
+            #will use bfs. bfs will always reach the first leaf first and return.
+            q = deque([root])
+            h = 1
+            while q:
+                for _ in range(len(q)):
+                    x = q.popleft()
+                    if not x.left and not x.right:
+                        return h
+                    if x.left:
+                        q.append(x.left)
+                    if x.right:
+                        q.append(x.right)
+                h += 1
+            return 0
+        #return dfs(root)
+        return bfs(root)
