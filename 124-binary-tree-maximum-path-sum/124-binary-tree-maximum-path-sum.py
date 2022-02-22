@@ -10,12 +10,13 @@ class Solution:
         def dfs(root):
             if not root:
                 return 0
-            l, r = dfs(root.left), dfs(root.right)
+            l = max(dfs(root.left), 0)
+            r = max(dfs(root.right), 0)
             
             #Induction
             self.res = max(self.res, l + r + root.val)
             
-            return max(max(l, r) + root.val , 0)   
+            return max(l, r) + root.val  
             
         
         self.res = -math.inf
