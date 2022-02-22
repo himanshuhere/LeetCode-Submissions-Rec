@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        #here all values are +ve, thus 1+l+r always be bigger than 1+max(l,r), if -ves also make sure to capture max(1+l+r, 1+max(l,r), alreadyCapturedAns)
+        #here all values are +ve, thus 1+l+r always be bigger than 1+max(l,r), if -ves also make sure to capture max(1+l+r, 1+max(l,r), alreadyCapturedAns) -greedy
         
         def dfs(root):
             #base condition
