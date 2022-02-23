@@ -4,11 +4,11 @@ class Solution:
         
         if not node:
             return None
+       
         
         #Only Graph traversal + map
         #DFS
         def dfs(old):
-
             copy = Node(old.val)
             old_to_copy[old] = copy
             
@@ -19,7 +19,25 @@ class Solution:
 
             return copy
         
-        old_to_copy = {}
-        return dfs(node)
+        #old_to_copy = {}
+        #return dfs(node)
                     
         #DFS - Why map? see visiting cost of graph is V+E, because vertices will be visisted once but due to some extra edges we might visit same node again, like 1-2, 3-2. 2 can be visisted twice. If in first visit we have already created copy of 2, next time we would not want to oerate on that again so map can be useful getting previosly stored copies.
+        
+         #BFS
+        q = deque([node])
+        old_to_copy = {node : Node(node.val, [])}
+        while q:
+            old = q.popleft()
+            copy = old_to_copy[old]
+            
+            for nei in old.neighbors:
+                if nei not in old_to_copy:
+                    old_to_copy[nei] = Node(nei.val, [])
+                    q.append(nei)
+                copy.neighbors.append(old_to_copy[nei])
+                
+                
+        return old_to_copy[node]
+        
+        
