@@ -10,11 +10,11 @@ class Solution:
             if l > r:
                 ans[k] = l
                 i += 1
-                k -= 1
             else:
                 ans[k] = r
                 j -= 1
-                k -= 1
+                
+            k -= 1
         return ans
                 
         
