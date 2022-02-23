@@ -49,7 +49,8 @@ class Solution:
                 
                 dfs(root.left, curPathsum)
                 dfs(root.right, curPathsum)
-                self.m[curPathsum] -= 1
+                
+                self.m[curPathsum] -= 1             #backtrack
                 
             dfs(root, 0)
         
