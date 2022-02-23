@@ -21,7 +21,8 @@ class Solution:
                 return
             
             if node.val == target:          #at any node, not only leaf
-                self.numOfPaths += 1        #The path does not need to start or end at the root or a leaf,                                                  but it must go downwards
+                self.numOfPaths += 1        #The path does not need to start or end at the root or a leaf,                                                  but it must go downwards                 
+            
             test(node.left, target-node.val)
             test(node.right, target-node.val)
         
