@@ -11,7 +11,7 @@ class Solution:
                 p //= nums[i]
                 i += 1
                 
-            ans += (j-i+1)
-            
+            ans += (j-i+1)  #i could cross j and results in -ve lenght
             j += 1
+            
         return ans if ans >= 0 else 0
