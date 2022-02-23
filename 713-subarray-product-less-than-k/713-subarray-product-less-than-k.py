@@ -7,11 +7,11 @@ class Solution:
         while j < len(nums):
             p *= nums[j]
             
-            while i < len(nums) and p >= k:
+            while i <= j and p >= k:
                 p //= nums[i]
                 i += 1
                 
-            ans += (j-i+1)  #i could cross j and results in -ve lenght
+            ans += (j-i+1) 
             j += 1
             
-        return ans if ans >= 0 else 0
+        return ans 
