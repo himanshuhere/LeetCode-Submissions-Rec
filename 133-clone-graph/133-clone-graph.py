@@ -8,8 +8,7 @@ class Solution:
         #Only Graph traversal + map
         #DFS
         def dfs(old):
-            if old in old_to_copy:
-                return old_to_copy[old]
+
             
             copy = Node(old.val)
             old_to_copy[old] = copy
