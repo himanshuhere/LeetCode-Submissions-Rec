@@ -41,6 +41,8 @@ class Solution:
                 else:
                     break
             
+            if (i >= 0) != (j >= 0):
+                return False
             
             #if two char are different
             if i >= 0 and j >= 0 and s[i] != t[j]:
@@ -48,8 +50,7 @@ class Solution:
             
             
            
-            if (i >= 0) != (j >= 0):
-                return False
+            
             
             i -= 1
             j -= 1
