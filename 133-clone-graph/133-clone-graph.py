@@ -1,6 +1,6 @@
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
-        #DFS to close. will use given graph to traverse over and keep creating deep copy parallely see
+        #DFS to clone. will use given graph to traverse over and keep creating deep copy parallely see
         
         def dfsclone(old_node):
             if old_node in map_:            #if clone already done
