@@ -2,17 +2,23 @@ class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
         #DFS to clone. will use given graph to traverse over and keep creating deep copy parallely see
         
-        def dfsclone(old_node):
-            if old_node in map_:            #if clone already done
-                return map_[old_node]
+        if not node:
+            return None
+        
+        #DFS
+        def dfs(old):
+            if old in old_to_copy:
+                return old_to_copy[old]
             
-            copy = Node(old_node.val)
-            map_[old_node] = copy
+            copy = Node(old.val)
+            old_to_copy[old] = copy
             
-            #now connect neigbours
-            for nei in old_node.neighbors:
-                copy.neighbors.append(dfsclone(nei))
+            for nei in old.neighbors:
+                old_to_copy[nei] = dfs(nei)
+                copy.neighbors.append(old_to_copy[nei])
+            
             return copy
         
-        map_ = {}
-        return dfsclone(node) if node else None
+        old_to_copy = {}
+        return dfs(node)
+                    
