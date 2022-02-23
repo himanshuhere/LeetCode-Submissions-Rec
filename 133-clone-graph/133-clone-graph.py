@@ -5,6 +5,7 @@ class Solution:
         if not node:
             return None
         
+        #Only Graph traversal + map
         #DFS
         def dfs(old):
             if old in old_to_copy:
