@@ -8,7 +8,7 @@ class Solution:
         #skipping duplicates will boost performance
         
         for i in range(len(A)-2):
-            if i == 0 or i > 0 and A[i-1] != A[i]:
+            if i == 0 or i > 0 and A[i-1] != A[i]:  #can remove this too
                 l, r = i+1, len(A)-1
 
                 while l < r:
