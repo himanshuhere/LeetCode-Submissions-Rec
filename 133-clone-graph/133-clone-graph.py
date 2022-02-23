@@ -9,12 +9,11 @@ class Solution:
         #DFS
         def dfs(old):
 
-            
             copy = Node(old.val)
             old_to_copy[old] = copy
             
             for nei in old.neighbors:
-                if nei not in old_to_copy:        
+                if nei not in old_to_copy:              #has already created, maybe visiting second time     
                     old_to_copy[nei] = dfs(nei)
                 copy.neighbors.append(old_to_copy[nei])
 
