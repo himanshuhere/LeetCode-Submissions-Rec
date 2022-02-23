@@ -2,7 +2,6 @@ class Solution:
     def copyRandomList(self, head: 'Node') -> 'Node':
         #see strivers both sol
         #brute
-        
         oldToCopy = {None : None}
         cur = head
         while cur:
@@ -12,7 +11,7 @@ class Solution:
         
         cur = head
         while cur:
-            oldToCopy[cur].next = oldToCopy[cur.next]   #what if cur.next is none, thus init map as None: None
+            oldToCopy[cur].next = oldToCopy[cur.next] #what if cur.next is none, thus init map as None: None
             oldToCopy[cur].random = oldToCopy[cur.random]
             cur = cur.next 
             
