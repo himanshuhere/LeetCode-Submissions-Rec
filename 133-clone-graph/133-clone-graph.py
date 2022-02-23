@@ -34,6 +34,7 @@ class Solution:
                     old_to_copy[nei] = Node(nei.val, [])
                     q.append(nei)
                 copy.neighbors.append(old_to_copy[nei])
+                #if ke bahar q me append karunga means pehle to aaya hai abhi fir se dal rha to loop me fasta jayega, visited nhi hai map hi vis ka kam kar rha toh jab not in map tbhi queue me dalne ka
                 
                 
         return old_to_copy[node]
