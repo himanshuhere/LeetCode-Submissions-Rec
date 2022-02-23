@@ -20,7 +20,7 @@ class Solution:
         i, j = len(s)-1, len(t)-1
         sskip, tskip = 0, 0
         
-        while i >= 0 or j >= 0:
+        while i >= 0 or j >= 0: #and nhi or, s ya t chota ek bada ho sakta hai bade wale me # jada ho sab pop ho jaye isliye or
             while i >= 0:
                 if s[i] == "#":
                     sskip += 1
