@@ -55,7 +55,7 @@ class Solution:
             dfs(root, 0)
         
         self.m, self.count = defaultdict(int), 0
-        self.m[0] = 1
+        self.m[0] = 1               #this is imp, as root to cur node path needs 1 as count
         memoized()
         return self.count
             
