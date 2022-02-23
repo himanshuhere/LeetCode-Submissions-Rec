@@ -1,6 +1,7 @@
 class Solution:
     def pathSum(self, root: Optional[TreeNode], target: int) -> int:
         #1. Brute Force: O(nlogn) ~ O(n^2)
+        
         # 1.1 High level walk-through:
         # (Define return) Define a global var: self.numOfPaths in the main function.
         # (1st layer DFS) Use recursive traverse to go through each node (can be any order: pre, in, post all fine).
@@ -20,8 +21,7 @@ class Solution:
                 return
             
             if node.val == target:          #at any node, not only leaf
-                self.numOfPaths += 1
-
+                self.numOfPaths += 1        #The path does not need to start or end at the root or a leaf,                                                  but it must go downwards
             test(node.left, target-node.val)
             test(node.right, target-node.val)
         
