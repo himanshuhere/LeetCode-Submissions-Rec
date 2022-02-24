@@ -4,6 +4,7 @@ class Solution:
         #unhappy can get like 12 45 65 76 878 65 4 33 76, se it will be repeating at some number. se just need to check if repetition is happening at 1 or at other number like 76.
         #ofc it can be done using set, if same ele comes (non one) again unhappy
         #TC is hard to calculate can say for 1000 atmost op can be 1001.
+        #TCS is logn as per wiki
         
         #CYCLE OKAY only one algo, slow and fast pointer. yes think like a linked list
         
