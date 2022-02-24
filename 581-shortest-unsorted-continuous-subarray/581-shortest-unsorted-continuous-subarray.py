@@ -2,30 +2,28 @@ class Solution:
     def findUnsortedSubarray(self, nums: List[int]) -> int:
         #very easy o(4n)
         n = len(nums)
-        mn = 2 ** 31
-        mx = -2 ** 31
+        st = []
+        #there might be many diff zero space ways but this problem i did for monotonic stack toh see
+        #from left we ll find the first value which causing issue
+        
+        #from left maintain increasing monotonicity, if anywhere it breaks capture the index, make sure to let left the legftmost index only, leftmost breakpoint thus min.
+        #two pointer wold have worked if find left firts and right first worked, somw like 20,22,21,4,5,3,15, left most is 22 right most is 3, but technically 20, 15 is the edges, thus check all breakpoints and keep the one close to edge
+        
+        left, right = math.inf, -math.inf
+        
+        #increaisng stack
+        for i in range(len(nums)):
+            while st and nums[st[-1]] > nums[i]:
+                left = min(left, st.pop())      #culprit is stack top, nit current. do test case 
+            st.append(i)
+                
+        st = [] 
+        #decreasing stack
+        for i in range(len(nums)-1, -1, -1):
+            while st and nums[st[-1]] <nums[i]:
+                right = max(right, st.pop())      #culprit is stack top, nit current. do test case 
+            st.append(i)
             
-        for i in range(n-1):
-            if nums[i] > nums[i + 1]:
-                mn = min(mn, nums[i + 1])
-
-        for i in range(n-1, 0, -1):
-            if nums[i - 1] > nums[i]:
-                mx = max(mx, nums[i - 1])
-
-
-        l = 0
-        for i in range(n):
-            if mn < nums[i]:
-                l = i
-                break
-
-        r = 0
-        for i in range(n-1, -1, -1):
-            if mx > nums[i]:
-                r = i
-                break
-
-        return r - l + 1 if r > l else 0
-
-      
+        if (left == math.inf and right == -math.inf):
+            return 0 
+        return right-left+1
