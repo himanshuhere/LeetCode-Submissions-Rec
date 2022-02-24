@@ -9,15 +9,14 @@ class Solution:
         
         while j < len(fruits):
             d[fruits[j]] += 1
+                
+            while len(d) > 2 and i < j:
+                d[fruits[i]] -= 1
+                if d[fruits[i]] == 0:
+                    d.pop(fruits[i])
+                i += 1
             
-            if len(d) <= 2:
-                ans = max(ans, j - i + 1)
-                j += 1
-            else:
-                while len(d) > 2 and i < j:
-                    d[fruits[i]] -= 1
-                    if d[fruits[i]] == 0:
-                        d.pop(fruits[i])
-                    i += 1
-                j += 1
+            ans = max(ans, j - i + 1)
+                
+            j += 1
         return ans
