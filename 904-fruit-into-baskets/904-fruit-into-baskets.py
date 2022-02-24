@@ -13,7 +13,7 @@ class Solution:
             if d[fruits[j]] == 1:
                 count += 1
                 
-            while count > 2 and i < j:
+            while count > 2:
                 d[fruits[i]] -= 1
                 if d[fruits[i]] == 0:
                     count -= 1
