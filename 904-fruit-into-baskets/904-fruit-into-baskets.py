@@ -2,6 +2,9 @@ class Solution:
     def totalFruit(self, fruits: List[int]) -> int:
         #read and understand, its sliding window variable window size problem
         #arra or string, find longest window/subarray/substring with 2 unique char
+        
+        #Longest substring with atmost two distinct char
+        
         if len(fruits) == 1: return 1
         
         i = j = ans = 0
