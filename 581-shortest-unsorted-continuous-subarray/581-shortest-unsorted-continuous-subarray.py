@@ -14,14 +14,14 @@ class Solution:
         #increaisng stack
         for i in range(len(nums)):
             while st and nums[st[-1]] > nums[i]:
-                left = min(left, st.pop())      #culprit is stack top, nit current. do test case 
+                left = min(left, st.pop())          #culprit is stack top, nit current. do test case 
             st.append(i)
                 
         st = [] 
         #decreasing stack
         for i in range(len(nums)-1, -1, -1):
             while st and nums[st[-1]] <nums[i]:
-                right = max(right, st.pop())      #culprit is stack top, nit current. do test case 
+                right = max(right, st.pop())        #culprit is stack top, nit current. do test case 
             st.append(i)
             
         if (left == math.inf and right == -math.inf):
