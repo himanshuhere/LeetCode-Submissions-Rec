@@ -1,18 +1,29 @@
 class Solution:
     def jump(self, nums: List[int]) -> int:
-        @lru_cache(None)
-        def f(i):
-            if i == len(nums)-1:
-                return 0
+        #working but slow
+#         @lru_cache(None)
+#         def f(i):
+#             if i == len(nums)-1:
+#                 return 0
             
+#             jumps = nums[i]
+#             ans = math.inf
+#             for j in range(1, jumps+1):
+#                 if (i+j) < len(nums):
+#                     ans = min(ans, 1 + f(i+j))
+#             return ans
+#         return f(0)
+        
+        dp = [0]*len(nums)
+        dp[-1] = 0
+        for i in range(len(nums)-2, -1, -1):
             jumps = nums[i]
             ans = math.inf
             for j in range(1, jumps+1):
                 if (i+j) < len(nums):
-                    ans = min(ans, 1 + f(i+j))
-            return ans
-        return f(0)
-        
+                    ans = min(ans, 1 + dp[i+j])
+            dp[i] = ans
+        return dp[0]
         
         
         
