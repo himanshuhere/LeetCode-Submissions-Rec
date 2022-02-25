@@ -14,7 +14,7 @@ class Solution:
             for i in range(n-2, -1, -1):
                 dp[i] = nums[i] + dp[q[0]]
                 
-                while q and dp[q[-1]] <= dp[i]: 
+                while q and dp[q[-1]] <= dp[i]: #monotonic q to dp pe hi operate hoga pura
                     q.pop()
                 q.append(i)
                 
