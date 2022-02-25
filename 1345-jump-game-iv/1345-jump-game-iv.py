@@ -4,7 +4,8 @@ class Solution:
         #dfs with dp takes long huge calls to fid the min path. see technically we need min ump or say min path for min path we should consider BFS if we have a destinationcall like here reaching last index else dfs will check for all path before finding optimal unnecessary calls. Better model JUMP GAME 4 liek a graph of values --> index and apply BFS with initial as 0th idnex then keep checking for n-1th and return jumps you take. Options - i-1, i+1, j (that map will help you for find app j with same value)
         #map use - j where: arr[i] == arr[j] and i != j.
 
-        
+    #Why not DFS - TLE , so dfs+memoized = No, will givr wrong ans. As third condition says find the duplicate index value. thus we ll godeep in dfs as u know and will find the index having duplicate and will memoized this value, jabki smaller one is still pending to explore. 100 se 100 tak ka pehle deepness k chakkar me lamba rasta strore kar loya ab dusra 100 kam length pe hai but we ll take memoized value and shortest ans nhi milega, Sol is BFS only
+    
         n = len(arr)
         m = defaultdict(list)
         for i in range(n):
