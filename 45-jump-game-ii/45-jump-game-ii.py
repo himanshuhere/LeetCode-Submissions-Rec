@@ -15,35 +15,31 @@ class Solution:
 #         return f(0)
         
     #working but slow - worst o(n^2)
-        dp = [math.inf]*len(nums)
-        dp[-1] = 0
-        for i in range(len(nums)-2, -1, -1):
-            jumps = nums[i]
-            ans = math.inf
-            for j in range(1, jumps+1):
-                if (i+j) < len(nums):
-                    ans = min(ans, 1 + dp[i+j])
-            dp[i] = ans
-        return dp[0]
+#         dp = [math.inf]*len(nums)
+#         dp[-1] = 0
+#         for i in range(len(nums)-2, -1, -1):
+#             jumps = nums[i]
+#             ans = math.inf
+#             for j in range(1, jumps+1):
+#                 if (i+j) < len(nums):
+#                     ans = min(ans, 1 + dp[i+j])
+#             dp[i] = ans
+#         return dp[0]
         
         
         
         #Greedy fast
+        if len(nums) == 1:
+            return 0
         
+        steps = nums[0]
         jumps = 0
-        l = r = 0   #window
-        #because ques says it is sure u ll reach last index fo assume and do
+        maxReach = nums[0] + 0
         
-        while r < len(nums)-1:  #not taking last as their we need to land not start
-            farthest = -1
-            for i in range(l, r+1):
-                farthest = max(farthest, i+nums[i]) #find the max far in widnow
-            
-            l = r + 1
-            r = farthest
-            jumps += 1
-         
-        return jumps
-    
-    #it io(n) see while+for
-            
+        for i in range(1, len(nums)-1):     #because any number cant be 0, min 1
+            steps -= 1
+            maxReach = max(maxReach, i+nums[i])
+            if steps == 0:
+                steps = maxReach - i
+                jumps += 1
+        return jumps+1
