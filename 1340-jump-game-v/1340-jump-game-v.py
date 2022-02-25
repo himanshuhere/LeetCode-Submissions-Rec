@@ -10,7 +10,7 @@ class Solution:
                     break
                 x = max(x, dfs(j))
                 
-            for j in range(i - 1, max(0, i - d) -1, -1):
+            for j in range(i - 1, max(-1, i - d - 1), -1):
                 if arr[i] <= arr[j]: 
                     break 
                 x = max(x, dfs(j))
