@@ -1,6 +1,6 @@
 class Solution:
     def jump(self, nums: List[int]) -> int:
-        #working but slow
+        #working but slow - worst o(n^2)
 #         @lru_cache(None)
 #         def f(i):
 #             if i == len(nums)-1:
@@ -14,20 +14,21 @@ class Solution:
 #             return ans
 #         return f(0)
         
-        dp = [0]*len(nums)
-        dp[-1] = 0
-        for i in range(len(nums)-2, -1, -1):
-            jumps = nums[i]
-            ans = math.inf
-            for j in range(1, jumps+1):
-                if (i+j) < len(nums):
-                    ans = min(ans, 1 + dp[i+j])
-            dp[i] = ans
-        return dp[0]
+    #working but slow - worst o(n^2)
+        # dp = [0]*len(nums)
+        # dp[-1] = 0
+        # for i in range(len(nums)-2, -1, -1):
+        #     jumps = nums[i]
+        #     ans = math.inf
+        #     for j in range(1, jumps+1):
+        #         if (i+j) < len(nums):
+        #             ans = min(ans, 1 + dp[i+j])
+        #     dp[i] = ans
+        # return dp[0]
         
         
         
-        
+        #Greedy fast
         
         jumps = 0
         l = r = 0   #window
