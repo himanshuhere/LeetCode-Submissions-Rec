@@ -6,7 +6,7 @@ class Solution:
         def dfs(i):
             x = 0
             for j in range(i + 1, min(i + d + 1, n)):
-                if arr[i] <= arr[j]: 
+                if arr[i] <= arr[j]:    #ek b bada hai range me break not possible aage
                     break
                 x = max(x, dfs(j))
                 
@@ -17,3 +17,4 @@ class Solution:
             return 1 + x
         
         return max(dfs(i) for i in range(n))
+#pehle mai check kar raha tha if arr[i] > arr[j] then go but nhi ek b bada mile break wahi se
