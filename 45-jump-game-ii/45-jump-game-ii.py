@@ -15,16 +15,16 @@ class Solution:
 #         return f(0)
         
     #working but slow - worst o(n^2)
-        # dp = [0]*len(nums)
-        # dp[-1] = 0
-        # for i in range(len(nums)-2, -1, -1):
-        #     jumps = nums[i]
-        #     ans = math.inf
-        #     for j in range(1, jumps+1):
-        #         if (i+j) < len(nums):
-        #             ans = min(ans, 1 + dp[i+j])
-        #     dp[i] = ans
-        # return dp[0]
+        dp = [math.inf]*len(nums)
+        dp[-1] = 0
+        for i in range(len(nums)-2, -1, -1):
+            jumps = nums[i]
+            ans = math.inf
+            for j in range(1, jumps+1):
+                if (i+j) < len(nums):
+                    ans = min(ans, 1 + dp[i+j])
+            dp[i] = ans
+        return dp[0]
         
         
         
