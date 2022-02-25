@@ -33,7 +33,7 @@ class Solution:
             return 0
         
         steps = nums[0]
-        jumps = 0
+        jumps = 1
         maxReach = nums[0] + 0
         
         for i in range(1, len(nums)-1):     #because any number cant be 0, min 1
@@ -42,4 +42,4 @@ class Solution:
             if steps == 0:
                 steps = maxReach - i
                 jumps += 1
-        return jumps+1
+        return jumps
