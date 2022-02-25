@@ -36,5 +36,10 @@ class Solution:
                         q.append(j)
                         vis.add(j)
                 del m[arr[i]]
+                #m[arr[i]] = []
             jumps+=1 
         return -1
+    
+    #TWO MAJOR MISTAKES I DID:
+    #1. for loop nhi lagaya to ans 3 nhi 8 arha tha fir bhi dimag nh gaya. q ke bad for ka dhyan dena hai kaha hai kaha nhi lagega
+    #2. map ko blank nhi kar rha use ke bad lese unnecessary iteration ho rhe the TLE agya
