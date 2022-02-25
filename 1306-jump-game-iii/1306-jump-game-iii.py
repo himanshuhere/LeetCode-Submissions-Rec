@@ -24,15 +24,12 @@ class Solution:
             
             nextjump = u + arr[u]
             if nextjump < len(arr) and nextjump not in visited:
-                if arr[nextjump] == 0:
-                    return True
                 visited.add(nextjump)
                 queue.append(nextjump)
 
             nextjump = u - arr[u]
             if nextjump >= 0 and nextjump not in visited:
-                if arr[nextjump] == 0:
-                    return True
                 visited.add(nextjump)
                 queue.append(nextjump)
+                
         return False
