@@ -1,5 +1,4 @@
 import sys
-sys.setrecursionlimit(10000000)
 class Solution:
     def canReach(self, arr: List[int], start: int) -> bool:
 
