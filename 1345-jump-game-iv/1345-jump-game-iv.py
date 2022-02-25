@@ -35,6 +35,6 @@ class Solution:
                     if j not in vis:
                         q.append(j)
                         vis.add(j)
-                m[arr[i]] = []      
+                del m[arr[i]]
             jumps+=1 
         return -1
