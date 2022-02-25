@@ -18,3 +18,4 @@ class Solution:
         
         return max(dfs(i) for i in range(n))
 #pehle mai check kar raha tha if arr[i] > arr[j] then go but nhi ek b bada mile break wahi se
+#bst exapmle, 6 4 14 6 8, so u stand at 8 and seeing left. you can jump to 6, 4, but 14 will block you for reaching 4 thus break els eyou will calculate 4 also.
