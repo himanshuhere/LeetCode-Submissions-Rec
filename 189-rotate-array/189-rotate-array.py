@@ -1,7 +1,5 @@
 class Solution:
     def rotate(self, nums: List[int], k: int) -> None:
-        n = len(nums)
-        k = k%n
         
         def reversed(i, j):
             while i < j:
@@ -9,6 +7,8 @@ class Solution:
                 i+=1
                 j-=1
                 
+        n = len(nums)
+        k = k%n
         
         reversed(0, n-1)        
         reversed(0, k-1)
