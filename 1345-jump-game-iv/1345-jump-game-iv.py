@@ -6,30 +6,35 @@ class Solution:
 
         
         n = len(arr)
-        d = defaultdict(list)
-        for i, val in enumerate(arr):
-            d[val].append(i)
+        m = defaultdict(list)
+        for i in range(n):
+            m[arr[i]].append(i)
         
-        visited = [False for _ in range(n)]
-        q = [0]
-        visited[0] = True
-        ans = 0
+        vis = set()
+        q = deque([0])
+        vis.add(0)
+        jumps = 0
+        
         while q:
-            for i in range(len(q)):
-                ind = q.pop(0)
-                #print(ind)
-                if ind == n-1:
-                    return ans
-                if ind + 1 < n and visited[ind+1] == False:
-                    visited[ind+1] = True
-                    q.append(ind+1)
-                if ind - 1 > 0 and visited[ind-1] == False:
-                    visited[ind-1] = True
-                    q.append(ind-1)
-                for nei in d[arr[ind]]:
-                    if visited[nei] == False:
-                        visited[nei] = True
-                        q.append(nei)
-                del d[arr[ind]]
-            ans += 1
+            for _ in range(len(q)):
+                i = q.popleft()
+                if i == n-1:
+                    return jumps
+
+                nextjump = i+1
+                if nextjump < n and nextjump not in vis:
+                    q.append(nextjump)
+                    vis.add(nextjump)
+
+                nextjump = i-1
+                if nextjump >= 0 and nextjump not in vis:
+                    q.append(nextjump)
+                    vis.add(nextjump)
+
+                for j in m[arr[i]]:
+                    if j not in vis:
+                        q.append(j)
+                        vis.add(j)
+                m[arr[i]] = []      
+            jumps+=1 
         return -1
