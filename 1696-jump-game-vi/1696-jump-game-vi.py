@@ -1,6 +1,5 @@
 class Solution:
     def maxResult(self, nums: List[int], k: int) -> int:
-        
         #Tried DP, you will get the result but TLE why becasue you are taking k jumps everytime just to get the max of that range. Can we optimize this, maybe heap - logn or maybe decreasing queue, where everytume front you get maximum val. o(1), i mean heap is better but this is more better. atleast you ll understand a new way to optimize heap op. n-logn-1.
         #thats it other than this everything is dp only tabulation yes.
         #top down - k^n, tabulation - n*k, dp+queuue = n
@@ -8,21 +7,21 @@ class Solution:
         #yes you also need to make sure that queue is in range of k.
         
             n = len(nums)
-            dq = deque([0])  
-            for i in range(1, n):
-                # nums[i] = max(nums[i-k], nums[i-k+1],.., nums[i-1]) + nums[i] = nums[dq.front()] + nums[i]
-                nums[i] = nums[dq[0]] + nums[i]
-
-                while dq and nums[dq[-1]] <= nums[i]: 
-                    dq.pop()  
-                dq.append(i)
-
-                # Remove if the last element is out of window size k
-                if i - dq[0] >= k: 
-                    dq.popleft()
-
-            return nums[n - 1]
-
+            dp = [None]*n
+            dp[n-1] = nums[n-1]
+            q = deque([n-1])
+            
+            for i in range(n-2, -1, -1):
+                dp[i] = nums[i] + dp[q[0]]
+                
+                while q and dp[q[-1]] <= dp[i]: 
+                    q.pop()
+                q.append(i)
+                
+                if q[0] - i >= k: 
+                    q.popleft()
+                    
+            return dp[0]
         
         
 # Intuition:
