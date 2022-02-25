@@ -15,12 +15,13 @@ class Solution:
     #2
         queue = deque([start])
         visited = set()
+        visited.add(start)
         
         while queue:
             u = queue.popleft()
             if arr[u] == 0:
                 return True
-            visited.add(u)
+            #visited.add(u)
             
             nextjump = u + arr[u]
             if nextjump < len(arr) and nextjump not in visited:
