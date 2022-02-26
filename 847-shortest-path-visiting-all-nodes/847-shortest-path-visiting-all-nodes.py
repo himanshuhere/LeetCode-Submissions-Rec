@@ -2,6 +2,7 @@ class Solution:
     def shortestPathLength(self, graph):
         #bit masking for states as array is mutable and cant be hashed or memoized yaha nhi dfs pe kar rhe the phele wo to same isme b laga diye fir. kher
         #TC for both O(N^2 * 2^N)
+        #1 <= n <= 12
         
         if len(graph) == 1:
             return 0
