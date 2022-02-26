@@ -6,7 +6,7 @@ class Solution:
             return 0
         
         n = len(graph)
-        ending_mask = (1 << n) - 1      #all 1s all visited
+        ending_mask = (1 << n) - 1                              #all 1s all visited
         q = deque([(node, 1 << node) for node in range(n)])     #1<<node, means ith bit on. means okay node
         seen = set(q)
 
@@ -27,7 +27,8 @@ class Solution:
             
             steps += 1
         
-        
+     
+    #next_mask = mask | (1 << nei)  , if already set fine. if not set it. 
         
         
         
