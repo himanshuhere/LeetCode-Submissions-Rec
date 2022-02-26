@@ -4,18 +4,20 @@ class Solution:
             return 0
         
         n = len(graph)
-        ending_mask = (1 << n) - 1
-        q = deque([(node, 1 << node) for node in range(n)])
+        ending_mask = (1 << n) - 1      #all 1s all visited
+        q = deque([(node, 1 << node) for node in range(n)])     #1<<node, means ith bit on. means okay node
         seen = set(q)
 
         steps = 0
         while q:
             for _ in range(len(q)):
                 node, mask = q.popleft()
+                
+                if mask == ending_mask:
+                        return steps
+                    
                 for nei in graph[node]:
-                    next_mask = mask | (1 << nei)       #set ith to 1
-                    if next_mask == ending_mask:
-                        return 1 + steps
+                    next_mask = mask | (1 << nei)       #set ith to 1, if first time well n good, if second third its fine as ques wants to visiting allowed multiple, wese b shortest be popped by BFS
                     
                     if (nei, next_mask) not in seen:
                         seen.add((nei, next_mask))
