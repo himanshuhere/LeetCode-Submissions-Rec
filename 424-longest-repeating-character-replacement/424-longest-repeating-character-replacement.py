@@ -15,7 +15,7 @@ class Solution:
                 maxRepLetter = s[j]
             
             window = j-i+1                
-            if window - maxRepLetterCount > k:
+            if window - maxRepLetterCount > k:  #while kam nhi ka rrha. Pls read niche wale codes too
                 if s[i] in m:
                     m[s[i]] -=1 
                     if s[i] == maxRepLetter:
