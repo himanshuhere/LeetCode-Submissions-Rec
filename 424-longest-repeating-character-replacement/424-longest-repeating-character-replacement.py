@@ -28,19 +28,19 @@ class Solution:
         return ans
     
         
-#         while j < len(s):
-#             m[s[j]] +=1 
+        while j < len(s):
+            m[s[j]] +=1 
             
-#             window = j-i+1
-#             if window - max(m.values()) <= k:       #greedy
-#                 ans = max(ans, j-i+1)
+            window = j-i+1
+            if window - max(m.values()) <= k:       #greedy
+                ans = max(ans, j-i+1)
                 
-#             elif window - max(m.values()) > k:
-#                 if s[i] in m:
-#                     m[s[i]] -=1 
-#                 i += 1
-#             j += 1
-#         return ans
+            elif window - max(m.values()) > k:
+                if s[i] in m:
+                    m[s[i]] -=1 
+                i += 1
+            j += 1
+        return ans
 # #window - max(m.values()), we want to long the string so we should (greed) look for replacing the least count chars in window, so that we can save more k for others, use k less and raise yuour widnow size thats y
 
 
@@ -49,32 +49,32 @@ class Solution:
 
 #         #we can always make sliding widow variable to more elegant like
 #     #try to shrik window first if it is long, then capture ans. if not long we wud be capturing ans only
-#         while j < len(s):
-#             m[s[j]] +=1 
-#             window = j-i+1
-#             while window - max(m.values()) > k:
-#                 if s[i] in m:
-#                     m[s[i]] -=1 
-#                 i += 1
-#             ans = max(ans, j-i+1)
-#             j += 1
-#         return ans
+        while j < len(s):
+            m[s[j]] +=1 
+            window = j-i+1
+            while window - max(m.values()) > k:
+                if s[i] in m:
+                    m[s[i]] -=1 
+                i += 1
+            ans = max(ans, j-i+1)
+            j += 1
+        return ans
     
 #     #now ques comes, how to short bet this max(m.values()), you can right using some extra variable and maintain some logc
     
     
-#         maxRepLetterCount = 0
-#         while j < len(s):
-#             m[s[j]] +=1 
-#             maxRepLetterCount = max(maxRepLetterCount, m[s[j]])
+        maxRepLetterCount = 0
+        while j < len(s):
+            m[s[j]] +=1 
+            maxRepLetterCount = max(maxRepLetterCount, m[s[j]])
             
-#             window = j-i+1
-#             if window - maxRepLetterCount <= k:       #greedy
-#                 ans = max(ans, j-i+1)
+            window = j-i+1
+            if window - maxRepLetterCount <= k:       #greedy
+                ans = max(ans, j-i+1)
                 
-#             elif maxRepLetterCount > k:
-#                 if s[i] in m:
-#                     m[s[i]] -=1 
-#                 i += 1
-#             j += 1
-#         return ans
+            elif maxRepLetterCount > k:
+                if s[i] in m:
+                    m[s[i]] -=1 
+                i += 1
+            j += 1
+        return ans
