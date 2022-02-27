@@ -20,7 +20,7 @@ class Solution:
                 nums[i], nums[j] = nums[j], nums[i]
             else:
                 i += 1
-        
+        #worst 2n
         ans= []
         for i in range(n):
             if nums[i] - 1 != i:
