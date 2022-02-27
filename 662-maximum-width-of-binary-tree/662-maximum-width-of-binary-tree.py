@@ -10,15 +10,15 @@ class Solution:
             return 0                #edge case 
         
         ans = 0
-        q = deque([(root, 1)])         #(node, curr level n count)
+        q = deque([(root, 1)])         #(node, indexing)
         
         while q: 
             ans = max(ans, q[-1][1] - q[0][1] + 1)
             
             for _ in range(len(q)):
-                node, i = q.popleft()
+                node, index = q.popleft()
                 if node.left: 
-                    q.append((node.left, 2*i))
+                    q.append((node.left, 2*index))      #2*i
                 if node.right: 
-                    q.append((node.right, 2*i+1))            
+                    q.append((node.right, 2*index+1))   #2*i+1        
         return ans 
