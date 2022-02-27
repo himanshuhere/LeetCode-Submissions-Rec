@@ -13,10 +13,11 @@ class Solution:
                 m[s[j]] -= 1
                 if m[s[j]] == 0:    count -= 1
             
-            while count == 0:
+            while count == 0:   #==k nhi kuki sare elements chaiye, 
                 if ans > j-i+1:
                     ans = j-i+1
                     start, end = i, j
+                    
                 if s[i] in m:
                     m[s[i]] += 1
                     if m[s[i]] == 1:    count += 1
@@ -25,5 +26,7 @@ class Solution:
         
         return s[start:end+1]
          
+    #feasble solutions are when count = 0. out of all feasible we need max window.
+    
 
      
