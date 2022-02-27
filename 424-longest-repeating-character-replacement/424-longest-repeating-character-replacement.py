@@ -14,7 +14,8 @@ class Solution:
                 maxRepLetterCount = m[s[j]]
                 maxRepLetter = s[j]
             
-            if j-i+1 - maxRepLetterCount > k:  #while kam nhi ka rrha. Pls read niche wale codes too
+            window = j-i+1                
+            if window - maxRepLetterCount > k:  #while kam nhi ka rrha. Pls read niche wale codes too
                 if s[i] in m:
                     m[s[i]] -=1 
                     if s[i] == maxRepLetter:
