@@ -10,7 +10,7 @@ class Solution:
             return 0                #edge case 
         
         ans = 0
-        q = deque([(root, 0)])         #(node, curr level n count)
+        q = deque([(root, 1)])         #(node, curr level n count)
         
         while q: 
             ans = max(ans, q[-1][1] - q[0][1] + 1)
