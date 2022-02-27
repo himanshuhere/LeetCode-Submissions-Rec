@@ -23,7 +23,6 @@ class Solution:
                     map_[s[i]] += 1
                     if map_[s[i]] == 1:
                         count += 1
-                    
                 i += 1
             j+=1
         return ans
