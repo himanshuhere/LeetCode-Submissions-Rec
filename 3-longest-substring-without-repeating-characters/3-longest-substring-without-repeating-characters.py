@@ -9,18 +9,13 @@ class Solution:
         while j < len(s):
             map_[s[j]] += 1
             
-            # if len(map_) > j-i+1:
-            #     j += 1
-            if len(map_) == j-i+1:
-                ans = max(ans, j-i+1)
-                j += 1
-                
-            elif len(map_) < j-i+1:
-                while len(map_) < j-i+1:
-                    map_[s[i]] -= 1
-                    if map_[s[i]] == 0:
-                        del map_[s[i]]
-                    i += 1
-                j += 1
+            while len(map_) < j-i+1:
+                map_[s[i]] -= 1
+                if map_[s[i]] == 0:
+                    del map_[s[i]]
+                i += 1
+                    
+            ans = max(ans, j-i+1)                
+            j += 1
         return ans
             
