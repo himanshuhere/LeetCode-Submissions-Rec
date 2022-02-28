@@ -23,7 +23,7 @@ class Solution:
         colored, vis = [None]*n, [0]*n
         
         def dfs(node, c):
-            vis[node] = 1
+            vis[node] = 1       #technically you can use colored as vis too, if none not visited. 
             colored[node] = c
             
             for k in graph[node]:
