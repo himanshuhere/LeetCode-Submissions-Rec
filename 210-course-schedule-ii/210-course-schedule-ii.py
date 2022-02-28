@@ -23,3 +23,17 @@ class Solution:
                     q.append(k)
                     
         return q if c==n else []
+
+        
+        #def - directed cycle algo
+        def iscycle(node):
+            vis[node] = 1       #under-process
+            for k in graph[node]:
+                if vis[k] == 0: #unvisited
+                    if dfs(k):
+                        return Treu
+                elif vis[k] == 1:
+                    return True
+            vis[node] = 2       #completed
+            return False
+                    
