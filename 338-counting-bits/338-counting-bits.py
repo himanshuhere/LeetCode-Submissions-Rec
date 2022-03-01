@@ -13,7 +13,7 @@ class Solution:
             #karninghan algo
             count = 0
             while i != 0:
-                i = i & ( i - 1 )
+                i = i & ( i - 1 )       #off the last bit
                 count += 1
             res += [count]
             
