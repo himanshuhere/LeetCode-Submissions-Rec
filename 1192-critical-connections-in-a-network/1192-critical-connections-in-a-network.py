@@ -30,6 +30,7 @@ class Solution:
                         
                 else:   #backedge, no chance of getting visited. Just update it for calc bridge at other node
                     low[node] = min(low[node], tin[k])
+                    #low[node] = min(low[node], low[k]) wud also work
         
         
         tin = [None]*n
