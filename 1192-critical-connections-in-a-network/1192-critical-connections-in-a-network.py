@@ -38,7 +38,7 @@ class Solution:
         low = [None]*n
         timer = [1]
         
-        dfs(0, -1)
+        dfs(0, -1)      #par is imp to pass in order to skip
         return res
     
     
