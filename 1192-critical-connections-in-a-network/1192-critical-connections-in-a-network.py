@@ -8,20 +8,19 @@ class Solution:
             adj[u].append(v)
             adj[v].append(u)
             
-        #time of entry/insertion into the dfs for this nod
-        vis = set()
-        res = []
-        
+        #time of entry/insertion into the dfs for this node
         def dfs(node, par):
-            vis.add(node)
-            tin[node] = timer[0]
-            low[node] = timer[0]
-            timer[0] += 1
+            nonlocal timer
+            
+            vis[node] = 1
+            tin[node] = timer
+            low[node] = timer
+            timer += 1
             
             
             for k in adj[node]:
                 if k == par:    continue
-                if k not in vis:            #forward edge, can be bridge
+                if vis[k] == 0:            #not visited, forward edge, can be bridge
                     dfs(k, node)
                     #after dfs call done
                     if tin[node] < low[k]:      #k mere se b bada h mtlb koi ancestor se conncted nhi h bridge h ye mat kato
@@ -36,8 +35,9 @@ class Solution:
         
         tin = [None]*n
         low = [None]*n
-        timer = [1]
-        
+        vis = [0]*n
+        timer = 1
+        res = []
         dfs(0, -1)      #par is imp to pass in order to skip
         return res
     
