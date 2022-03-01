@@ -22,6 +22,8 @@ class Solution:
                 m = prod
         
         return m % int(1e9+7)
+    
+    #why sums[0] is not roots sum like graph, becsue its a tree sums array gets filled starting with leaf nodes so at 0th index you might get sum of any leaf nodes. Take care of binary tree thses things. Althought edge cut thing will work as we are checking of all nodes without checking for any order
         
         
     #same algo for graph see. same
