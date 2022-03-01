@@ -24,10 +24,11 @@ class Solution:
                 if k not in vis:            #forward edge, can be bridge
                     dfs(k, node)
                     #after dfs call done
-                    low[node] = min(low[node], low[k])      #check if conncted to ancestor(ancestor = means low timer)
                     if tin[node] < low[k]:      #k mere se b bada h mtlb koi ancestor se conncted nhi h bridge h ye mat kato
                         res.append([node, k])   #bridge
-                        
+                    
+                    low[node] = min(low[node], low[k])      #check if conncted to ancestor(ancestor = means low timer)
+
                 else:   #backedge, no chance of getting visited. Just update it for calc bridge at other node
                     low[node] = min(low[node], tin[k])
                     #low[node] = min(low[node], low[k]) wud also work
