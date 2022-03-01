@@ -13,21 +13,22 @@ class Solution:
         res = []
         
         def dfs(node, par):
+            vis.add(node)
             tin[node] = timer[0]
             low[node] = timer[0]
             timer[0] += 1
             
-            vis.add(node)
+            
             for k in adj[node]:
                 if k == par:    continue
-                if k not in vis:
+                if k not in vis:            #forward edge, can be bridge
                     dfs(k, node)
                     #after dfs call done
                     low[node] = min(low[node], low[k])
-                    if tin[node] < low[k]:      #see mere cur node k time of ins se k ka low kam hoga ya equal hoga to k kahi se mere tak aa sakta hai, but actual me usko lower ya equal value kahi aur se mili hai jaha se rasta hai kuki gaya to mere se hai to iska k ka tin and low mere se ek jada hi hoga agar kam hai to update hua hai kahi adjacent node se means bridge imp nhi hai but agar bada hai to sale ko koi aur rasta nhi mila kato bc.
+                    if tin[node] < low[k]:      #k mere se b bada h mtlb koi ancestor se conncted nhi h bridge h ye mat kato
                         res.append([node, k])   #bridge
                         
-                else:   #k in vis, thus it is a cycle. Cant be bridge do only low updation here
+                else:   #backedge, no chance of getting visited. Just update it for calc bridge at other node
                     low[node] = min(low[node], low[k])
         
         
