@@ -6,7 +6,6 @@
 #         self.right = right
 class Solution:
     def maxProduct(self, root: Optional[TreeNode]) -> int:
-        sums = []
         def dfs(node):
             if node is None:
                 return 0
@@ -14,6 +13,7 @@ class Solution:
             sums.append(subtree_sum)
             return subtree_sum
         
+        sums = []
         m = 0
         total = dfs(root)
         for i in range(len(sums)):
