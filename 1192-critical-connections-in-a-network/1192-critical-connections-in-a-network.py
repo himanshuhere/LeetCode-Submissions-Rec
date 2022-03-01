@@ -29,7 +29,7 @@ class Solution:
                         res.append([node, k])   #bridge
                         
                 else:   #backedge, no chance of getting visited. Just update it for calc bridge at other node
-                    low[node] = min(low[node], low[k])
+                    low[node] = min(low[node], tin[k])
         
         
         tin = [None]*n
