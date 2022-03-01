@@ -21,7 +21,7 @@ class Solution:
             if prod > m: 
                 m = prod
         
-        return m % (10**9 + 7)
+        return m % int(1e9+7)
         
         
     #same algo for graph see. same
