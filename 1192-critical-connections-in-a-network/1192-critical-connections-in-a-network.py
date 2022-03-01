@@ -27,7 +27,7 @@ class Solution:
                     if tin[node] < low[k]:      #k mere se b bada h mtlb koi ancestor se conncted nhi h bridge h ye mat kato
                         res.append([node, k])   #bridge
                     
-                    low[node] = min(low[node], low[k])      
+                    low[node] = min(low[node], low[k])   #isko b update kardo agar child k ka low time kam h means wo kisi ansector se connected h kuki mai b k se conncted hu let me connect to ancentor also mereko b low time chaiye bhai   
 
                 else:   #backedge, no chance of getting visited. Just update it for calc bridge at other node
                     low[node] = min(low[node], tin[k])  #check if conncted to ancestor(ancestor = means low timer)
