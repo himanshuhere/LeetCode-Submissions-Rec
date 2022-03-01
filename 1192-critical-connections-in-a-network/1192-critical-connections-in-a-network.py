@@ -20,7 +20,11 @@ class Solution:
             
             for k in adj[node]:
                 if k == par:    continue
-                if vis[k] == 0:            #not visited, forward edge, can be bridge
+                if vis[k] == 1:     #backedge, no chance of getting visited. Just update it for calc bridge at other node
+                    low[node] = min(low[node], tin[k])  #check if conncted to ancestor(ancestor = means low timer)
+                    #low[node] = min(low[node], low[k]) wud also work
+                    
+                else:   #not visited, forward edge, can be bridge
                     dfs(k, node)
                     #after dfs call done
                     if tin[node] < low[k]:      #k mere se b bada h mtlb koi ancestor se conncted nhi h bridge h ye mat kato
@@ -28,9 +32,7 @@ class Solution:
                     
                     low[node] = min(low[node], low[k])   #isko b update kardo agar child k ka low time kam h means wo kisi ansector se connected h kuki mai b k se conncted hu let me connect to ancentor also mereko b low time chaiye bhai   
 
-                else:   #backedge, no chance of getting visited. Just update it for calc bridge at other node
-                    low[node] = min(low[node], tin[k])  #check if conncted to ancestor(ancestor = means low timer)
-                    #low[node] = min(low[node], low[k]) wud also work
+                    
         
         
         tin = [None]*n
