@@ -6,18 +6,22 @@
 #         self.right = right
 class Solution:
     def maxProduct(self, root: Optional[TreeNode]) -> int:
-        def dfs(root):
-            nonlocal ans, rootSum
-            if not root:
+        sums = []
+        def dfs(node):
+            if node is None:
                 return 0
-            currSum = dfs(root.left) + dfs(root.right) + root.val
-            ans = max(ans, currSum * (rootSum - currSum))
-            return currSum
-
-        ans, rootSum = 0, 0
-        rootSum = dfs(root)  # Firstly, get total sum of all nodes in the Binary Tree
-        dfs(root)       # Then dfs in post order to calculate sum of each subtree and its complement
-        return ans%int(1e9+7)
+            subtree_sum = dfs(node.left) + dfs(node.right) + node.val
+            sums.append(subtree_sum)
+            return subtree_sum
+        
+        m = 0
+        total = dfs(root)
+        for i in range(len(sums)):
+            prod = sums[i] * (total-sums[i])
+            if prod > m: 
+                m = prod
+        
+        return m % (10**9 + 7)
         
         
     #same algo for graph see. same
