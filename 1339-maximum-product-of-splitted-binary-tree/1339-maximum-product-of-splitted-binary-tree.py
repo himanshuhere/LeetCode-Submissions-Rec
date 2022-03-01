@@ -18,8 +18,7 @@ class Solution:
         total = dfs(root)
         for i in range(len(sums)):
             prod = sums[i] * (total-sums[i])
-            if prod > m: 
-                m = prod
+            m = max(m, prod)
         
         return m % int(1e9+7)
     
