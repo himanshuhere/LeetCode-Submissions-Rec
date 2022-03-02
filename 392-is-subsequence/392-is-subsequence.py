@@ -7,12 +7,12 @@ class Solution:
         # if len(t) == 0:
         #     return False 
         
-        i, j = 0, 0
-        while i < len(s) and j < len(t):
-            if s[i] == t[j]:
-                i += 1
-            j += 1    
-        return i == len(s)
+        # i, j = 0, 0
+        # while i < len(s) and j < len(t):
+        #     if s[i] == t[j]:
+        #         i += 1
+        #     j += 1    
+        # return i == len(s)
     
     #intuitive is lcs
     #lcs of two string cud be 0 to min(s1,s2), this case we ll find lcs and match its size with s1 if yes then return true
