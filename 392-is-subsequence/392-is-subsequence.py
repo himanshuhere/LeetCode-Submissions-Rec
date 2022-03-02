@@ -2,10 +2,10 @@ class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
         #two pointer o(m+n) or o max(m,n) == j for bigger string i for smaller, run j loop if i == j then incriment i else or not else incriment j always, at last u have matching char lenght in i match it with string size
         
-        if len(s) == 0:
-            return True
-        if len(t) == 0:
-            return False 
+        # if len(s) == 0:
+        #     return True
+        # if len(t) == 0:
+        #     return False 
         
         i, j = 0, 0
         while i < len(s) and j < len(t):
