@@ -5,24 +5,24 @@ class Solution:
             return 0
         
         dp = [0]*n
-#         #base case setting
-#         if nums[1]-nums[0] == nums[2]-nums[1]:
-#             dp[2] = 1
+        #base case setting
+        if nums[1]-nums[0] == nums[2]-nums[1]:
+            dp[2] = 1
         
-#         for i in range(3, n):
-#             if nums[i]-nums[i-1]==nums[i-1]-nums[i-2]:
-#                 dp[i] = dp[i-1] + 1
-#         return sum(dp)
+        for i in range(3, n):
+            if nums[i]-nums[i-1]==nums[i-1]-nums[i-2]:
+                dp[i] = dp[i-1] + 1
+        return sum(dp)
         
-        #short optimized
-        # res= 0
-        # for i in range(2, n):
-        #     if nums[i]-nums[i-1]==nums[i-1]-nums[i-2]:
-        #         dp[i] = dp[i-1] + 1
-        #     res+=dp[i]
-        # return res
+    #short optimized
+        res= 0
+        for i in range(2, n):
+            if nums[i]-nums[i-1]==nums[i-1]-nums[i-2]:
+                dp[i] = dp[i-1] + 1
+            res+=dp[i]
+        return res
         
-        #more optimized
+    #more optimized
         res= 0
         prev=0
         for i in range(2, n):
