@@ -15,11 +15,22 @@ class Solution:
 #         return sum(dp)
         
         #short optimized
+        # res= 0
+        # for i in range(2, n):
+        #     if nums[i]-nums[i-1]==nums[i-1]-nums[i-2]:
+        #         dp[i] = dp[i-1] + 1
+        #     res+=dp[i]
+        # return res
+        
+        #more optimized
         res= 0
+        prev=0
         for i in range(2, n):
+            cur=0
             if nums[i]-nums[i-1]==nums[i-1]-nums[i-2]:
-                dp[i] = dp[i-1] + 1
-            res+=dp[i]
+                cur = prev+1
+            res+=cur
+            prev=cur
         return res
     
     
