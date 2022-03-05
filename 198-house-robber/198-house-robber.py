@@ -15,8 +15,17 @@ class Solution:
             
         #return fn(len(A)-1)
     
-        dp = [0]*(len(A)+1)
-        dp[0] = 0
-        for i in range(1, len(dp)):
-            dp[i] = max(A[i-1]+dp[i-2], dp[i-1])
-        return dp[-1]
+        # dp = [0]*(len(A)+1)
+        # dp[0] = 0
+        # for i in range(1, len(dp)):
+        #     dp[i] = max(A[i-1]+dp[i-2], dp[i-1])
+        # return dp[-1]
+        
+        oneback = 0
+        twoback = 0
+        for i in range(1, len(A)+1):
+            cur = 0
+            cur = max(A[i-1]+twoback, oneback)
+            twoback = oneback
+            oneback = cur
+        return oneback
