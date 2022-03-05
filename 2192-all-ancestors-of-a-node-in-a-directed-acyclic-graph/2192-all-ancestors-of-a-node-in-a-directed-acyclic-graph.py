@@ -28,7 +28,7 @@ class Solution:
         while q2:
             node = q2.popleft()
             for k in g[node]:
-                for p in set(ans[k]):
+                for p in set(ans[k]):           #set karna jaruri hai bc acccept nhi hua contest me
                     for v in ans[p]:
                         ans[k].add(v)
                 ind2[k] -= 1
