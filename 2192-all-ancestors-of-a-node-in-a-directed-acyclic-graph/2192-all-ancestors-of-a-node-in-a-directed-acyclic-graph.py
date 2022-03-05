@@ -24,6 +24,9 @@ class Solution:
     
     #see the contest time wala intuitive 
     def contesttime():
+        # Build graph and compute in-degree for each node;
+        # Use topological for the first time to get the direct parent of each node;
+        # Use topological for the second time to get all ancestors of the direct parent of each node;
             #need direct ancestor plus unke b ancestor, either go kahn and recusive to parent or this
             g = defaultdict(list)
             ind = [0]*n
