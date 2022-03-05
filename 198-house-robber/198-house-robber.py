@@ -13,5 +13,10 @@ class Solution:
             #dont robb this house and go to next and further
             #chose the max money robbed
             
-        
-        return fn(len(A)-1)
+        #return fn(len(A)-1)
+    
+        dp = [0]*(len(A)+1)
+        dp[0] = 0
+        for i in range(1, len(dp)):
+            dp[i] = max(A[i-1]+dp[i-2], dp[i-1])
+        return dp[-1]
