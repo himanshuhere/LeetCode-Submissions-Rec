@@ -1,13 +1,33 @@
 class Solution:
     def champagneTower(self, poured: int, query_row: int, query_glass: int) -> float:
-        #arr = [[0]*101 for _ in range(101)]
-        arr = [[0]*(query_glass+2) for _ in range(query_row+1)]
+        #pascal triangle only
+        if poured == 0:
+            return 0
         
-        arr[0][0] = poured
-        for i in range(query_row):      #one level less is fine, we already calcuting next row
-            for j in range(query_glass+1):  #but col we need to reach
-                rem = max(arr[i][j] - 1, 0) 
-                arr[i+1][j] += rem/2
-                arr[i+1][j+1] += rem/2
-        ans = arr[query_row][query_glass] 
-        return ans if ans <= 1 else 1
+        pre = [poured]
+        while query_row:
+            tmp = []
+            tmp.append(max((pre[0]-1)/2, 0))
+            for i in range(1, len(pre)):
+                tmp.append(max((pre[i-1]-1)/2, 0) + max((pre[i]-1)/2, 0))
+            #tmp.append(max((pre[-1]-1)/2, 0))
+            tmp.append(tmp[0])
+            query_row-=1
+            
+            pre = tmp
+            
+        return min(pre[query_glass], 1)
+        
+        
+
+        
+
+#                              n
+#                      (n-1)/2  (n-1)/2
+# ((n-1)/2-1)/2  ((n-1)/2-1)/2+((n-1)/2-1)/2  ((n-1)/2-1)/2
+# so onn..
+
+#n
+#(n-1)/2  (n-1)/2
+#((n-1)/2-1)/2  ((n-1)/2-1)/2+((n-1)/2-1)/2  ((n-1)/2-1)/2
+# so onn..
