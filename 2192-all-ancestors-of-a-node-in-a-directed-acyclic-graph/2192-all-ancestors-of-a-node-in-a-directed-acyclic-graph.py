@@ -14,7 +14,6 @@ class Solution:
                 
         ind2 = copy.deepcopy(ind)
         q2 = copy.deepcopy(q)
-        
         ans = [set() for _ in range(n)]
         
         while q:
@@ -36,4 +35,6 @@ class Solution:
                     q2.append(k)
                     
         return [sorted(row) for row in ans]
+    
+    #rough copy me bahut sahi samjh ayega actually slow hai but understandable h
         
