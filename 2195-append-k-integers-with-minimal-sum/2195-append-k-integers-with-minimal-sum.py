@@ -16,7 +16,7 @@ class Solution:
                         ans+=(tmp*(tmp+1)//2)
                         k-=tmp
             else:
-                if nums[i-1]+1==nums[i] or nums[i-1]==nums[i]:    
+                if nums[i-1]+1==nums[i] or nums[i-1]==nums[i]:   #duplicate ne contest me harwadiya. pura code same tha bas bad me dekha duplicates hai 
                     continue
                 last = nums[i-1]
                 pre = last*(last+1)//2
