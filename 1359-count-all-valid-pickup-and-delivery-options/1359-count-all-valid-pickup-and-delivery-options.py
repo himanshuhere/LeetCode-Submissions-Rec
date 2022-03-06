@@ -48,6 +48,8 @@ class Solution:
     
     #maths one
     #for pickup we can put anywhere so n! ways but for deliveries we have like 1.3.5.7... from last delivery to first. so total summations of 2n-1
+    #for n=1, we have 1*(2n-1) then (n-1)*(2n-3), 
+    #n*(2n-1), (n-1)*(2n-3), (n-2)*(2n-5) , .............  
         
         res = 1
         for i in range(1, n+1):
