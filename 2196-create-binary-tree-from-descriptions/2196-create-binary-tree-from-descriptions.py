@@ -28,8 +28,10 @@ class Solution:
                 else:
                     node.right = TreeNode(child)
                     m[child] = node.right
+                    
             childs.add(child)
         
+        #jo b parent childs me nhi hai mtlb kisi ka baccha nhi hai root hai 
         root = None
         for par, _, _ in descriptions:
             if par not in childs:
