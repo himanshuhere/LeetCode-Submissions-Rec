@@ -1,12 +1,11 @@
 class Solution:
     def countOrders(self, n: int) -> int:
         MOD = 1_000_000_007
-        
         #Top down
         #since pickeup has no constraints and first pickup and then deli is possible for N we have 2N spaces. so we ll pick one and go for delivery or pick three and go for delivery like open close brancket we have qes in backtrackng. Might be case then after one picku two deliveries gonne made, so wll take take with [to_deliver_yet > picked] to make a call for delivery.
         #ways 
         @lru_cache(None)
-        def f(picked, undel):
+        def f(unpicked, undel):
             if unpicked == 0 and undel == 0:
                 return 1
             if unpicked < 0 or undel < 0 or undel < unpicked:
@@ -23,7 +22,7 @@ class Solution:
             
             return ans
     
-        #return f(n, n)
+        return f(n, n)
         
 #see why unp*f(unp-1, und), beacuse see as only for pick. Like permutation for first place we have n ways and then n-1 ans so on like if n = 4 then only for pickup since we dont have any constraints we have 4.3.2.1 = 4! ways. thus
 #for deliveries, we have only the number of ways which already has picked, thus (undel-unpicked)=this is like 1 is picked so from 4 we have 4-(unpicked) that is 4-3 thus 1 delivery to made, lil confusing but still.
@@ -44,7 +43,7 @@ class Solution:
                     dp[unpicked][undelivered] += (undelivered - unpicked) * dp[unpicked][undelivered - 1]
                 dp[unpicked][undelivered] %= MOD
         
-        #return dp[n][n]
+        return dp[n][n]
     
     
     #maths one
