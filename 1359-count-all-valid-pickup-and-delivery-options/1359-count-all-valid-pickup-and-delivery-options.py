@@ -1,6 +1,23 @@
 class Solution:
     def countOrders(self, n: int) -> int:
         MOD = 1_000_000_007
+        
+    #maths one
+    #for pickup we can put anywhere so n! ways but for deliveries we have like 1.3.5.7... from last delivery to first. so total summations of 2n-1
+    #for n=1, we have 1*(2n-1) then (n-1)*(2n-3), 
+    #n*(2n-1), (n-1)*(2n-3), (n-2)*(2n-5) , .............  
+        
+        res = 1
+        for i in range(1, n+1): #pickeups
+            res = res*i
+            res %= MOD
+            
+        for i in range(1, n+1): #deliveries
+            res = res*(2*i-1)
+            res %=MOD
+            
+        return res
+        
         #Top down
         #since pickeup has no constraints and first pickup and then deli is possible for N we have 2N spaces. so we ll pick one and go for delivery or pick three and go for delivery like open close brancket we have qes in backtrackng. Might be case then after one picku two deliveries gonne made, so wll take take with [to_deliver_yet > picked] to make a call for delivery.
         #ways 
@@ -46,15 +63,5 @@ class Solution:
         return dp[n][n]
     
     
-    #maths one
-    #for pickup we can put anywhere so n! ways but for deliveries we have like 1.3.5.7... from last delivery to first. so total summations of 2n-1
-    #for n=1, we have 1*(2n-1) then (n-1)*(2n-3), 
-    #n*(2n-1), (n-1)*(2n-3), (n-2)*(2n-5) , .............  
-        
-        res = 1
-        for i in range(1, n+1):
-            res = res*i
-            res = res*(2*i-1)
-            res %=MOD
-        return res
+    
     
