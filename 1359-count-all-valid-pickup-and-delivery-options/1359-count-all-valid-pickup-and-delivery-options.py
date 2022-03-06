@@ -35,7 +35,7 @@ class Solution:
         dp = [[0] * (n + 1) for i in range(n + 1)]
         dp[0][0] = 1
         for unpicked in range(n + 1):
-            for undelivered in range(1, n + 1):
+            for undelivered in range(1, n + 1): #(i, n + 1) this is more good
                 if unpicked > 0:
                     dp[unpicked][undelivered] += unpicked * dp[unpicked - 1][undelivered]
                 dp[unpicked][undelivered] %= MOD
@@ -44,5 +44,16 @@ class Solution:
                     dp[unpicked][undelivered] += (undelivered - unpicked) * dp[unpicked][undelivered - 1]
                 dp[unpicked][undelivered] %= MOD
         
-        return dp[n][n]
+        #return dp[n][n]
+    
+    
+    #maths one
+    #for pickup we can put anywhere so n! ways but for deliveries we have like 1.3.5.7... from last delivery to first. so total summations of 2n-1
+        
+        res = 1
+        for i in range(1, n+1):
+            res = res*i
+            res = res*(2*i-1)
+            res %=MOD
+        return res
     
