@@ -6,6 +6,8 @@
 #         self.right = right
 class Solution:
     def minDiffInBST(self, root: Optional[TreeNode]) -> int:
+                #inorder isliye kuki sorted data me hi closesnt aspas honge aur ans k chances jada hai
+
 #         def dfs(root):
 #             if not root:
 #                 return
