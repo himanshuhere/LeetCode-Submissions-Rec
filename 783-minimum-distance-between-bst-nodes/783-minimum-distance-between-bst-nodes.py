@@ -30,7 +30,7 @@ class Solution:
             pre = root.val
             dfs(root.right)
         
-        pre, res = -math.inf, math.inf
+        pre, res = -math.inf, math.inf      #ye pre = -inf bahit imp tha bhaiya
         dfs(root)
         return res
                 
