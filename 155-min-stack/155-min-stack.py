@@ -38,7 +38,7 @@ class Node:
         
 class MinStack:
     #Approach - two stack to one stack to LinkedList
-    def __init__(self): #same thing u can do with LL
+    def __init__(self):
         self.head = None
     
     def push(self, x):
