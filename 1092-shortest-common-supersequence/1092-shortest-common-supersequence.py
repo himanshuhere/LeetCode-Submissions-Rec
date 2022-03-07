@@ -4,8 +4,8 @@ class Solution:
         N = len(str1)
         M = len(str2)
         
-        def longestCommonSubsequenceTabulation(str1, str2, n, m):
-            table = [[None for x in range(m + 1)] for x in range(n + 1)]
+        def lcs(str1, str2, n, m):
+            table = [[0 for x in range(m + 1)] for x in range(n + 1)]
             
             for i in range(n + 1):
                 for j in range(m + 1):
@@ -35,23 +35,15 @@ class Solution:
                     else:
                         res += str2[j - 1]
                         j -= 1
-            print(res)
-            #only one while will run
             while i > 0:
                 res += str1[i - 1]
                 i -= 1
-            print(res)
             while j > 0:
                 res += str2[j - 1]
                 j -= 1
-            print(res)
-            print(res[::-1])
             return res[::-1]
         
         
-        dp = longestCommonSubsequenceTabulation(str1, str2, N, M)
-        #return m + n - dp[-1][-1]
-        #if it ask for lenght only give m + n - lcs(str1, str2, m ,n): no need to print
-        # print dp
+        dp = lcs(str1, str2, N, M)
         return printSCS(str1, str2, N, M, dp)
     
