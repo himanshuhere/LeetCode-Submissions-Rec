@@ -12,12 +12,12 @@ class Solution:
         
         l, r = self.lowestCommonAncestor(root.left, p, q), self.lowestCommonAncestor(root.right, p, q)
         
-        if l is None:
-            return r
-        elif r is None:
-            return l
-        else:
+        if l and r:
             return root
+        elif not l:
+            return r
+        else:
+            return l
         
         #LCA for BST --- *****BST*****
         def lca(root, n1, n2):
@@ -36,6 +36,7 @@ class Solution:
                 return lca(root.right, n1, n2)
 
             return root
+        
         #Iterative LCA ****BST*****
         def lca(root, n1, n2):
             while root:
