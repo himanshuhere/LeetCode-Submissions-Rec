@@ -1,6 +1,7 @@
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, src: int) -> int:
-        #Dijktra
+        #Dijktra - for it we dont need vis, because relaxation will not go in loop. 
+        
         g = defaultdict(list)
         for u, v, w in times:
             g[u].append((v, w))
