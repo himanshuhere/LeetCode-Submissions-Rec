@@ -19,9 +19,8 @@ class Solution:
             
             if pre.next != cur:
                 pre.next = cur.next
-                cur = cur.next
             else:
                 pre = pre.next
-                cur = cur.next
+            cur = cur.next
                 
         return dummy.next
