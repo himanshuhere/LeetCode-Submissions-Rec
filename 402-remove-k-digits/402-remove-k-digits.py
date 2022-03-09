@@ -10,21 +10,14 @@ class Solution:
         #means everytime you remove first peak, first i such that a[i] > a[i+1]
         def brute():
             while k:
-
                 i = 0
                 while i < len(num)-1 and num[i] <= num[i+1]:    #<= imp
                     i += 1
                 #num.pop(i)
                 num = num[:i] + num[i+1:]       #it will remove last for cases like 12345 or 1111
                 k -= 1
-
-            #trim
-            #i = 0
-            # while i < len(num) and num[i] == '0':
-            #     num = num[1:]
-            #     i += 1
-            num = num.lstrip("0")       #strip, lstrip, rtrip
-            return num if num != "" else "0"    #
+            num = num.lstrip("0")               #strip, lstrip, rtrip
+            return num if num != "" else "0"    
     
     #STACK see we need to remove first dip we get, and keep removing with k--, we also need to keep doing it for k only. 
     
