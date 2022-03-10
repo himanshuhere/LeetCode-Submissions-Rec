@@ -15,7 +15,7 @@ class MyStack:
         for _ in range(len(self.q1)-1):
             x = self.q1.popleft()
             self.q2.append(x)
-            #self.topp = x           #top will take the last value
+            self.topp = x           #top will take the last value
             
         popped = self.q1.popleft()
         self.q1, self.q2 = self.q2, self.q1
@@ -28,30 +28,30 @@ class MyStack:
     def empty(self) -> bool:
         return self.len == 0
 
-#ONE QUEUE: nothing just one less queue else push is N and pop is 1 only. so idea is to push element but after pushing in stack same end is used to pop, what a dirty filthy bastard. kher, so revert the elements thats all.
-#pop etc is same
+# #ONE QUEUE: nothing just one less queue else push is N and pop is 1 only. so idea is to push element but after pushing in stack same end is used to pop, what a dirty filthy bastard. kher, so revert the elements thats all.
+# #pop etc is same
 
-class MyStack:
-    def __init__(self):
-        self.q1 = deque()
-        self.topp = None
-        self.len = 0
+# class MyStack:
+#     def __init__(self):
+#         self.q1 = deque()
+#         self.topp = None
+#         self.len = 0
 
-    def push(self, x: int) -> None:
-        self.q1.append(x)
-        size = len(self.q1)
-        while size > 1:
-            self.q1.append(self.q1.popleft())
-            size -= 1
+#     def push(self, x: int) -> None:
+#         self.q1.append(x)
+#         size = len(self.q1)
+#         while size > 1:
+#             self.q1.append(self.q1.popleft())
+#             size -= 1
             
-        self.len += 1
+#         self.len += 1
 
-    def pop(self) -> int:
-        self.len -= 1
-        return self.q1.popleft()
+#     def pop(self) -> int:
+#         self.len -= 1
+#         return self.q1.popleft()
 
-    def top(self) -> int:
-        return self.q1[0]
+#     def top(self) -> int:
+#         return self.q1[0]
 
-    def empty(self) -> bool:
-        return self.len == 0
+#     def empty(self) -> bool:
+#         return self.len == 0
