@@ -1,6 +1,19 @@
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
-        # dynamic programming bcz in every iteration we r creating new row based on prev row
+        #simple
+        n = numRows
+        pas = [[1]*(i+1) for i in range(n)]
+        
+        for i in range(n):
+            for j in range(1, i):
+                pas[i][j] = pas[i-1][j-1] + pas[i-1][j]
+        
+        return pas
+        
+        
+       
+    #2
+    # dynamic programming bcz in every iteration we r creating new row based on prev row
         
         if numRows == 0: return []
         elif numRows == 1: return [[1]]
