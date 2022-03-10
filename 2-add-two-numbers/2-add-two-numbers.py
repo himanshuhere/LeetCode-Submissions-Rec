@@ -13,11 +13,11 @@ class Solution:
             v1 = l1.val if l1 else 0
             v2 = l2.val if l2 else 0
             
-            carry, s = divmod(v1+v2+carry, 10)
+            #carry, s = divmod(v1+v2+carry, 10)
             
-            # s = v1 + v2 + carry
-            # carry = s//10
-            # s = s % 10
+            s = v1 + v2 + carry
+            carry = s//10
+            s = s % 10
             
             ans.next = ListNode(s)
             ans = ans.next
