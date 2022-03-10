@@ -23,6 +23,7 @@ class MyQueue:
         return not self.s1
 
 #push o(1) pop amortized o(1)
+#PLEASE READ LAST PARA
 class MyQueue:
     def __init__(self):
         self.s1 = []
