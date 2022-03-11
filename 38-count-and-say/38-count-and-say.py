@@ -13,6 +13,7 @@ class Solution:
                 i += 1
             return res
         
+        
         s = "1"
         for _ in range(1, n):
             s = next_num(s)
