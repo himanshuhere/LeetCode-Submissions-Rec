@@ -1,11 +1,12 @@
 class Solution:
     def titleToNumber(self, col: str) -> int:
+        #l to r
         res = 0
         for ch in col:
             res = res*26 + (ord(ch) - ord('A') + 1)
         return res
     
-        #Or see 
+        #Or see right to left, bookish base conversion. anything to int
         powr = 0
         base = 26
         ans = 0
