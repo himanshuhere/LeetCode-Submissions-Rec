@@ -1,11 +1,11 @@
 class Solution:
     def arrangeCoins(self, n: int) -> int:
         # #1 Linear
-        # row = 1
-        # while n >= row:
-        #     n -= row
-        #     row += 1
-        # return row-1
+        row = 1
+        while n >= row:
+            n -= row
+            row += 1
+        return row-1
         
         #2 Binary Search 
         # range is sorted 1-n
