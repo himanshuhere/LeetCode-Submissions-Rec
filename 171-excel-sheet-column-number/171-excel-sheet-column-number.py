@@ -1,9 +1,18 @@
 class Solution:
     def titleToNumber(self, col: str) -> int:
-        res = 0
-        for ch in col:
-            res = res*26 + (ord(ch) - ord('A') + 1)
-        return res
+        # res = 0
+        # for ch in col:
+        #     res = res*26 + (ord(ch) - ord('A') + 1)
+        # return res
+    
+        #Or see 
+        powr = 0
+        base = 26
+        ans = 0
+        for ch in reversed(list(col)):
+            ans += (ord(ch) - ord('A') + 1) * (base**powr)
+            powr +=1
+        return ans
     
     
     #any strting(coulb be of any base X), say algo just need to change base to X
