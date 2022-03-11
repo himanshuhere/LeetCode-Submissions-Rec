@@ -8,6 +8,7 @@ class Solution:
         if not head or not k:
             return head
         
+        #1 - O(n+(k%n))
         n, last = 0, head
         while last.next:
             n += 1
@@ -22,9 +23,21 @@ class Solution:
             k -= 1
         
         last.next = head
-        new = cur.next
+        head = cur.next
         cur.next = None
+        return head
+    
+        #2 - O(k + n-k) - O(n) - TLE
+        sl, fs = head, head
+        for i in range(k):          #you cannot mod, so whole k in circle
+            fs = fs.next if fs.next else head
         
-        return new
+        while fs.next:
+            sl = sl.next
+            fs = fs.next
         
+        fs.next = head
+        head = sl.next
+        sl.next = None
+        return head
         
