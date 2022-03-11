@@ -27,7 +27,8 @@ class Solution:
         cur.next = None
         return head
     
-        #2 - O(k + n-k) - O(n) - TLE
+    
+        #2 - O(k + n-k) - O(n) - TLE - if not allowed % mod or lenght cal then
         sl, fs = head, head
         for i in range(k):          #you cannot mod, so whole k in circle
             fs = fs.next if fs.next else head
