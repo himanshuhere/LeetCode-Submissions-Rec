@@ -15,6 +15,7 @@ class Solution:
             oldToCopy[cur].random = oldToCopy[cur.random]
             cur = cur.next 
             
+        #two traversal lagege hi, else connection kispe karoge. 
         return oldToCopy[head]
     
     
