@@ -18,6 +18,11 @@ class Solution:
         return oldToCopy[head]
     
     
+    
+    
+    
+    
+    
         #optimal
         if not head:
             return 
