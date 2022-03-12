@@ -47,13 +47,15 @@ class Solution:
         #3
         prev = [0]*(n+1)
         prev[0] = 1
+        cur = [0]*(n+1)
+        cur[0] = 1
         for i in range(1, m+1):
-            cur = [0]*(n+1)
-            cur[0] = 1
             for j in range(1, n+1):
                 if s[i-1] == t[j-1]:
                     cur[j] = prev[j] + prev[j-1]
                 else:
                     cur[j] = prev[j]
-            prev = cur
+            prev = copy.copy(cur)       #ye direct ref attach karo but j loop k pehle cur har bar fill karna pdega same hi hai almost
         return prev[-1]
+        
+        #more optimization
