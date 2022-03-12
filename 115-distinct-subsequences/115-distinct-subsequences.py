@@ -66,6 +66,4 @@ class Solution:
             for j in range(n, 0, -1):
                 if s[i-1] == t[j-1]:
                     prev[j] = prev[j] + prev[j-1]
-                else:
-                    prev[j] = prev[j]
         return prev[-1]
