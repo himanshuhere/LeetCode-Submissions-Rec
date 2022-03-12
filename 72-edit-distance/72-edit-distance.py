@@ -79,3 +79,6 @@ class Solution:
             prev = copy.copy(cur)
         return prev[-1]
     
+    
+        #1-D array? No see we need cur[i-1] as well as prev[i-1] that means we need cur and prev rows to be present in order to make result. Like other matching algo, that has lets say only prev[i-X] or if cur thn only cur[i] then it is possible 
+    
