@@ -49,17 +49,33 @@ class Solution:
 #         return f(m, n)
         
         #Tab
-        dp = [[0]*(n+1) for _ in range(m+1)]
-        for j in range(n+1):
-            dp[0][j] = j
-        for i in range(m+1):
-            dp[i][0] = i
+#         dp = [[0]*(n+1) for _ in range(m+1)]
+#         for j in range(n+1):
+#             dp[0][j] = j
+#         for i in range(m+1):
+#             dp[i][0] = i
+        
+#         for i in range(1, m+1):
+#             for j in range(1, n+1):
+#                 if s1[i-1] == s2[j-1]:
+#                     dp[i][j] = dp[i-1][j-1]
+#                 else:
+#                     dp[i][j] = 1 + min(dp[i][j-1], dp[i-1][j], dp[i-1][j-1])
+#         return dp[m][n]
+        
+        #Space optimized
+        prev = [0]*(n+1)
+        cur = [0]*(n+1)
+        for j in range(n+1):        #only column is filled since i if fix = 0
+            prev[j] = j
         
         for i in range(1, m+1):
+            cur[0] = i              #part of base case, if j=0, put i
             for j in range(1, n+1):
                 if s1[i-1] == s2[j-1]:
-                    dp[i][j] = dp[i-1][j-1]
+                    cur[j] = prev[j-1]
                 else:
-                    dp[i][j] = 1 + min(dp[i][j-1], dp[i-1][j], dp[i-1][j-1])
-        return dp[m][n]
+                    cur[j] = 1 + min(cur[j-1], prev[j], prev[j-1])
+            prev = copy.copy(cur)
+        return prev[-1]
     
