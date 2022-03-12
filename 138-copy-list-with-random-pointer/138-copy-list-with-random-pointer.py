@@ -48,14 +48,17 @@ class Solution:
         
         #pass 3
         # separate two parts and handling NEXT
-        second = cur = head.next
-        while cur.next:
-            head.next = cur.next
+        secondHead = head.next      #to return
+        
+        head1 = head
+        head2 = head.next
+        while head2.next:
+            head.next = head2.next
             head = head.next
-            cur.next = head.next
-            cur = cur.next
+            head2.next = head.next
+            head2 = head2.next
         head.next = None
         
-        return second
+        return secondHead
     
         
