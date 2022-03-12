@@ -2,19 +2,19 @@ class Solution:
     def minDistance(self, s1: str, s2: str) -> int:
         m, n = len(s1), len(s2)
         
-#         @lru_cache(None)
-#         def f(i, j):
-#             if i < 0:
-#                 return j+1          #to insert 
-#             if j < 0:
-#                 return i+1          #to delete
-#             if s1[i] == s2[j]:
-#                 return f(i-1, j-1)
-#             else:
-#                 return 1 + min(f(i, j-1),   #insert
-#                                f(i-1, j),   #delete
-#                                f(i-1, j-1)) #replace
-#         return f(m-1, n-1)
+        @lru_cache(None)
+        def f(i, j):
+            if i < 0:
+                return j+1          #to insert 
+            if j < 0:
+                return i+1          #to delete
+            if s1[i] == s2[j]:
+                return f(i-1, j-1)
+            else:
+                return 1 + min(f(i, j-1),   #insert
+                               f(i-1, j),   #delete
+                               f(i-1, j-1)) #replace
+        return f(m-1, n-1)
     
     #PLS Understand
     #If s1[i] == s2[j], 
@@ -34,34 +34,34 @@ class Solution:
         
         #TABULATION
         #Lets first make it 1-based indexing
-#         @lru_cache(None)
-#         def f(i, j):
-#             if i == 0:   return j          #to insert 
-#             if j == 0:   return i          #to delete
-#             if s1[i-1] == s2[j-1]:
-#                 return f(i-1, j-1)
-#             else:
-#                 return 1 + min(f(i, j-1),   #insert
-#                                f(i-1, j),   #delete
-#                                f(i-1, j-1)) #replace
+        @lru_cache(None)
+        def f(i, j):
+            if i == 0:   return j          #to insert 
+            if j == 0:   return i          #to delete
+            if s1[i-1] == s2[j-1]:
+                return f(i-1, j-1)
+            else:
+                return 1 + min(f(i, j-1),   #insert
+                               f(i-1, j),   #delete
+                               f(i-1, j-1)) #replace
             
-#         m, n = len(s1), len(s2)
-#         return f(m, n)
+        m, n = len(s1), len(s2)
+        return f(m, n)
         
         #Tab
-#         dp = [[0]*(n+1) for _ in range(m+1)]
-#         for j in range(n+1):
-#             dp[0][j] = j
-#         for i in range(m+1):
-#             dp[i][0] = i
+        dp = [[0]*(n+1) for _ in range(m+1)]
+        for j in range(n+1):
+            dp[0][j] = j
+        for i in range(m+1):
+            dp[i][0] = i
         
-#         for i in range(1, m+1):
-#             for j in range(1, n+1):
-#                 if s1[i-1] == s2[j-1]:
-#                     dp[i][j] = dp[i-1][j-1]
-#                 else:
-#                     dp[i][j] = 1 + min(dp[i][j-1], dp[i-1][j], dp[i-1][j-1])
-#         return dp[m][n]
+        for i in range(1, m+1):
+            for j in range(1, n+1):
+                if s1[i-1] == s2[j-1]:
+                    dp[i][j] = dp[i-1][j-1]
+                else:
+                    dp[i][j] = 1 + min(dp[i][j-1], dp[i-1][j], dp[i-1][j-1])
+        return dp[m][n]
         
         #Space optimized
         prev = [0]*(n+1)
