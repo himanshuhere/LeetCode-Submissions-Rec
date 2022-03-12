@@ -65,7 +65,6 @@ class Solution:
         
         #Space optimized
         prev = [0]*(n+1)
-        cur = [0]*(n+1)
         for j in range(n+1):        #only column is filled since i if fix = 0
             prev[j] = j
         
