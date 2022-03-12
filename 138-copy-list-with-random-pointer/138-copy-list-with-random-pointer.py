@@ -2,21 +2,21 @@ class Solution:
     def copyRandomList(self, head: 'Node') -> 'Node':
         #see strivers both sol
         #brute
-        oldToCopy = {None : None}
-        cur = head
-        while cur:
-            copy = Node(cur.val)
-            oldToCopy[cur] = copy
-            cur = cur.next
+#         oldToCopy = {None : None}
+#         cur = head
+#         while cur:
+#             copy = Node(cur.val)
+#             oldToCopy[cur] = copy
+#             cur = cur.next
         
-        cur = head
-        while cur:
-            oldToCopy[cur].next = oldToCopy[cur.next] #what if cur.next is none, thus init map as None: None
-            oldToCopy[cur].random = oldToCopy[cur.random]
-            cur = cur.next 
+#         cur = head
+#         while cur:
+#             oldToCopy[cur].next = oldToCopy[cur.next] #what if cur.next is none, thus init map as None: None
+#             oldToCopy[cur].random = oldToCopy[cur.random]
+#             cur = cur.next 
             
-        #two traversal lagege hi, else connection kispe karoge. 
-        return oldToCopy[head]
+#         #two traversal lagege hi, else connection kispe karoge. 
+#         return oldToCopy[head]
     
     
     
@@ -24,20 +24,22 @@ class Solution:
     
     
     
-        #optimal
+        #2 optimal constant space
         if not head:
             return 
+        
         # copy nodes
         cur = head
         #pass 1
         while cur:
             nxt = cur.next
-            cur.next = Node(cur.val)
-            cur.next.next = nxt
-            cur = nxt
+            copy = Node(cur.val)
+            cur.next = copy
+            copy.next = nxt
+            cur = nxt           #move
             
         #pass 2
-        # copy random pointers
+        # copy/handling RANDOM pointers
         cur = head
         while cur:
             if cur.random:
@@ -45,7 +47,7 @@ class Solution:
             cur = cur.next.next
         
         #pass 3
-        # separate two parts
+        # separate two parts and handling NEXT
         second = cur = head.next
         while cur.next:
             head.next = cur.next
