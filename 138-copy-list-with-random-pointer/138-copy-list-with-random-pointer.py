@@ -47,17 +47,17 @@ class Solution:
             cur = cur.next.next
         
         #pass 3
-        # separate two parts and handling NEXT
+        # separate two parts and handling ONLY NEXT
         secondHead = head.next      #to return
         
         head1 = head
         head2 = head.next
         while head2.next:
-            head.next = head2.next
-            head = head.next
-            head2.next = head.next
+            head1.next = head2.next
+            head1 = head1.next
+            head2.next = head1.next
             head2 = head2.next
-        head.next = None
+        head1.next = None
         
         return secondHead
     
