@@ -22,6 +22,8 @@ class Solution:
     
     
     #wow. asal nodes k bich me copys bana do. Ab pehle randoms connect kardo because next karne gye to link tut jayegi and u wont b able to connect randome then so pehle random then next, while next list ll be break down into two, good return
+    #Old List: A --> B --> C --> D
+    #InterWeaved List: A --> A' --> B --> B' --> C --> C' --> D --> D'
     
         #2 optimal constant space
         if not head:
