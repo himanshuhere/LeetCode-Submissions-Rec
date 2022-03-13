@@ -1,9 +1,31 @@
 class Solution:
     def digArtifacts(self, n: int, artifacts: List[List[int]], dig: List[List[int]]) -> int:
-        grid = [[False]*n for _ in range(n)]
-        #lets dig first
+#         grid = [[False]*n for _ in range(n)]
+#         #lets dig first
+#         for r, c in dig:
+#             grid[r][c] = True
+        
+#         #now check every complete art is digged or not
+#         ans = 0
+#         for r1,c1,r2,c2 in artifacts:
+#             alluncovered = True
+#             for i in range(r1, r2+1):
+#                 for j in range(c1, c2+1):
+#                     if grid[i][j] == False:
+#                         alluncovered = False
+#                         break
+#                 if not alluncovered:
+#                     break
+#             if alluncovered:
+#                 ans+=1
+        
+#         return ans
+    
+    
+        #not matrix, use anything liner like map
+        s=set()
         for r, c in dig:
-            grid[r][c] = True
+            s.add((r,c))
         
         #now check every complete art is digged or not
         ans = 0
@@ -11,11 +33,9 @@ class Solution:
             alluncovered = True
             for i in range(r1, r2+1):
                 for j in range(c1, c2+1):
-                    if grid[i][j] == False:
+                    if (i,j) not in s:
                         alluncovered = False
                         break
-                if not alluncovered:
-                    break
             if alluncovered:
                 ans+=1
         
