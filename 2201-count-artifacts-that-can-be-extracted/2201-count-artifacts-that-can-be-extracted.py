@@ -27,7 +27,6 @@ class Solution:
         for r, c in dig:
             s.add((r,c))
         
-        #now check every complete art is digged or not
         ans = 0
         for r1,c1,r2,c2 in artifacts:
             alluncovered = True
