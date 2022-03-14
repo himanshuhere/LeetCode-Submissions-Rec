@@ -32,6 +32,9 @@ class Solution:
             else:
                 st.append(p)
             i+=1
-        return '/' + '/'.join(st)
-                
+        
+        res = ""
+        while st:
+            res = '/'+st.pop()+res
+        return res if res!="" else "/"
         
