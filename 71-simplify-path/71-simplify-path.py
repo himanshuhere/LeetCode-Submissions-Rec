@@ -1,20 +1,15 @@
 class Solution:
     def simplifyPath(self, path: str) -> str:
-        #Whole idea is that, if we find "." so we ll jump on current directory thus, just ignore it. Do not add to valid path.
-        #If "..", thus we need to jump current + previous dir, thus only because of this we need STACK, else kaam normal string se ho jana tha. Baki ignore "/////" etc.
-        #bhery easzy
+        path = path.split('/')
+        st = []
         
-        parts = path.split("/")
-        stack = []
-        for p in parts:
-            if p in ["", "."]:      #if more /// like this it will split in ""
+        for p in path:
+            if p == "" or p == ".":
                 continue
-            elif p == "..":
-                if stack:
-                    stack.pop()
+            if p == "..":
+                if st:
+                    st.pop()
             else:
-                stack.append(p)
+                st.append(p)
                 
-        return '/' + '/'.join(stack)
-    
-    #this could also be done without split. just maintain a cur string and keep adding until "/", then operate and make curr blank again'.
+        return "/" + "/".join(st)
