@@ -1,16 +1,16 @@
 class Solution:
     def simplifyPath(self, path: str) -> str:
-        # path = path.split('/')
-        # st = []
-        # for p in path:
-        #     if p == "" or p == ".":
-        #         continue
-        #     if p == "..":
-        #         if st:
-        #             st.pop()
-        #     else:
-        #         st.append(p)
-        # return "/" + "/".join(st)
+        path = path.split('/')
+        st = []
+        for p in path:
+            if p == "" or p == ".":
+                continue
+            if p == "..":
+                if st:
+                    st.pop()
+            else:
+                st.append(p)
+        return "/" + "/".join(st)
 
     
     #Whole idea is that, if we find "." so we ll jump on current directory thus, just ignore it. Do not add to valid path. and split /// will result in "" thus ignore these too
