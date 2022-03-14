@@ -19,6 +19,6 @@ class Solution:
             head = head.next    
             turn ^= 1
             
-        even.next = None
+        even.next = None            #very imp, was getting errors
         odd.next = dummy2.next
         return dummy1.next
