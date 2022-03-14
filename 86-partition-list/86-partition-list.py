@@ -46,3 +46,5 @@ class Solution:
         eq.next = dgreat.next
         less.next = deq.next
         return dless
+    
+    #Both solution will do same thing. better go with first with two pointer
