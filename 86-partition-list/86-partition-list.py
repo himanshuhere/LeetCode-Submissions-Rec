@@ -23,3 +23,26 @@ class Solution:
     #it may look like we are creating and adding nodes but swear it is o(1) as 
     #on visualizing u ll get to know we are just manipulating pointers nothing more 
     #just created few nodes to start that counts as constant space
+    
+    #QUES. List Pivoting on k
+    #SOL. - o(n)/o(1)
+        less = dless = ListNode(0)
+        eq = deq = ListNode(0)
+        great = dgreat = ListNode(0)
+
+        while head:
+            if head.val < k:
+                less.next = head
+                less = less.next
+            elif head.val == k:
+                eq.next = head
+                eq = eq.next
+            else:
+                great.next = head
+                great = great.next
+            head = head.next
+
+        great.next = None
+        eq.next = dgreat.next
+        less.next = deq.next
+        return dless
