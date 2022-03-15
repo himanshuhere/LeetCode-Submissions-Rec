@@ -34,6 +34,7 @@ class Solution:
                 headA = headA.next
                 headB = headB.next
             return headA
+        
         def twoPointer():
             if not headA or not headB:  return None #see notes best one
             a, b = headA, headB
@@ -48,5 +49,12 @@ class Solution:
                 else:
                     b = b.next
             return a
+        
+        def optimized():
+            pass
+            #go find any one tail and connect it to its head.
+            #now send thid head to find the begginnning of cycle fucntion, thats your ans.
+            #make sure to remove the created cycle.
+            #o(n)
         return twoPointer()
 
