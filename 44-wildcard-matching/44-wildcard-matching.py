@@ -104,7 +104,7 @@ class Solution:
             prev[j] = flag
         
         for i in range(1, m+1):
-            cur[0] = False
+            cur[0] = False              #first col of evry row
             for j in range(1, n+1):
                 if s[i-1] == p[j-1] or p[j-1] == '?':
                     cur[j] = prev[j-1]
