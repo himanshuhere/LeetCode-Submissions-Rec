@@ -63,12 +63,37 @@ class Solution:
             
 #         return f(len(s), len(p))
         
-        m, n = len(s), len(p)
-        dp = [[False]*(n+1) for _ in range(m+1)]
-        dp[0][0] = True
+        #2D DP
+#         m, n = len(s), len(p)
+#         dp = [[False]*(n+1) for _ in range(m+1)]
+#         dp[0][0] = True
         
-        for i in range(1, m+1):
-            dp[i][0] = False
+#         for i in range(1, m+1):
+#             dp[i][0] = False
+        
+#         for j in range(1, n+1):
+#             flag = True
+#             for k in range(1, j+1):    #if only till 0 to j, then use p[k]
+#                 if p[k-1] != '*':
+#                     flag = False
+#                     break
+#             dp[0][j] = flag
+        
+#         for i in range(1, m+1):
+#             for j in range(1, n+1):
+#                 if s[i-1] == p[j-1] or p[j-1] == '?':
+#                     dp[i][j] = dp[i-1][j-1]
+#                 elif p[j-1] == '*':
+#                     dp[i][j] = dp[i][j-1] or dp[i-1][j]
+#                 else:
+#                     dp[i][j] = False   
+#         return dp[-1][-1]
+    
+        #1D DP
+        m, n = len(s), len(p)
+        prev = [False]*(n+1)
+        cur = [False]*(n+1)
+        prev[0] = True
         
         for j in range(1, n+1):
             flag = True
@@ -76,17 +101,20 @@ class Solution:
                 if p[k-1] != '*':
                     flag = False
                     break
-            dp[0][j] = flag
+            prev[j] = flag
         
         for i in range(1, m+1):
+            cur[0] = False
             for j in range(1, n+1):
                 if s[i-1] == p[j-1] or p[j-1] == '?':
-                    dp[i][j] = dp[i-1][j-1]
+                    cur[j] = prev[j-1]
                 elif p[j-1] == '*':
-                    dp[i][j] = dp[i][j-1] or dp[i-1][j]
+                    cur[j] = cur[j-1] or prev[j]
                 else:
-                    dp[i][j] = False   
-        return dp[-1][-1]
+                    cur[j] = False 
+            prev = copy.copy(cur)
+            
+        return prev[-1]
         
     
         
