@@ -72,7 +72,7 @@ class Solution:
         
         for j in range(1, n+1):
             flag = True
-            for k in range(1, j+1):
+            for k in range(1, j+1):    #if only till 0 to j, then use p[k]
                 if p[k-1] != '*':
                     flag = False
                     break
