@@ -1,6 +1,6 @@
 class Solution:
     def minRemoveToMakeValid(self, s: str) -> str:
-        st = []
+        #forward
         ans = ""
         op, cl = 0, 0
         for ch in s:
@@ -13,6 +13,8 @@ class Solution:
                 cl -= 1
             else:
                 ans += ch
+        
+        #backward
         s = ans
         ans = ""
         op, cl = 0, 0
@@ -26,4 +28,5 @@ class Solution:
                 cl -= 1
             else:
                 ans += ch
+                
         return ans[::-1]
