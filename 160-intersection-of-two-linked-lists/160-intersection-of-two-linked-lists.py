@@ -56,5 +56,10 @@ class Solution:
             #now send thid head to find the begginnning of cycle fucntion, thats your ans.
             #make sure to remove the created cycle.
             #o(n)
+            
+            #this algo, is imp to know as can be useful for cases where they say List can have cycle,
+            #if both has -- return none i guess
+            #if any of them have then use above algo
+            
         return twoPointer()
 
