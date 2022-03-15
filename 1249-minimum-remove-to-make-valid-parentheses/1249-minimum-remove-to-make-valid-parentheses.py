@@ -12,7 +12,7 @@ class Solution:
             if cl > op:
                 cl -= 1
             else:
-                ans += ch
+                ans += ch       #this is n opertation. if want use string arr to get o(1)
         
         #backward
         s = ans
@@ -27,6 +27,6 @@ class Solution:
             if cl > op:
                 cl -= 1
             else:
-                ans += ch
+                ans += ch       
                 
         return ans[::-1]
