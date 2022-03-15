@@ -1,7 +1,7 @@
 class Solution:
     def minRemoveToMakeValid(self, s: str) -> str:
         #forward
-        ans = ""
+        ans = []
         op, cl = 0, 0
         for ch in s:
             if ch == '(':
@@ -12,11 +12,11 @@ class Solution:
             if cl > op:
                 cl -= 1
             else:
-                ans += ch       #this is n opertation. if want use string arr to get o(1)
-        
+                #ans += ch       #this is n opertation. if want use string arr to get o(1)
+                ans.append(ch)
         #backward
-        s = ans
-        ans = ""
+        s = ''.join(ans)
+        ans = []
         op, cl = 0, 0
         for ch in s[::-1]:
             if ch == '(':
@@ -27,6 +27,6 @@ class Solution:
             if cl > op:
                 cl -= 1
             else:
-                ans += ch       
+                ans.append(ch)  
                 
-        return ans[::-1]
+        return ''.join(ans[::-1])
