@@ -58,8 +58,8 @@ class Solution:
             #o(n)
             
             #this algo, is imp to know as can be useful for cases where they say List can have cycle,
-            #if both has -- return none i guess
-            #if any of them have then use above algo
+            #if any one has -- return none i guess
+            #if both of them have then use above algo
             
         return twoPointer()
 
