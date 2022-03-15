@@ -1,29 +1,16 @@
-A:     a1 → a2 → a3 → a4 → null
-B:     b1 → b2 → b3 → null
-b
-a
-A:     a1 → a2 → a3 → a4 → null
-B:     b1 → b2 → b3 → null
-b = null, then b = a1
-b                   a = null, then a = b1
-A:     a1 → a2 → a3 → a4 → null
-B:     b1 → b2 → b3 → null
-b
-A:     a1 → a2 → a3 → a4 → null
-B:     b1 → b2 → b3 → null
-a
-b
-A:     a1 → a2 → a3 → a4 → null
-B:     b1 → b2 → b3 → null
-a
-b
-A:     a1 → a2 → a3 → a4 → null
-B:     b1 → b2 → b3 → null
-a
-b = null
-A:     a1 → a2 → a3 → a4 → null
-B:     b1 → b2 → b3 → null
-a = null
-Since a == b is true (both refer to null), end loop while(a != b), return a = null.
-​
-Notice that if list A and list B have the same length, this solution will terminate in no more than 1 traversal; if both lists have different lengths, this solution will terminate in no more than 2 traversals -- in the second traversal, swapping a and b synchronizes a and b before the end of the second traversal. By synchronizing a and b I mean both have the same remaining steps in the second traversal so that it's guaranteed for them to reach the first intersection node, or reach null at the same time (technically speaking, in the same iteration) -- see Case 2 (Have Intersection & Different Len) and Case 4 (Have No Intersection & Different Len)
+* **Brute force** : Do two while loop, pick a node from list1 and then compare it with all nodes in list2 and see if find.
+TC : O(M*N), SC : O(1)
+* **Hashing** : Use hash to store all nodes aof list1, then iter list2 and check if already present in hashtable.
+TC : O(M+N), SC : O(M, N)
+* **Optimized 1** : Do iter on each list and find lenght of both, say l1 and l2, thn find the diff bw lenght and, move the longest list head/dummy to diff plus, then both head or dummy wud be of same lenght from intersection, now do iter simntsly on both and check if matches.
+TC : O(M) + O(M-N) + O(N) = O(2M)
+SC : O(1)
+* **Optimized 2** :  same complexity, but small and concise code. So use this approach.
+So we will put dummies to heads, and start moving untill one reached null, so longer list wud still have the difference nodes left. so again if d1 reaches the end, put d1 on head2 or vice versa if d2 reaches null. we ll do it for both, and after that both dummy will come at same length and then start checking if nodes have intersection. see code and try to understand. it will work for lists having no intersection also.
+See the code in compiler
+TC :  O(2M)
+SC : O(1)
+//boundary check
+if(headA == null || headB == null) return null;
+ListNode a = headA;
+ListNode b = headB;
