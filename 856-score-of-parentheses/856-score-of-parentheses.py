@@ -12,6 +12,7 @@ class Solution:
         return stack.pop()
         
         
+        
         #khud, kiya 
         st = []
         st.append(0)
