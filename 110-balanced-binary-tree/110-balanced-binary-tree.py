@@ -8,6 +8,9 @@ class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         def f(r):
             nonlocal ans
+            if not ans:
+                return -math.inf
+            
             if not r:
                 return 0
             l, r = f(r.left), f(r.right)
