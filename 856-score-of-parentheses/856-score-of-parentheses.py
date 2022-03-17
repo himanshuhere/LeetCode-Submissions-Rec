@@ -1,5 +1,18 @@
 class Solution:
     def scoreOfParentheses(self, s: str) -> int:
+        #sol
+        stack = [0] #The score of the current frame
+        for x in s:
+            if x == '(':
+                stack.append(0)
+            else:
+                v = stack.pop()
+                stack[-1] += max(2 * v, 1)
+
+        return stack.pop()
+        
+        
+        #khud, kiya 
         st = []
         st.append(0)
         score = 0
