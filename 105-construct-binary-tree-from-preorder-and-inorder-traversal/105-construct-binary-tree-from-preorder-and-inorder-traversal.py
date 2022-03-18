@@ -16,8 +16,8 @@ class Solution:
         leftVals = inRootidx - iS
         
         root = TreeNode(pre[pS])
-        root.left = self.build(pre, pS+1, pS+leftVals, ino, iS, inRootidx-1, m)
-        root.right = self.build(pre, pS+leftVals+1, pE, ino, inRootidx+1, iE, m)
+        root.left = self.build(pre, pS+1, pS+leftVals, 0, iS, inRootidx-1, m)
+        root.right = self.build(pre, pS+leftVals+1, pE, 0, inRootidx+1, iE, m)
         
         return root
         
