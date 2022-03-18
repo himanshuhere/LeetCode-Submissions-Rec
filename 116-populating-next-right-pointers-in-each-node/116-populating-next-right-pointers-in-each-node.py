@@ -28,9 +28,9 @@ class Solution:
                     prev.next = curr
                 prev = curr
 
-                if curr.left != None:
+                if curr.left:
                     q.append(curr.left)
-                if curr.right != None:
+                if curr.right:
                     q.append(curr.right)
         return root
 
