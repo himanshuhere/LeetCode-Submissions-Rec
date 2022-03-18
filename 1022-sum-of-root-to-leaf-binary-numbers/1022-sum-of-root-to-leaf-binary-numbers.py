@@ -21,8 +21,8 @@ class Solution:
             if not root:
                 return 0
             
-            #sum_ = sum_ * 2 + root.val          #works so good, try a test case
-            sum_ = sum_ << 1 | root.val
+            sum_ = sum_ * 2 + root.val          #works so good, try a test case
+            #sum_ = sum_ << 1 | root.val
             if not root.left and not root.right:
                 return sum_
             return dfs(root.left, sum_) + dfs(root.right, sum_)
