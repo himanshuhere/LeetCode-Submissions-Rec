@@ -8,7 +8,7 @@ class Solution:
         ListNode.__eq__ = lambda a,b: a.val == b.val
         ListNode.__lt__ = lambda a,b: a.val < b.val
         
-    #2 O(nlogk) still otimized
+    #2 O(nlogk)/O(k) - otimized | at time only k element will be in heap
         h = []
         for each_head in lists:
             if each_head:
@@ -27,7 +27,7 @@ class Solution:
         return dummy.next
     
     
-    #1 o(nlogk)
+    #1 o(nlogk)/O(n) as n >>> k here
         if not lists:
             return None
         if len(lists) == 1:
