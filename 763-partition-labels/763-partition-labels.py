@@ -4,7 +4,7 @@ class Solution:
         for i, ch in enumerate(s):
             lastocc[ord(ch)-ord('a')] = i
             
-        ans = [0]
+        ans = []
         n = len(s)
         i = 0
         while i < n:
@@ -17,4 +17,4 @@ class Solution:
             pre = sum(ans)
             ans.append((last-pre)+1)
             i = j
-        return ans[1:]
+        return ans
