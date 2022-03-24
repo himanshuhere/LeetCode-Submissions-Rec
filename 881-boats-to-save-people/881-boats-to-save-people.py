@@ -1,5 +1,7 @@
 class Solution:
     def numRescueBoats(self, people: List[int], limit: int) -> int:
+        #Two pointer 
+        
         A = sorted(people)
         ans = 0
         i, j = 0, len(A)-1
