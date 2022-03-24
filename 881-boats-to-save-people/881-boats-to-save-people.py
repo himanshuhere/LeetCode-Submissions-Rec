@@ -4,6 +4,8 @@ class Solution:
         #kabhi kabhi khud pe bharosa nhi hota
         #sorting+two pointer
         
+        #Each boat carries at most two people at the same time
+        
         A = sorted(people)
         l, r = 0, len(A)-1
         boats = 0 
