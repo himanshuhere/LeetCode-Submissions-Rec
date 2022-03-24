@@ -7,7 +7,7 @@ class Solution:
         A = sorted(people)
         l, r = 0, len(A)-1
         boats = 0 
-        while l <= r:
+        while l <= r:                   #l <= r, one person will missed if l<r for odd lenght right
             weights = A[l]+A[r]
             if weights > limit:
                 r -= 1                  #bcs surely r is max than l, greedly fill boat with r
