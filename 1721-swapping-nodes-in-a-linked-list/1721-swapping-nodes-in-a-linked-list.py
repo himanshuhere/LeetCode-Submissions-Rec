@@ -11,7 +11,7 @@ class Solution:
             n += 1
             cur = cur.next
         f = s = head
-        for _ in range(k-1):
+        for _ in range(k-1):        #bcs f and s already at head, so count 1 for that
             f = f.next
         #print(f)
         for _ in range(n-k):
