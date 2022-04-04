@@ -15,7 +15,7 @@ class Solution:
             p1 = p1.next
             
         if not p1:            #need to handle, if no dummy created for slow,fast before head
-            return p2.next
+            return head.next
         
         while p1.next:
             p1 = p1.next
