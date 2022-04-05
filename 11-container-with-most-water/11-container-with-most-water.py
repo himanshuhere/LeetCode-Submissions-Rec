@@ -14,3 +14,5 @@ class Solution:
                 area = max(area, (r-l)*height[r])
                 r -= 1
         return area
+    
+    
