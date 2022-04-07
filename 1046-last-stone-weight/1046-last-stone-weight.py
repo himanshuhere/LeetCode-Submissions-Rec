@@ -10,7 +10,7 @@ class Solution:
             if not stones:  # s1 is the remaining stone
                 return s1
             s2 = -heappop(stones)  # the second-heaviest stone; s2 <= s1
-            if s1 > s2:
+            if s1 > s2:     #or !=
                 heappush(stones, -(s1-s2))  # push the NEGATED value 
             # else s1 == s2; both stones are destroyed
         return 0  # if no more stones remain
