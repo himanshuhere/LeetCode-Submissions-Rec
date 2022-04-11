@@ -66,3 +66,6 @@ class Solution:
                     cur[j][cap] = profit
             ahead = cur.copy()
         return ahead[1][2]
+    
+    
+    #if want 2 dp better use trans like thing means lets remove canbuy and cap two spaces and use once tran. so if will be like if tran == 4: return 0, and every time buy and sell(take case) happens you do tran += 1, and how can we determine canbuy using tran, simple if tran%2==0 you can buy else sell.
