@@ -45,15 +45,15 @@ class Solution:
                     else:
                         profit = max(prices[i] + dp[i+1][1][cap-1], dp[i+1][0][cap])                # Sell
                     dp[i][j][cap] = profit
-        return dp[0][1][k]
+        #return dp[0][1][k]
     
     
         #space opt
-        ahead = [[0]*3 for _ in range(2)]          #two variables
-        cur = [[0]*3 for _ in range(2)] 
+        ahead = [[0]*(k+1) for _ in range(2)]          #two variables
+        cur = [[0]*(k+1) for _ in range(2)] 
         for i in range(n-1, -1, -1):
             for j in range(0, 2):
-                for cap in range(1, 3):
+                for cap in range(1, k+1):
                     profit = 0
                     if j:
                         profit = max(-prices[i] + ahead[0][cap], 0 + ahead[1][cap])  # Buy (take/not take)
@@ -61,7 +61,7 @@ class Solution:
                         profit = max(prices[i] + ahead[1][cap-1], ahead[0][cap])                # Sell
                     cur[j][cap] = profit
             ahead = cur.copy()
-        return ahead[1][2]
+        return ahead[1][k]
     
     
     #if want 2 dp better use trans like thing means lets remove canbuy and cap two spaces and use once tran. so if will be like if tran == 4: return 0, and every time buy and sell(take case) happens you do tran += 1, and how can we determine canbuy using tran, simple if tran%2==0 you can buy else sell.
