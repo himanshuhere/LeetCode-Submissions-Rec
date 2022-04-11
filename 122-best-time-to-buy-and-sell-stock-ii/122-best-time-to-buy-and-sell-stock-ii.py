@@ -29,4 +29,17 @@ class Solution:
             else:
                 profit = max(prices[i] + dp(i+1, True), dp(i+1, False))                # Sell
             return profit
-        return dp(0, True)
+        #return dp(0, True)
+    
+        #Tabulation
+        dp = [[0]*2 for _ in range(n+1)]
+        dp[n][0] = dp[n][1] = 0
+        for i in range(n-1, -1, -1):
+            for j in range(0, 2):
+                profit = 0
+                if j:
+                    profit = max(-prices[i] + dp[i+1][0], 0 + dp[i+1][1])  # Buy (take/not take)
+                else:
+                    profit = max(prices[i] + dp[i+1][1], dp[i+1][0])                # Sell
+                dp[i][j] = profit
+        return dp[0][1]
