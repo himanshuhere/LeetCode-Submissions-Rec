@@ -39,7 +39,7 @@ class Solution:
                 else:
                     profit = max(prices[i] - fee + dp[i+1][1], dp[i+1][0])                # Sell
                 dp[i][j] = profit
-        return dp[0][1]
+        #return dp[0][1]
     
         #space opt
         ahead = [0]*2           #two variables
@@ -50,7 +50,7 @@ class Solution:
                 if j:
                     profit = max(-prices[i] + ahead[0], 0 + ahead[1])  # Buy (take/not take)
                 else:
-                    profit = max(prices[i] + ahead[1], ahead[0])                # Sell
+                    profit = max(prices[i] - fee + ahead[1], ahead[0])                # Sell
                 cur[j] = profit
             ahead = cur.copy()
         return ahead[1]
