@@ -45,7 +45,7 @@ class Solution:
         #return dp[0][1]
     
         #space opt
-        ahead = [0]*2
+        ahead = [0]*2           #two variables
         cur = [0]*2
         for i in range(n-1, -1, -1):
             for j in range(0, 2):
