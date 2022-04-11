@@ -26,7 +26,7 @@ class Solution:
             else:
                 profit = max(prices[i] - fee + dp(i+1, True), dp(i+1, False))                # Sell
             return profit
-        return dp(0, True)
+        #return dp(0, True)
     
         #Tabulation
         dp = [[0]*2 for _ in range(n+1)]
@@ -37,9 +37,9 @@ class Solution:
                 if j:
                     profit = max(-prices[i] + dp[i+1][0], 0 + dp[i+1][1])  # Buy (take/not take)
                 else:
-                    profit = max(prices[i] + dp[i+1][1], dp[i+1][0])                # Sell
+                    profit = max(prices[i] - fee + dp[i+1][1], dp[i+1][0])                # Sell
                 dp[i][j] = profit
-        #return dp[0][1]
+        return dp[0][1]
     
         #space opt
         ahead = [0]*2           #two variables
