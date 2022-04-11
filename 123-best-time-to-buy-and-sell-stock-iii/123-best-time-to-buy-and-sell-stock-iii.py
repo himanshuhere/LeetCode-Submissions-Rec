@@ -49,18 +49,20 @@ class Solution:
                     else:
                         profit = max(prices[i] + dp[i+1][1][cap-1], dp[i+1][0][cap])                # Sell
                     dp[i][j][cap] = profit
-        return dp[0][1][2]
+        #return dp[0][1][2]
+    
     
         #space opt
-        ahead = [0]*2           #two variables
-        cur = [0]*2
+        ahead = [[0]*3 for _ in range(2)]          #two variables
+        cur = [[0]*3 for _ in range(2)] 
         for i in range(n-1, -1, -1):
             for j in range(0, 2):
-                profit = 0
-                if j:
-                    profit = max(-prices[i] + ahead[0], 0 + ahead[1])  # Buy (take/not take)
-                else:
-                    profit = max(prices[i] + ahead[1], ahead[0])                # Sell
-                cur[j] = profit
+                for cap in range(1, 3):
+                    profit = 0
+                    if j:
+                        profit = max(-prices[i] + ahead[0][cap], 0 + ahead[1][cap])  # Buy (take/not take)
+                    else:
+                        profit = max(prices[i] + ahead[1][cap-1], ahead[0][cap])                # Sell
+                    cur[j][cap] = profit
             ahead = cur.copy()
-        return ahead[1]
+        return ahead[1][2]
