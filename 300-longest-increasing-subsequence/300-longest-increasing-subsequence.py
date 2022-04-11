@@ -27,7 +27,7 @@ class Solution:
     
         #best tab - it is not intuitive you should know
         #t - n^2 and s - n
-        ans = [1]*n
+        ans = [1]*n         #eveyone make 1 LIS
         for i in range(n):
             for j in range(i):
                 if nums[i] > nums[j]:
