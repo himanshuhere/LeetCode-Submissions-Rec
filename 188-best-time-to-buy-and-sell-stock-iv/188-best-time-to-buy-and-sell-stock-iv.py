@@ -23,29 +23,29 @@ class Solution:
             else:
                 profit = max(prices[i] + dp(i+1, True, cap-1), dp(i+1, False, cap))                # Sell
             return profit
-        return dp(0, True, k)
+        #return dp(0, True, k)
     
     
         #Tabulation
-        dp = [[[0]*3 for _ in range(2)] for _ in range(n+1)]
+        dp = [[[0]*(k+1) for _ in range(2)] for _ in range(n+1)]
         for i in range(n-1, -1, -1):
             for j in range(0, 2):
                 dp[i][j][0] = 0
                 
         for i in range(2):
-            for j in range(0, 3):
+            for j in range(0, k+1):
                 dp[n][i][j] = 0
                 
         for i in range(n-1, -1, -1):
             for j in range(0, 2):
-                for cap in range(1, 3):
+                for cap in range(1, k+1):
                     profit = 0
                     if j:
                         profit = max(-prices[i] + dp[i+1][0][cap], 0 + dp[i+1][1][cap])  # Buy (take/not take)
                     else:
                         profit = max(prices[i] + dp[i+1][1][cap-1], dp[i+1][0][cap])                # Sell
                     dp[i][j][cap] = profit
-        #return dp[0][1][2]
+        return dp[0][1][k]
     
     
         #space opt
