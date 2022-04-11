@@ -8,7 +8,7 @@ class Solution:
         
         @lru_cache(None)
         def dp(i, canBuy):
-            if i >= n:          #this will be 
+            if i >= n:          #this will be i >= n instead i==n
                 return 0            #profit whether we have bought or sold on last day
             
             profit = 0
