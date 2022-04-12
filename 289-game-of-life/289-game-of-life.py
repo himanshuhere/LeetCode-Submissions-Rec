@@ -14,7 +14,7 @@ class Solution:
                         livecount += 1
                 if b[i][j] == 1:
                     if livecount < 2 or livecount > 3:   
-                        b[i][j] = -1
+                        b[i][j] = -1            #dies, but earlier was one, so could be use for other simul as abs(-1)
                 else:
                     if livecount == 3:  
                         b[i][j] = 2
