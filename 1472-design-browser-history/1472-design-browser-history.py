@@ -37,8 +37,8 @@ class BrowserHistory:
 
     def visit(self, url: str) -> None:
         node = ListNode(url)
-        node.prev = self.root
         self.root.next = node
+        node.prev = self.root
         self.root = self.root.next
 
     def back(self, steps: int) -> str:
