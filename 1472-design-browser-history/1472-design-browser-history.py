@@ -18,7 +18,7 @@ class BrowserHistory:
         return self.history[-1]
 
     def forward(self, steps: int) -> str:
-        while steps > 0 and self.future:
+        while steps > 0 and len(self.future) > 0:
             self.history.append(self.future.pop())
             steps -= 1
         return self.history[-1]
