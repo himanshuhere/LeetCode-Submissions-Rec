@@ -9,7 +9,7 @@ class Solution:
         def inorder(root):
             nonlocal ans, k
             #exit as soon as possible
-            if not root or k == 0:
+            if not root:
                 return
             inorder(root.left)
             k -= 1
