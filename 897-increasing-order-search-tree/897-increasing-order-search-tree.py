@@ -7,18 +7,16 @@
 class Solution:
     def increasingBST(self, root: TreeNode) -> TreeNode:
         def inorder(root):
+            nonlocal head
             if not root:
                 return
             inorder(root.left)
-            val.append(root.val)
+            head.right = TreeNode(root.val)
+            head = head.right
             inorder(root.right)
         
-        val = []
-        inorder(root)
         dummy = head = TreeNode(0)
-        for v in val:
-            head.right = TreeNode(v)
-            head = head.right
+        inorder(root)
         return dummy.right
             
             
