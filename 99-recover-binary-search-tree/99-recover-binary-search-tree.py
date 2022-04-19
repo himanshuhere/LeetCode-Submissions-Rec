@@ -43,7 +43,7 @@ class Solution:
             inorder(root.left)
             
             #business
-            if prev and root.val < prev.val:
+            if prev and root.val < prev.val:        #first time root would not go
                 #first violation
                 if not f:
                     f = prev
