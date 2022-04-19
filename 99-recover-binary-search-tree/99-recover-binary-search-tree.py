@@ -7,26 +7,26 @@
 class Solution:
     def recoverTree(self, root: Optional[TreeNode]) -> None:
         #o(n) space
-        def inorder(root, first):
-            nonlocal i
-            if not root:
-                return
-            inorder(root.left, first)
-            if first:
-                ino.append(root.val)
-            else:
-                if root.val != ino[i]:
-                    root.val = ino[i]
-                i += 1
-            inorder(root.right, first)
+#         def inorder(root, first):
+#             nonlocal i
+#             if not root:
+#                 return
+#             inorder(root.left, first)
+#             if first:
+#                 ino.append(root.val)
+#             else:
+#                 if root.val != ino[i]:
+#                     root.val = ino[i]
+#                 i += 1
+#             inorder(root.right, first)
         
-        ino = []
-        inorder(root, True)
-        ino.sort()
+#         ino = []
+#         inorder(root, True)
+#         ino.sort()
         
-        i = 0
-        inorder(root, False)
-        return root
+#         i = 0
+#         inorder(root, False)
+#         return root
         
         
         
@@ -34,10 +34,11 @@ class Solution:
         #o(n) stack space not o(h) for that do morris inorder traversal if u know4
         
         self.first = self.second = self.last = None
-        self.prev = TreeNode(float('-inf'))
+        self.prev = TreeNode(-math.inf)
         
         def inorder(root):
-            if not root:    return 
+            if not root:    
+                return 
             inorder(root.left)
             
             #business
