@@ -8,17 +8,15 @@ class Solution:
     def recoverTree(self, root: Optional[TreeNode]) -> None:
         #o(n) space
         def inorder(root, first):
-            nonlocal i, f, s
+            nonlocal i
             if not root:
                 return
             inorder(root.left, first)
             if first:
                 ino.append(root.val)
             else:
-                if not f and root.val != ino[i]:
-                    f = root
-                elif f and root.val != ino[i]:
-                    s = root
+                if root.val != ino[i]:
+                    root.val = ino[i]
                 i += 1
             inorder(root.right, first)
         
@@ -27,9 +25,7 @@ class Solution:
         ino.sort()
         
         i = 0
-        f, s = None, None
         inorder(root, False)
-        f.val, s.val = s.val, f.val
         return root
         
         
