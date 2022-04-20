@@ -8,7 +8,7 @@ class BSTIterator:
             root = root.left
 
     def next(self) -> int:
-        node = self.s.pop()
+        node = self.s.pop() #return to isiko karna hai but usse pehle next snammest ki vyavastha karke jana isliye cur step kuki next smallest ek right aur uske sidhe sare left most me hai 
         cur = node.right
         
         while cur:
