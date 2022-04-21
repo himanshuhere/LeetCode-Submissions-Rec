@@ -1,6 +1,6 @@
 #READ NOTES PLS
 class BSTIterator:
-
+    #o(n)- array, o(h) - this stack better know this
     def __init__(self, root: Optional[TreeNode]):
         self.s = []
         while root:
