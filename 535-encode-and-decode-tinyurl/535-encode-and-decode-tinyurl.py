@@ -1,14 +1,14 @@
 #brute
-class Codec:
-    def __init__(self):
-        self.urls = []
+# class Codec:
+#     def __init__(self):
+#         self.urls = []
 
-    def encode(self, longUrl):
-        self.urls.append(longUrl)
-        return 'http://tinyurl.com/' + str(len(self.urls) - 1)
+#     def encode(self, longUrl):
+#         self.urls.append(longUrl)
+#         return 'http://tinyurl.com/' + str(len(self.urls) - 1)
 
-    def decode(self, shortUrl):
-        return self.urls[int(shortUrl.split('/')[-1])]
+#     def decode(self, shortUrl):
+#         return self.urls[int(shortUrl.split('/')[-1])]
     
 # Using increasing numbers as codes like that is simple but has some disadvantages, which the below solution fixes:
 
