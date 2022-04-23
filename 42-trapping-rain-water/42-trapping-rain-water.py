@@ -10,11 +10,13 @@ class Solution:
         res = 0
         while l < r:
             #updates maxes
-            if height[l] > lmax:    lmax = height[l]
-            if height[r] > rmax:    rmax = height[r]
+            if height[l] > lmax:    
+                lmax = height[l]
+            if height[r] > rmax:    
+                rmax = height[r]
         
             #compute water on curr pillar
-            if lmax < rmax:
+            if height[l] < height[r]:
                 res += lmax - height[l]
                 l+=1
             else:
