@@ -3,31 +3,7 @@ class Solution:
     #pls see notes all solution., understand the intuition, extention of prefix/suffix
     #crux = min(lmax, rmax)-current_height
         
-        #1 understading intuition here, better - 2022/feb
-        n = len(height)
-        l, r = 0, n-1
-        lmax, rmax = 0, 0
-        res = 0
-        while l < r:
-            #updates maxes
-            if height[l] > lmax:    
-                lmax = height[l]
-            if height[r] > rmax:    
-                rmax = height[r]
-        
-            #compute water on curr pillar
-            if height[l] < height[r]:
-                res += lmax - height[l]
-                l+=1
-            else:
-                res += rmax - height[r]
-                r-=1
-        return res
-        
-        
-        
-        
-        
+        #1 understading intuition here, better - 2022/feb       
         #2 striver
         n = len(height)
         le, ri = 0, n - 1
@@ -37,13 +13,17 @@ class Solution:
         while le < ri:
             
             if height[le] < height[ri]:    #making sure right is max that left, thus we can store water
-                if height[le] >= lmax: lmax = height[le]    #it is 0 zero water then
-                else: ans += lmax - height[le]
+                if height[le] >= lmax: 
+                    lmax = height[le]    #it is 0 zero water then
+                else: 
+                    ans += lmax - height[le]
                 le += 1
                 
             else:
-                if height[ri] >= rmax: rmax = height[ri]
-                else: ans += rmax - height[ri]
+                if height[ri] >= rmax: 
+                    rmax = height[ri]
+                else: 
+                    ans += rmax - height[ri]
                 ri -= 1
         return ans
     
