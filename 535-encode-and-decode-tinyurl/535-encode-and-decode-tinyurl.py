@@ -31,14 +31,17 @@ class Codec:
         self.code2url = {}
 
     def encode(self, longUrl):
-        while longUrl not in self.url2code:
-            code = ''.join(random.choice(Codec.alphabet) for _ in range(6))
-            if code not in self.code2url:
-                self.code2url[code] = longUrl
-                self.url2code[longUrl] = code
-        return 'http://tinyurl.com/' + self.url2code[longUrl]
+        code = ''
+        while code in self.url2code:
+            for i in range(6):
+                code += random.choice(alphabet)
+                
+        self.url2code[code] = longUrl
+        url  = 'http://tinyurl.com/'+code
+        self.code2url[url] = longUrl
+        return url
 
     def decode(self, shortUrl):
-        return self.code2url[shortUrl[-6:]]
+        return self.code2url[shortUrl]
 
     #It's possible that a randomly generated code has already been generated before. In that case, another random code is generated instead. Repeat until we have a code that's not already in use. How long can this take? Well, even if we get up to using half of the code space, which is a whopping 626/2 = 28,400,117,792 entries, then each code has a 50% chance of not having appeared yet. So the expected/average number of attempts is 2, and for example only one in a billion URLs takes more than 30 attempts. And if we ever get to an even larger number of entries and this does become a problem, then we can just use length 7. We'd need to anyway, as we'd be running out of available codes.
