@@ -33,7 +33,7 @@ class PeekingIterator:
         return ret
 
     def hasNext(self):
-        return self.temp != None
+        return self.temp is not None
         
 
 # Your PeekingIterator object will be instantiated and called as such:
