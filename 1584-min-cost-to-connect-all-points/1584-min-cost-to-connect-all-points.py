@@ -16,8 +16,9 @@ class Solution:
         #Prim's
         vis = set()
         h = [(0,0)]  #minHeap, dist, start
+        
         res = 0
-        while len(vis) < n:
+        while h:
             cost, i = heapq.heappop(h)
             res += cost
             vis.add(i)
