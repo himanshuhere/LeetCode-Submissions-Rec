@@ -1,0 +1,5 @@
+* Intuitive wud be to traverse all mattrix and find 0 then change row and col for that to 0  * -- imp thing is to make sure we cant change direct 0 on every row col on locating zero else it will ruin our forward operation thus we can locate zero and make its row and col as -1 (but if there is zero we cant make them -1 let them be zero else we ll again ruin our further operation)*
+O(mn) + O(m+n)
+* next to have dummy row and col size array and mark them when there is zero on respective row or col
+* more optimistic, wud be to use first row and column as dummy to save extra space and use them for ope but since a[0][0] wub be responsible for two arrays thus we have to take a flag for that toggling at last we ll update that place as per flag value
+one forward pass with dummy updation + backward pass(because again forward will update dummy first ans sol ll get ruined)
