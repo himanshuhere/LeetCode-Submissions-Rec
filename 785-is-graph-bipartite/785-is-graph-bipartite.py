@@ -18,6 +18,7 @@ class Solution:
                         return False
             return True
         
+        
         for i in range(n):
             if vis[i] == 0:
                 if not dfs(i, 0): 
