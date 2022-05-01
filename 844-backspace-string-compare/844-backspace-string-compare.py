@@ -5,12 +5,11 @@ class Solution:
         def build(str):
             st = []
             for ch in str:
-                if ch != "#":
-                    st.append(ch)
-                else:
+                if ch == "#":
                     if st:
                         st.pop()
-                        
+                else:
+                    st.append(ch)
             return "".join(st)
         
         return build(s) == build(t)
