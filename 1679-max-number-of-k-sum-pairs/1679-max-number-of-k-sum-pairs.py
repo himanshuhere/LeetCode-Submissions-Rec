@@ -4,7 +4,7 @@ class Solution:
         m = defaultdict(int)
         c = 0
         for i in nums:
-            if m[k-i] > 0:
+            if m[k-i] > 0:  #k-i in m would not work as m[k-i] can be 0 and syill it will be true
                 c += 1
                 m[k-i] -= 1
             else:   
