@@ -1,5 +1,17 @@
 class Solution:
     def maxOperations(self, nums: List[int], k: int) -> int:
+        
+        m = defaultdict(int)
+        c = 0
+        for i in nums:
+            if m[k-i] > 0:
+                c += 1
+                m[k-i] -= 1
+            else:   
+                m[i] += 1
+        return c
+        
+        
         nums.sort()
         i, j = 0, len(nums)-1
         c = 0
