@@ -43,7 +43,6 @@ class MyStack:
         while size > 1:
             self.q1.append(self.q1.popleft())
             size -= 1
-            
         self.len += 1
 
     def pop(self) -> int:
