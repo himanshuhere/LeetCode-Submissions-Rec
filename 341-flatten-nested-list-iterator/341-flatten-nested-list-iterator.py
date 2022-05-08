@@ -1,9 +1,9 @@
 def dfs(nested, flat):
     for elem in nested:
         if elem.isInteger():
-            flat.append(elem.getInteger())
+            flat.append(elem)
         else:
-            dfs(elem.getList(), flat)
+            dfs(elem, flat)
 
 class NestedIterator:
     def __init__(self, nestedList: [NestedInteger]):
