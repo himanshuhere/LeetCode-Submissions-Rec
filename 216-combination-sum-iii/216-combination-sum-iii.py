@@ -7,6 +7,7 @@ class Solution:
         def backtrack(i, k, target, tmp):
             if k < 0 or target < 0:
                 return
+            
             if k == 0 and target == 0:
                 res.append(tmp[:])
                 return
