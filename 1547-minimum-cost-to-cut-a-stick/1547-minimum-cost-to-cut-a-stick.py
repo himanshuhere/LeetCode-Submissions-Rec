@@ -10,7 +10,9 @@ class Solution:
         def f(i, j):
             if i > j:
                 return 0
-            
+            #if i == j:
+                #return cuts[j+1]-cuts[i-1]
+                
             mini = math.inf
             for k in range(i, j+1):
                 cost = cuts[j+1] - cuts[i-1] + f(i, k-1) + f(k+1, j)
