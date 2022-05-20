@@ -13,14 +13,9 @@ class Solution:
         
         #2
         dp = [[0 for _ in range(n)] for _ in range(m)]
-        # if A[-1][-1] == 1:      
-        #     return 0
-        
         for i in range(m-1, -1, -1):
             for j in range(n-1, -1, -1):
-                
                 if A[i][j] == 0:
-                    
                     if i==m-1 and j==n-1:
                         dp[i][j] = 1
                     elif i == m-1:
