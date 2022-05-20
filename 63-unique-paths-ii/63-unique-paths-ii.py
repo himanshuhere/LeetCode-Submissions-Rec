@@ -9,7 +9,7 @@ class Solution:
             if (i,j) == (m-1,n-1):
                 return 1
             return f(i+1,j)+f(i,j+1)
-        #return f(0,0)
+        return f(0,0)
         
         #2
         dp = [[0 for _ in range(n)] for _ in range(m)]
