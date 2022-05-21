@@ -17,6 +17,7 @@ class Solution:
         ans = f(len(coins)-1, amt)
         return ans if ans < math.inf else -1
         
+        
         n = len(coins)
         t = [[0 for _ in range(amt+1)] for _ in range(n+1)]
         for i in range(n+1):
