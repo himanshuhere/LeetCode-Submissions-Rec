@@ -4,7 +4,7 @@ class Solution:
         def f(i, m, n):
             if m < 0 or n < 0:
                 return -1
-            if (not m and not n) or i == len(strs):
+            if (m==0 and n==0) or i == len(strs):
                 return 0
             
             return max(1 + f(i+1, m-strs[i].count('0'), n-strs[i].count('1')), f(i+1, m, n))
