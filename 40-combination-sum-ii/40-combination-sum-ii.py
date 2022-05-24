@@ -7,11 +7,11 @@ class Solution:
         res = []
         tmp = []
         def backtrack(i, tmp, target):
-            if target < 0:
-                return
             if target == 0:
                 res.append(sorted(tmp[:]))
                 return
+            if target < 0 or i == len(candidates):
+                return 
             
             for j in range(i, len(A)):
                 if j > i and A[j] == A[j-1]:
@@ -19,7 +19,6 @@ class Solution:
                 
                 tmp.append(A[j])
                 backtrack(j+1, tmp, target-A[j])    #j+1 bcs Each number in candidates may only be used once in the combination.
-
 #else j is there if 1 1 1 1 1 1 1 etc
                 tmp.pop()
         
