@@ -8,13 +8,13 @@ class Solution:
         dec = [0] * n
         
         #lis
-        for i in range(n):
-            for j in range(i):
+        for i in range(1,n):
+            for j in range(0,i):
                 if nums[i] > nums[j]:
                     inc[i] = max(inc[i], inc[j] + 1)
           
         #lds
-        for i in range(n-1,-1,-1):
+        for i in range(n-2,-1,-1):
             for j in range(n-1,i,-1):
                 if nums[i] > nums[j]:
                     dec[i] = max(dec[i], dec[j] + 1)
