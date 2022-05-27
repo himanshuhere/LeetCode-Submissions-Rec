@@ -1,13 +1,10 @@
 class Solution:
     def grayCode(self, n: int) -> List[int]:
         #peep code dekhna ya notes
-        res_bin = []
-        res_bin = self.genGrayCode(n)
-        res_int = []
-        for binary in res_bin:
-            res_int.append(int(binary, 2))
-        
-        return res_int
+        a = self.genGrayCode(n)
+        for i, num in enumerate(a):
+            a[i] = int(num, 2)
+        return a
 
     def genGrayCode(self, A):
         if A == 1:
