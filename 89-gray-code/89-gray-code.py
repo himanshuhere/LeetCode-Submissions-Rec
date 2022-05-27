@@ -16,9 +16,9 @@ class Solution:
         temp = self.genGrayCode(A-1)
         res = []
         for i in range(len(temp)):
-            res.append(str(temp[i])+"0")
+            res.append("0" + str(temp[i]))
 
         for i in range(len(temp)-1, -1, -1):
-            res.append(str(temp[i])+"1")
+            res.append("1" + str(temp[i]))
         
         return res
