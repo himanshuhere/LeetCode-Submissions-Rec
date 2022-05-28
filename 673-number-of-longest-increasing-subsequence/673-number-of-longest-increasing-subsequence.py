@@ -1,5 +1,6 @@
 class Solution:
     def findNumberOfLIS(self, nums: List[int]) -> int:
+        #LIS
         #Prerequisite - LC #300 Plz
         n = len(nums)
         lis = [1]*n
