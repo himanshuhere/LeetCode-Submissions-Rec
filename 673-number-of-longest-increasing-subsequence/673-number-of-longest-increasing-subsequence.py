@@ -9,9 +9,9 @@ class Solution:
                 if nums[j] < nums[i]:
                     if 1 + lis[j] > lis[i]:
                         lis[i] = lis[j] + 1
-                        cnt[i] = cnt[j]
+                        cnt[i] = cnt[j]                 #inherit
                     elif 1 + lis[j] == lis[i]:
-                        cnt[i] += cnt[j]
+                        cnt[i] += cnt[j]                #increase the count
         mx = max(lis)
         ans = 0
         for i, n in enumerate(lis):
