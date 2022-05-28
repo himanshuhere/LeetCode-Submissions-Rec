@@ -12,7 +12,7 @@ class Solution:
     #or can apply cyclic sort algo
         i = 0
         while i < len(nums):
-            if nums[i] == nums[nums[i]]:
+            if nums[i] == nums[nums[i]]:    #else swap wud have handled ths i know but it is imp to ignore inf loop in program
                 i += 1
             else:
                 nums[i], nums[nums[i]] = nums[nums[i]], nums[i]
