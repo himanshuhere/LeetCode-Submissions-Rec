@@ -18,6 +18,6 @@ class Solution:
         ans = 0
         for i in range(len(w)):
             for j in range(i+1, len(w)):
-                if mask[i] & mask[j] == 0:
+                if mask[i] & mask[j] == 0:      #will be 0 if all chars differ
                     ans = max(ans, len(w[i])*len(w[j]))
         return ans
