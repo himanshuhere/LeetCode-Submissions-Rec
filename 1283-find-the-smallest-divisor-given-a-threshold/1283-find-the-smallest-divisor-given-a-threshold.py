@@ -10,10 +10,10 @@ class Solution:
         def blackBox(div):
             sm = 0
             for num in nums:
-                # sm += ceil(num/div)
-                sm += num//div          #if not use ceil
-                if num%div != 0:
-                    sm+=1
+                sm += ceil(num/div)
+                # sm += num//div          #if not use ceil
+                # if num%div != 0:
+                #     sm+=1
             return sm <= threshold
         
         
