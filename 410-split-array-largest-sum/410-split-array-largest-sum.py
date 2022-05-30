@@ -5,6 +5,8 @@ class Solution:
         #Not intuitive to me now, dont worry will come soon. Some things here too, range always lies or most of the times, like 0 , 1, min, max, sum, yes think and try every possibility. Cant confirm in things but hope patterns will hint me. now code
         #TC = O(nLog(sum-max))
         
+        #CONEYER BELT SHIP ==== THIS QUES subsets contigeous
+        
         def feasible(threshold) -> bool:
             subs = 1
             sm = 0
