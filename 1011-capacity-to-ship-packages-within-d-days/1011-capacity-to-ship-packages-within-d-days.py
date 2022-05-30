@@ -8,17 +8,17 @@ class Solution:
             for weight in weights:
                 total += weight
                 if total > capacity:  # too heavy, wait for the next day
-                    total = weight
+                    total = weight      #start new weight on new day not like koko resume from left
                     days += 1
                     if days > D:  # cannot ship within D days
                         return False
             return True
 
-        left, right = max(weights), sum(weights)
-        while left < right:
-            mid = left + (right - left) // 2
+        lo, hi = max(weights), sum(weights)     #max(w) if low bound, always take care of like 11 total = weigth not total = total - capacity
+        while lo < hi:
+            mid = lo + (hi - lo) // 2
             if feasible(mid):
-                right = mid
+                hi = mid
             else:
-                left = mid + 1
-        return left
+                lo = mid + 1
+        return lo
