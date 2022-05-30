@@ -1,3 +1,6 @@
+#ditto same logic and ditto same code line Allocate books to sudents
+#days = students, weights = pages everything is same
+​
 def feasible(capacity) -> bool:
 days = 1
 total = 0
