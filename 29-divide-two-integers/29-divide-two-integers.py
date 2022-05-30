@@ -18,3 +18,19 @@ class Solution:
             quot = -quot
             
         return min(max(-2 ** 31, quot), 2 ** 31-1)
+    
+    
+#     50 | 3
+#     3 x 16 = 48
+#     q = 16
+#     divd = 50-48 = 2 | 3
+#     res = 0
+#     while divisor <= dividend:
+#         val = divisor
+#         q = 1
+#         while val + div <= dividend:
+#             val += div
+#             q += 1
+#         dividend -= val
+#         res += q
+    
