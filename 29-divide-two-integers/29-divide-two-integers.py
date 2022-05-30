@@ -4,13 +4,16 @@ class Solution:
         
         dividend, divisor = abs(dividend), abs(divisor)
         
-        t = 0
         quot = 0
-        for i in range(31, -1, -1): #31 to 0
-            if t + (divisor << i) <= dividend:
-                t += (divisor << i)
-                quot |= (1 << i)
-                
+        while divisor <= dividend:
+            val = divisor
+            mult = 1
+            while val + val <= dividend:
+                val += val
+                mult += mult
+            dividend -= val
+            quot += mult
+            
         if not positive:
             quot = -quot
             
