@@ -11,7 +11,7 @@ class Solution:
             return hour <= h
         
         #BS
-        lo, hi = 1, max(piles)
+        lo, hi = 1, max(piles)          #min 1 for case like p=[370], h=369
         while lo < hi:
             mid = lo + (hi - lo)//2
             if feasible(mid):
