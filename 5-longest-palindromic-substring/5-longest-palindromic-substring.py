@@ -1,5 +1,6 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
+        # starting at l,r expand outwards to find the biggest palindrome
         def palindromeAt(s, l, r):    
             while l >= 0 and r < len(s) and s[l] == s[r]:
                 l -= 1
@@ -14,7 +15,7 @@ class Solution:
             res = max(res, odd, even, key=len)
         return res
 
-    # starting at l,r expand outwards to find the biggest palindrome
+    
     
     
     
