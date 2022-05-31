@@ -16,7 +16,7 @@ class Solution:
         return res
 
     
-    
+    #why not LPS.bcs LPSubstring matrix wd have 0 in matrix and thus you cant deciee where to move when matching is done.
     
     
     
