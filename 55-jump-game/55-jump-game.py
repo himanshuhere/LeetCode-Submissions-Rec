@@ -24,6 +24,7 @@ class Solution:
         # return dp[0]
         
         #this shit looking for something else that out of the box algo see, btw dp giving TLE
+        #GREEDY
         last = len(nums)-1
         for i in range(len(nums)-2, -1, -1):
             #if with one or more jump, can i cross or land at last index if yes one sub prob solved
