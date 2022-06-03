@@ -11,7 +11,7 @@ class Solution:
     def canFinish(self, A: int, B: List[List[int]]) -> bool:
         global vis,selfvis,g
         
-        def dfs(v): 
+        def dfs(v): #since directed parent is not needed, you wont go back to same edge
             vis[v] = True
             selfvis[v] = True
 
