@@ -1,12 +1,9 @@
 class Solution:
     def threeSumClosest(self, A: List[int], target: int) -> int:
-        #3 sum is n^2, will do same
-        #as per constraint size will be min 3 so consider all them as res
-        res = A[0] + A[1] + A[2]
-        
-        A = sorted(A)
         #skipping duplicates will boost performance
-        
+
+        res = A[0] + A[1] + A[2]
+        A = sorted(A)
         for i in range(len(A)-2):
             if i == 0 or i > 0 and A[i-1] != A[i]:  #can remove this too
                 l, r = i+1, len(A)-1
