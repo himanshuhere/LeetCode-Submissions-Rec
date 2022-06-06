@@ -7,7 +7,7 @@ class Solution:
         while i < n:
             j = nums[i] - 1
             #if (nums[i] > 0 and nums[i] <= n) and nums[i] != nums[j]:
-            if (nums[i]-1 >= 0 and nums[i]-1 < n) and nums[i] != nums[j]:
+            if (j >= 0 and j < n) and nums[i] != nums[j]:
                 nums[i], nums[j] = nums[j], nums[i]
             else:
                 i += 1
