@@ -8,7 +8,8 @@ class Solution:
     def maxSumBST(self, root: Optional[TreeNode]) -> int:
         def check(node):
             nonlocal res
-            if not node: return 0, True, -inf, inf  #size, isBST, MIN, MAX
+            if not node: 
+                return 0, True, -inf, inf  #sum, isBST, MIN, MAX
             
             s1, bst1, maxi1, mini1 = check(node.left)
             s2, bst2, maxi2, mini2 = check(node.right)
