@@ -32,7 +32,7 @@ class Solution:
             dfs(root.right)
         
         pre, res = -math.inf, math.inf      #ye pre = -inf bahit imp tha bhaiya
-        dfs(root, -math.inf)
+        dfs(root)
         return res
                 
             
