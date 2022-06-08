@@ -25,6 +25,7 @@ class Solution:
             return root.left
         
         
+    #two ways: cut the right sub and append to the right of max of left sub and return left sub finally, else 2 way: cut the left and append to the left of min of right sub and return right child
     
         if root.val == key: return helper(root)
         
