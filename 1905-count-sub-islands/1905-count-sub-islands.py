@@ -12,7 +12,7 @@ class Solution:
             if i<0 or i>=m or j<0 or j>=n or grid2[i][j]==0:
                 return
 
-            grid2[i][j]=0
+            grid2[i][j] = 0
             dfs(i+1,j)
             dfs(i,j+1)
             dfs(i,j-1)
@@ -21,7 +21,7 @@ class Solution:
         # removing all the non-common sub-islands
         for i in range(m):
             for j in range(n):
-                if grid2[i][j]==1 and grid1[i][j]==0:
+                if grid1[i][j]==0 and grid2[i][j]==1:
                     dfs(i,j)
 
         c=0
