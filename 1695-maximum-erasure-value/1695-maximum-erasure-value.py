@@ -6,14 +6,12 @@ class Solution:
         i, j = 0, 0
         count = 0
         subsum = 0
-        while j < len(nums):
+        
+        for j in range(len(nums)):
             m[nums[j]] += 1
             subsum += nums[j]
             if m[nums[j]] == 1:
                 count += 1
-                
-            if count == (j-i+1):
-                ans = max(ans, subsum)
                 
             while count < (j-i+1):
                 #ans = max(ans, subsum)
@@ -24,7 +22,9 @@ class Solution:
                 subsum -= nums[i]
                 
                 i+=1
-            j += 1
+            
+            if count == (j-i+1):
+                ans = max(ans, subsum)
             
         return ans
                 
