@@ -68,7 +68,7 @@ class Solution:
     #3 optmimized
         def single():
             n = len(h)
-            l, r = [-1]*n, [n]*n
+            l, r = [-1]*n, [n]*n        #imp initilization
             s = []
             for i in range(n):
                 while s and h[s[-1]] >= h[i]:
