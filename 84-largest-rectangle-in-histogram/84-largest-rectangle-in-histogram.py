@@ -68,7 +68,7 @@ class Solution:
     #3 optmimized
         def single():
             n = len(h)
-            l, r = [None]*n, [None]*n
+            l, r = [-1]*n, [n]*n
             s = []
             for i in range(n):
                 while s and h[s[-1]] >= h[i]:
@@ -80,6 +80,6 @@ class Solution:
         ans = -math.inf
         left, right = single()
         for i in range(len(h)):
-            ans = max(ans, ((right[i] if right[i] else len(h)) -left[i]-1)*h[i])
+            ans = max(ans, (right[i]-left[i]-1)*h[i])
         return ans
                     
