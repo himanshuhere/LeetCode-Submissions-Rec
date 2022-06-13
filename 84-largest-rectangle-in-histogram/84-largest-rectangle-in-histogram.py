@@ -51,20 +51,10 @@ class Solution:
             s = []
             left = [None]*len(h)
             first = -1
-            
             for i in range(len(h)):
-                if i == 0:
-                    left[i] = first
-                elif s and h[s[-1]] < h[i]:
-                    left[i] = s[-1]
-                elif s and h[s[-1]] >= h[i]:
-                    while s and h[s[-1]] >= h[i]:
-                        s.pop()
-                    if not s:
-                        left[i] = first
-                    else:
-                        left[i] = s[-1]
-                
+                while s and h[s[-1]] >= h[i]:
+                    s.pop()
+                left[i] = s[-1] if s else first
                 s.append(i)
             return left
         
