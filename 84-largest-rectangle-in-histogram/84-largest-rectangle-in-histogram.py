@@ -40,18 +40,9 @@ class Solution:
             last = len(h)
             
             for i in range(len(h)-1, -1, -1):
-                if i == len(h)-1:
-                    right[i] = last
-                elif s and h[s[-1]] < h[i]:
-                    right[i] = s[-1]
-                elif s and h[s[-1]] >= h[i]:
-                    while s and h[s[-1]] >= h[i]:
-                        s.pop()
-                    if not s:
-                        right[i] = last
-                    else:
-                        right[i] = s[-1]
-                
+                while s and h[s[-1]] >= h[i]:
+                    s.pop()
+                right[i] = s[-1] if s else last
                 s.append(i)
             return right
         
