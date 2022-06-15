@@ -17,7 +17,7 @@ class Solution:
             return i==len(s1) and j==len(s2)
             
         
-        nums.sort(key=len)
+        nums.sort(key=len)          #IMP - len wise sort krne ka hai re abababa
         n = len(nums)
         ans = [1]*n         #eveyone make 1 LIS
         for i in range(n):
