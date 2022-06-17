@@ -19,7 +19,7 @@ class Solution:
             l=dfs(node.left)
             r=dfs(node.right)
             
-            if l==0 or r==0:
+            if l==0 or r==0:        #leaf's parent
                 self.sum+=1
                 return 2
             elif l==2 or r==2:
