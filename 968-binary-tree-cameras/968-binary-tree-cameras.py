@@ -26,7 +26,7 @@ class Solution:
             elif l==2 or r==2:
                 return 1
             else:
-                return 0
+                return 0            
         
         self.sum=0
         if dfs(root)==0:
