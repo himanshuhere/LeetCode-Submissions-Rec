@@ -15,7 +15,8 @@ class Solution:
         # reference: https://www.itread01.com/content/1546174153.html
         def dfs(node):
             if not node:
-                return 1
+                return 1        #so. at leaf you return 0, skipping leaf (see else)
+            
             l=dfs(node.left)
             r=dfs(node.right)
             
