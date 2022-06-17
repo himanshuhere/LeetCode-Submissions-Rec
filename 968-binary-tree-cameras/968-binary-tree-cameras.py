@@ -30,6 +30,6 @@ class Solution:
         
         self.sum=0
         if dfs(root)==0:
-            self.sum+=1
+            self.sum+=1     #putting at root, if not there
         
         return self.sum
