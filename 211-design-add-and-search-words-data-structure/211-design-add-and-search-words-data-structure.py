@@ -9,6 +9,7 @@ class WordDictionary:   #Trie
         self.childs = {}
         self.end = False
         #self.root = TrieNode()
+        
     def addWord(self, word: str) -> None:
         
         for ch in word:
@@ -22,7 +23,7 @@ class WordDictionary:   #Trie
         for i, ch in enumerate(word): 
             if ch == ".":
                 for c in self.childs:
-                    if self.search(c+word[i+1:]):
+                    if self.search(c+word[i+1:]):      #slicing might take extra n, dfs itself n
                         return True
                 return False
             
