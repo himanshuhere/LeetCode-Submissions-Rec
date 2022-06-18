@@ -29,12 +29,10 @@ class Trie():
 class WordFilter:
     def __init__(self, words: List[str]):
         self.trie = Trie()
-        i, n = 0, len(words)
-        while i < n:
+        for i in range(len(words)):
             l = len(words[i])
             for j in range(l + 1):
                 self.trie.insert(words[i][j:l] + '#' + words[i], i)
-            i += 1
 
     def f(self, prefix: str, suffix: str) -> int:
         return self.trie.search(suffix + '#' + prefix)
