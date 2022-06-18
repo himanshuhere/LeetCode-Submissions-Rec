@@ -1,29 +1,30 @@
 class TrieNode():
     def __init__(self):
-        self.children = {}
-        self.weight = -1        #very imp, for index purpose
+        self.childs = {}
+        self.index = -1        #very imp, for index purpose
 
 class Trie():
     def __init__(self):
         self.root = TrieNode()
     
     def insert(self, word, i):
-	    # node.weight can be overwritten when a larger one is inserted
+	    # node.index can be overwritten when a larger one is inserted, WOW
+        
         node = self.root
-        node.weight = i
-        for char in word:
-            if char not in node.children:
-                node.children[char] = TrieNode()
-            node = node.children[char]
-            node.weight = i
+        node.index = i
+        for c in word:
+            if c not in node.childs:
+                node.childs[c] = TrieNode()
+            node = node.childs[c]
+            node.index = i
     
     def search(self, word):
         node = self.root
-        for char in word:
-            if char not in node.children:
+        for c in word:
+            if c not in node.childs:
                 return -1
-            node = node.children[char]
-        return node.weight
+            node = node.childs[c]
+        return node.index
         
         
 class WordFilter:
