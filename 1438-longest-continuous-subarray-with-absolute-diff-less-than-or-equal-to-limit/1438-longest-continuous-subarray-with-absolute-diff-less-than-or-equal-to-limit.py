@@ -1,6 +1,6 @@
 class Solution:
     def longestSubarray(self, nums: List[int], limit: int) -> int:
-        # sliding window
+        # sliding window + double ended queue
         #put index
         mx, mn = collections.deque([0]), collections.deque([0])
         ans = 1
