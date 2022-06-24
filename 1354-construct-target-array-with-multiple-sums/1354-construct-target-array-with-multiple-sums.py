@@ -11,7 +11,7 @@ class Solution:
                 return True
             if m < total or total == 0 or m % total == 0:
                 return False
-            m %= total
+            m %= total                      #instead m-=total 
             total += m
             heapq.heappush(A, -m)
         
