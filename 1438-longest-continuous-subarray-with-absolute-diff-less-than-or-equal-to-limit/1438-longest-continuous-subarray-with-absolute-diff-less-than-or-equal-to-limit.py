@@ -4,24 +4,24 @@ class Solution:
         #put index
         mx, mn = collections.deque([0]), collections.deque([0])
         ans = 1
-        left = 0
+        i = 0
         
-        for i in range(1, len(nums)):
+        for j in range(1, len(nums)):
             # update max and min monotonic q
-            while mx and nums[mx[-1]] < nums[i]:
+            while mx and nums[mx[-1]] < nums[j]:
                 mx.pop()
-            mx.append(i)
-            while mn and nums[mn[-1]] > nums[i]:
+            mx.append(j)
+            while mn and nums[mn[-1]] > nums[j]:
                 mn.pop()
-            mn.append(i)
+            mn.append(j)
             
             while mx and mn and nums[mx[0]] - nums[mn[0]] > limit:
-                left += 1
-                if mx[0] < left:
+                i += 1
+                if mx[0] < i:
                     mx.popleft()
-                if mn[0] < left:
+                if mn[0] < i:
                     mn.popleft()
                     
-            ans = max(ans, i-left+1)
+            ans = max(ans, j-i+1)
             
         return ans
