@@ -14,4 +14,8 @@ class Solution:
             m %= total                      #instead m-=total 
             total += m
             heapq.heappush(A, -m)
+            
+            
+        
+        #% accelerate kar rha kaam like [100, 3] -> [97, 3] -> [94, 3] agar apni tarike se kiya jo hai m -== total, but while lopp 33 bar chalega and will make [1, 3], but if using % while loop ek bar chalega bas. So multiple subs converted into quotent and we dont care about quotient here, only reminder better use %
         
