@@ -1,12 +1,21 @@
-maxq, minq = [], []
-res = i = 0
-for j, a in enumerate(A):
-heappush(maxq, [-a, j])
-heappush(minq, [a, j])
-while -maxq[0][0] - minq[0][0] > limit:
-i = min(maxq[0][1], minq[0][1]) + 1
-while maxq[0][1] < i: heapq.heappop(maxq)
-while minq[0][1] < i: heapq.heappop(minq)
-res = max(res, j - i + 1)
-return res
-​
+# sliding window + double ended queue
+#put index
+mx, mn = collections.deque([0]), collections.deque([0])
+ans = 1
+left = 0
+for i in range(1, len(nums)):
+# update max and min monotonic q
+while mx and nums[mx[-1]] < nums[i]:
+mx.pop()
+mx.append(i)
+while mn and nums[mn[-1]] > nums[i]:
+mn.pop()
+mn.append(i)
+while mx and mn and nums[mx[0]] - nums[mn[0]] > limit:
+left += 1
+if mx[0] < left:
+mx.popleft()
+if mn[0] < left:
+mn.popleft()
+ans = max(ans, i-left+1)
+return ans
