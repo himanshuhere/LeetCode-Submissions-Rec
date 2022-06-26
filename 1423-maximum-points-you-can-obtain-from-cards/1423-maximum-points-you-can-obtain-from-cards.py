@@ -1,5 +1,6 @@
 class Solution:
     def maxScore(self, cardPoints: List[int], k: int) -> int:
+        #Fixed sliding window of size n-k, find the smallest subarray and sub from the sum
         n = len(cardPoints)
         tot = sum(cardPoints)
         k = n-k
