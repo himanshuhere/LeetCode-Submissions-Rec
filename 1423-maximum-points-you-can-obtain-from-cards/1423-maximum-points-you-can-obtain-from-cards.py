@@ -1,13 +1,12 @@
 class Solution:
     def maxScore(self, cardPoints: List[int], k: int) -> int:
         n = len(cardPoints)
+        tot = sum(cardPoints)
         k = n-k
         if k == 0:
-            return sum(cardPoints)
+            return tot
         
-        i = 0
-        j = 0
-        s = 0
+        i, j, s = 0, 0, 0
         ans = math.inf
         while j < n:
             s += cardPoints[j]
@@ -16,6 +15,6 @@ class Solution:
                 s -= cardPoints[i]
                 i += 1
             j += 1
-        return sum(cardPoints)-ans
+        return tot-ans
                 
             
