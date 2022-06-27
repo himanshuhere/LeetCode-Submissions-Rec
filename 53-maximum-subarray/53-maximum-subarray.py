@@ -4,6 +4,8 @@ class Solution:
         # Kadane's algorithm, O(n)
         res = cur = nums[0]
         for i in range(1, len(nums)):
-            cur = max(cur + nums[i], nums[i])
+            cur += nums[i]
+            if nums[i] > cur:
+                cur = nums[i]
             res = max(res, cur)
         return res
