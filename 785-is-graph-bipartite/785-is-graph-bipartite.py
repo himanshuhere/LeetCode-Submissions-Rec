@@ -2,7 +2,7 @@ class Solution:
     def isBipartite(self, graph: List[List[int]]) -> bool:
         #dfs
         n = len(graph)
-        colored, vis = [-1]*n, [0]*n
+        colored = [-1]*n
         
         def dfs(node, c):
             #vis[node] = 1       #technically you can use colored as vis too, if none not visited. 
