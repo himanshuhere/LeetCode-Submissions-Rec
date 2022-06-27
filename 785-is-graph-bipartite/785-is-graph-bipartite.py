@@ -1,16 +1,15 @@
 class Solution:
     def isBipartite(self, graph: List[List[int]]) -> bool:
-
         #dfs
         n = len(graph)
-        colored, vis = [None]*n, [0]*n
+        colored, vis = [-1]*n, [0]*n
         
         def dfs(node, c):
-            vis[node] = 1       #technically you can use colored as vis too, if none not visited. 
+            #vis[node] = 1       #technically you can use colored as vis too, if none not visited. 
             colored[node] = c
             
             for k in graph[node]:
-                if vis[k] == 0:
+                if colored[k] == -1:        #unvisited
                     if dfs(k, c^1) == False:
                         return False
                 else:       #visited, pehle se assigned color now check if right or not
@@ -20,7 +19,7 @@ class Solution:
         
         
         for i in range(n):
-            if vis[i] == 0:
+            if colored[i] == -1:
                 if not dfs(i, 0): 
                     return False
         return True
