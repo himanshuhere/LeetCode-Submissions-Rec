@@ -8,7 +8,7 @@ class Solution:
         
         #beg to mid = 0, mid to end = 1, else after end = 2
         
-        while mid <= j:
+        while mid <= j:         #since while loop has only mid, j, they need to move 
             if nums[mid] == 0:
                 nums[mid], nums[i] = nums[i], nums[mid]
                 i += 1
