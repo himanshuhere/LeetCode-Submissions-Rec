@@ -12,7 +12,7 @@ class Solution:
         i = 0
         j = len(matrix)-1
         while i <= j:
-            for k in range(len(matrix)):
+            for k in range(len(matrix[0])):
                 matrix[i][k], matrix[j][k] = matrix[j][k], matrix[i][k]
             i += 1
             j -= 1
