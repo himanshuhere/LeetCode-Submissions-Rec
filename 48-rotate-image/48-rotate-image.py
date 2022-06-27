@@ -19,5 +19,5 @@ class Solution:
             
         #transpose
         for i in range(len(matrix)):
-            for j in range(i):      #range(i+1, len(matrix[0]))
+            for j in range(i, len(matrix[0])):      #range(i+1, len(matrix[0]))
                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
