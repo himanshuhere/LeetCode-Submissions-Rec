@@ -1,9 +1,3 @@
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 class Solution:
     def minCameraCover(self, root: Optional[TreeNode]) -> int:
         #there are two ways, go preorder and go postorder.
@@ -29,7 +23,7 @@ class Solution:
                 return 0            
         
         self.sum=0
-        if dfs(root)==0:
+        if dfs(root) == 0:
             self.sum+=1     #putting at root, if not there
         
         return self.sum
