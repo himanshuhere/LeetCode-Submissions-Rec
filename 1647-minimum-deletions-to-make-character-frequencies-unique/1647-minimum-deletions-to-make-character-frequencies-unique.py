@@ -5,9 +5,9 @@ class Solution:
         prev = float('inf')
         for freq in frequencies:
             if freq >= prev:
-                new_freq = max(prev - 1, 0)
+                new_freq = prev - 1
                 deletions += (freq - new_freq)
-                prev = new_freq
+                prev = new_freq if new_freq>0 else prev
             else:
                 prev = freq
         return deletions
