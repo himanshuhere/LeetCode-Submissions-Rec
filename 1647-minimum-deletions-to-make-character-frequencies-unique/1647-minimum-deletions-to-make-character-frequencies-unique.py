@@ -7,7 +7,7 @@ class Solution:
             if freq >= prev:
                 new_freq = prev - 1
                 deletions += (freq - new_freq)
-                prev = new_freq if new_freq>0 else prev
+                prev = new_freq if new_freq > 0 else prev       #skip if invalid else jump with i
             else:
                 prev = freq
         return deletions
