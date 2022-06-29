@@ -9,8 +9,6 @@ class Solution:
         for i in range(len(arr)):
             d[i] = d[i - 1] ^ arr[i]
             
-        for q in queries:
-            i, j = q[0], q[1]
-            # res.append(d[i], d[j + 1]) because we have started d from -1 so 0 will be at 1
+        for i, j in queries:
             res.append(d[i - 1] ^ d[j])
         return res
