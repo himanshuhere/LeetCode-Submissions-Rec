@@ -19,9 +19,10 @@ class Solution:
             def test(node, target):
                 if node is None:
                     return
-
+                
                 if node.val == target:          #at any node, not only leaf
-                    self.numOfPaths += 1        #The path does not need to start or end at the root or a leaf,    but it must go downwards, return mt marna aage b path ho sakte h same line me(val -ve +ve hai) inhi baato ko toh dhyan rakhna hai                 
+                    self.numOfPaths += 1
+                                      #The path does not need to start or end at the root or a leaf,    but it must go downwards, return mt marna aage b path ho sakte h same line me(val -ve +ve hai) inhi baato ko toh dhyan rakhna hai                 
 
                 test(node.left, target-node.val)
                 test(node.right, target-node.val)
@@ -30,8 +31,9 @@ class Solution:
             # 1st layer DFS to go through each node
             dfs(root)
             return self.numOfPaths
-        #this is any to any (root to leaf, root to any, any to leaf, any to any)
-        #positives value me we can write return after operation (if not leaf node) but negatives me nahi thats y see on line 24 we dot have any return. ans is possible keep going
+        
+            #this is any to any (root to leaf, root to any, any to leaf, any to any)
+            #positives value me we can write return after operation (if not leaf node) but negatives me nahi thats y see on line 24 we dot have any return. ans is possible keep going
         
         def memoized():
             #same as subarray sum to target k
