@@ -3,7 +3,7 @@ class Solution:
         #seq vs subseq
         #see notes
         maxcount = 0
-        nset = set(nums)
+        nset = set(nums)        #set is must else TLE
 
         for num in nset:
             if num - 1 not in nset:
