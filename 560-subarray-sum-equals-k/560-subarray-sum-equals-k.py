@@ -2,7 +2,7 @@ class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         #sliding window can be used variable one but for only positives number, here negatives also there sliding window will not work. but map can be but HOW. think of s[i,j] = s[0,j]-s[0,i], now see will put every sum frim left to right in map if again found will increase count. Since we just need to return count of  window subarryas with sum k, not max windows not min, window can of any size just sum should be k. so whenevr we found that cur sum - k, already present then we found ans, but could be possible that sum-k can also be occured multiple times back then thus we have count in map, take entire count and add that to final res.
         
-        #same ques in striver sheet with sum = 0
+        #same ques in striver sheet with sum = 0, but want longest window so in map keep (sum, index)
         
         map_ = defaultdict(int)
         res = 0
