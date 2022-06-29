@@ -46,7 +46,6 @@ class Solution:
                 curPathsum += root.val
                 if curPathsum - target in self.m:
                     self.count += self.m[curPathsum - target]
-                
                 self.m[curPathsum] += 1
                 
                 dfs(root.left, curPathsum)
