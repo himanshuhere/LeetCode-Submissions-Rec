@@ -6,19 +6,36 @@ class Solution:
         if sum(nums)&1:
             return False
         
+#         s = sum(nums)//2
+#         #1
+#         @cache
+#         def f(i, s):
+#             if s == 0:
+#                 return True
+#             if i == len(nums) or s < 0:
+#                 return False
+#             return f(i+1, s-nums[i]) or f(i+1, s)
+        
+#         return f(0, s)
+    
+        #2 to make tab 
         s = sum(nums)//2
         #1
         @cache
         def f(i, s):
             if s == 0:
                 return True
-            if i == len(nums) or s < 0:
+            #if i == -1 or s < 0:
+            if i == 0 or s < 0:
                 return False
-            return f(i+1, s-nums[i]) or f(i+1, s)
+            if nums[i-1] <= s:
+                return f(i-1, s-nums[i-1]) or f(i-1, s)
+            else:
+                return f(i-1, s)
         
-        return f(0, s)
+        #return f(len(nums)-1, s)
+        return f(len(nums), s)
     
-        #2
         n = len(nums)
         tot = sum(nums)//2
         
