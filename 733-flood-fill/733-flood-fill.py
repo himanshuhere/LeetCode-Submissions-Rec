@@ -13,3 +13,5 @@ class Solution:
         oldcolor = image[sr][sc]
         dfs(sr,sc)
         return image
+    
+    #image[i][j]==newColor or image[i][j]!=oldcolor: both condition are necesarry yes
