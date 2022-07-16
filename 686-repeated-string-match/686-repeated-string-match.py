@@ -13,7 +13,7 @@ class Solution:
                     return True
             return False
         
-        def isContains2(s, sub):         #TLE
+        def isContains2(s, sub):         #Worked
             subhash = hash(sub)
             for i in range(0, len(s)-len(sub)+1):
                 if subhash == hash(s[i:i+len(sub)]):
