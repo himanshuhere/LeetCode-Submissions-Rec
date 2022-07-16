@@ -15,3 +15,8 @@ class Solution:
         return image
     
     #image[i][j]==newColor or image[i][j]!=oldcolor: both condition are necesarry yes
+    #bcs both could be same, thats the trick
+    #one simple way to pre check that 
+    # if oldColor != newColor:
+    #     dfs(sr, sc)
+    # return image
