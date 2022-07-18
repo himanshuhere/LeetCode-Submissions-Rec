@@ -26,3 +26,5 @@ class Solution:
         res = dummy.next
         res.prev = None
         return res
+    
+    #technically, you can update next, child both of last that is fine but next anyways going to update in next iter so take care should be exercised for child more
