@@ -20,7 +20,7 @@ class Solution:
                 
             curr.next = last
             last.prev = curr  
-            last.child = None
+            last.child = None       #imp as your result should be a linear linkedlist
             curr = curr.next
         
         res = dummy.next
