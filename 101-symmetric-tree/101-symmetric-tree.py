@@ -6,14 +6,7 @@
 #         self.right = right
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-        def isSym(l, r):
-            if not l or not r:
-                return l == r
-            if l.val != r.val:
-                return False
-            return isSym(l.left, r.right) and isSym(l.right, r.left)
-        #return not root or isSym(root.left, root.right)
-    
+        
         
         
         
