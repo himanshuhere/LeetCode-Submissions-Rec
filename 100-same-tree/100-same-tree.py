@@ -18,9 +18,9 @@ class Solution:
     
         #2
         
-        deq = deque([(p, q)])
+        deq = [(p, q)]
         while deq:
-            p, q = deq.popleft()
+            p, q = deq.pop()
             if not p and not q:
                 continue
             if not p or not q:
