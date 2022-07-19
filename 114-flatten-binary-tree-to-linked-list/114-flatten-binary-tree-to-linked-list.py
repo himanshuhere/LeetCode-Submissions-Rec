@@ -23,3 +23,27 @@ class Solution:
                 
             
             cur = cur.right
+            
+        
+    #Q. Make binary tree to doubly linkedlist (inorder - inplace)
+    
+    def f(root, prev, head):
+        if not root:
+            return
+        
+        f(root.left)
+        
+        if head == None:
+            head = root         #first node
+        else:
+            root.prev = prev
+            prev.next = root
+        prev = root             #keep this prev updated
+        
+        f(root.right)
+    
+    head = prev = None
+    #f(root, prev, head)
+    #return head
+
+    #same algo could be used if iterative asked
