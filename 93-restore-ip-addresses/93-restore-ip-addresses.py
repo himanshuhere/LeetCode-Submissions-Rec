@@ -3,7 +3,7 @@ class Solution:
         ans = []
         def valid(lst):
             for s1 in lst:
-                if s1[0]=="0" and len(s1)!=1:         #more zeroes
+                if s1[0]=="0" and len(s1)>1:         #more zeroes
                     return False
                 if not (0<=int(s1)<=255):
                     return False
