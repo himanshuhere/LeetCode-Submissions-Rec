@@ -33,7 +33,7 @@ class Solution:
             p, q = deq.popleft()
             if not check(p, q):
                 return False         
-            if p:
+            if p and q:
                 deq.append((p.left, q.left))
                 deq.append((p.right, q.right))
         return True
