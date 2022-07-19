@@ -17,22 +17,16 @@ class Solution:
     
     
         #2
-        def check(p, q):
-            # if both are None
-            if not p and not q:
-                return True
-            # one of p and q is None
-            if not q or not p:
-                return False
-            if p.val != q.val:
-                return False
-            return True
         
         deq = deque([(p, q)])
         while deq:
             p, q = deq.popleft()
-            if not check(p, q):
-                return False         
+            if not p and not q:
+                continue
+            if not p or not q:
+                return False
+            if p.val != q.val:
+                return False  
             if p and q:
                 deq.append((p.left, q.left))
                 deq.append((p.right, q.right))
