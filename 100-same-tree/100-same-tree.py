@@ -16,7 +16,7 @@ class Solution:
         #return helper(p, q)
     
     
-        #2
+        #2 - use bfs with queue or stack - same as both will procees same flow on trees
         stack = [(p, q)]
         while stack:
             l, r = stack.pop()
