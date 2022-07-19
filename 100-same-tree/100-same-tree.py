@@ -17,17 +17,15 @@ class Solution:
     
     
         #2
-        
-        deq = [(p, q)]
-        while deq:
-            p, q = deq.pop()
-            if not p and not q:
+        stack = [(p, q)]
+        while stack:
+            l, r = stack.pop()
+            if not l and not r:
                 continue
-            if not p or not q:
+            if not l or not r:
                 return False
-            if p.val != q.val:
-                return False  
-            if p and q:
-                deq.append((p.left, q.left))
-                deq.append((p.right, q.right))
+            if l.val != r.val:
+                return False
+            stack.append((l.left, r.left))
+            stack.append((l.right, r.right))
         return True
