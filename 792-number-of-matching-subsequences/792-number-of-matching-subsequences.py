@@ -1,6 +1,9 @@
 #1
 class Solution:
     def numMatchingSubseq(self, s: str, words: List[str]) -> int:
+        #O(m + n * k^2) where n is the number of words, m is the length of the reference string s, and k is the length of the longest string in words.
+#The reason it is k^2 is because of the slice/substring operation (word[1:]) takes O(k) time
+
         word_dict = defaultdict(list)
         count = 0
         
@@ -20,6 +23,10 @@ class Solution:
                     word_dict[word[1]].append(word[1:])
         
         return count
+    
+    
+    
+    
 
 #Trie Woould work bt TC to same hi hai, see all word then all chars of word. ky bkar de rhe tum trie bata k kuch nhi TLE arha yha trie + dfs+map lagna hai better go for diff solution this one up above
 #2
