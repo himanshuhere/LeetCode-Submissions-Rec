@@ -20,6 +20,6 @@ class Solution:
             preCnt, preChr = cnt, chr
             
         res = ''.join(res)
-        if len(res) != len(S): 
+        if len(res) < len(S): 
             return ""
         return res
