@@ -40,6 +40,6 @@ class Solution:
             fn(root.right)
             ans.append(root.val)
         
-        ans = []
-        fn(root)
-        return ans
+        # ans = []
+        # fn(root)
+        # return ans
