@@ -11,23 +11,42 @@ class Solution:
         if not root:
             return None
         
-        st = [root]
-        st2 = []
+#         st = [root]
+#         st2 = []
+#         res = []
+#         while st:
+#             root = st.pop()
+#             st2.append(root.val)
+#             if root.left:
+#                 st.append(root.left)
+#             if root.right:
+#                 st.append(root.right)
+        
+#         while st2:
+#             res.append(st2.pop())
+        
+#         return res
+        
+        #Iterativ, Single stack - (2N)
+        
+        st = []
         res = []
-        while st:
-            root = st.pop()
-            st2.append(root.val)
-            if root.left:
-                st.append(root.left)
-            if root.right:
-                st.append(root.right)
-        
-        while st2:
-            res.append(st2.pop())
-        
+        while root or st:
+            if root:
+                st.append(root)
+                root = root.left
+            else:
+                tmp = st[-1].right
+                if tmp == None:
+                    tmp = st.pop()
+                    res.append(tmp.val)
+                    
+                    while st and st[-1].right == tmp:
+                        tmp = st.pop()
+                        res.append(tmp.val)
+                else:
+                    root = tmp
         return res
-        
-        
         
         
         
