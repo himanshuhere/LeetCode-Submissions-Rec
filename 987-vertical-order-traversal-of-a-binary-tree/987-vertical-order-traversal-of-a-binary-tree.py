@@ -11,7 +11,7 @@ class Solution:
         queue = deque([(root, 0, 0)]) # node, x, y
         
         while queue:
-            for i in range(len(queue)):
+            for _ in range(len(queue)):
                 node, x, y = queue.popleft()
                 verticals[x].append((y, node.val))
                 
