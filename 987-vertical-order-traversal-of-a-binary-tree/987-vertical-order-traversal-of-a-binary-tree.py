@@ -7,7 +7,7 @@
 class Solution:
     def verticalTraversal(self, root: Optional[TreeNode]) -> List[List[int]]:
         #see copy notes - tree striver
-        verticals = collections.defaultdict(list)
+        verticals = defaultdict(list)
         queue = deque([(root, 0, 0)]) # node, x, y
         
         while queue:
