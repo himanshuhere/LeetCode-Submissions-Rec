@@ -7,25 +7,26 @@
 class Solution:
     def verticalTraversal(self, root: Optional[TreeNode]) -> List[List[int]]:
         #see copy notes - tree striver
-#         verticals = defaultdict(list)
-#         queue = deque([(root, 0, 0)]) # node, x, y
+        verticals = defaultdict(list)
+        queue = deque([(root, 0, 0)]) # node, x, y
         
-#         while queue:
-#             for _ in range(len(queue)):
-#                 node, x, y = queue.popleft()
-#                 verticals[x].append((y, node.val))
+        while queue:
+            for _ in range(len(queue)):
+                node, x, y = queue.popleft()
+                verticals[x].append((y, node.val))
                 
-#                 if node.left:
-#                     queue.append((node.left, x-1, y+1)) #
-#                 if node.right:
-#                     queue.append((node.right, x+1, y+1))
+                if node.left:
+                    queue.append((node.left, x-1, y+1)) #
+                if node.right:
+                    queue.append((node.right, x+1, y+1))
             
-#         output = []
-#         for x in sorted(verticals.keys()):
-#             column = [i[1] for i in sorted(verticals[x])]
-#             output.append(column)
-#         return output
+        output = []
+        for x in sorted(verticals.keys()):
+            column = [i[1] for i in sorted(verticals[x])]
+            output.append(column)
+        return output
     
+    #2
         #Or can use heap inside map to not do sorting again see.
         vert = defaultdict(list)
         q = deque([(root, 0, 0)])
