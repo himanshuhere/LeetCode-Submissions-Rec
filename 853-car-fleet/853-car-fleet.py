@@ -9,21 +9,21 @@ class Solution:
         
         #1 Stack
         
-        pair = [(p, s) for p, s in zip(position, speed)]
-        pair.sort(reverse=True)
-        stack = []
-        for p, s in pair:  # Reverse Sorted Order
-            stack.append((target - p) / s)          #ttt
-            if len(stack) >= 2 and stack[-1] <= stack[-2]:
-                stack.pop()
-        return len(stack)
+        # pair = [(p, s) for p, s in zip(position, speed)]
+        # pair.sort(reverse=True)
+        # stack = []
+        # for p, s in pair:  # Reverse Sorted Order
+        #     stack.append((target - p) / s)          #ttt
+        #     if len(stack) >= 2 and stack[-1] <= stack[-2]:
+        #         stack.pop()
+        # return len(stack)
         
         #2 without stack
         carconfig = [(pos, (target-pos)/sp) for pos, sp in zip(position, speed)]    #(pos, ttt)
         carconfig.sort()
         fleet = 0
         for i in range(len(carconfig)-1, 0, -1):
-            if carconfig[i-1][1] >= carconfig[i][1]:
+            if carconfig[i-1][1] <= carconfig[i][1]:
                 carconfig[i-1] = carconfig[i]
             else:
                 fleet += 1
