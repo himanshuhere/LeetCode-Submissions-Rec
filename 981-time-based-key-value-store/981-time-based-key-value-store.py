@@ -15,10 +15,23 @@ class TimeMap:
 
     def get(self, key: str, timestamp: int) -> str:
         space = self.store.get(key, [])
-        if not space:
-            return ""
+        res = ""
         
         l, r = 0 , len(space)-1
+        while l <= r:
+            m = (l+r)//2
+            if space[m][1] <= timestamp:
+                res = space[m][0]
+                l = m+1
+            else:
+                r = m-1
+        return res
+        
+        
+        
+        
+        
+        #template 2, but need some checks
         while l < r:
             m = ((l+r)//2) + 1      #biasing to the right side, better use <= template
             if space[m][1] > timestamp:
