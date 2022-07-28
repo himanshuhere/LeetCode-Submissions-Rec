@@ -3,7 +3,7 @@ class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         if not root:
             return False
-        if not subRoot:     #imp
+        if not subRoot:     #imp, kayde se ye pehle ayega 
             return True
         
         if self.isSame(root, subRoot):
