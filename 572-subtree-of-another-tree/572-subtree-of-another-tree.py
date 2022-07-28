@@ -3,8 +3,8 @@ class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         if not root:
             return False
-#         if not subRoot:     #imp
-#             return True
+        if not subRoot:     #imp
+            return True
         
         if self.isSame(root, subRoot):
             return True
