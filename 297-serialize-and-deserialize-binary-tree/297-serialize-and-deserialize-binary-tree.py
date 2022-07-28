@@ -1,6 +1,6 @@
 #-ve values string me -5-6-7 ese jayegi to dhyan rakhna hai isliye separator chaiye hota
 
-
+#bc khud se code kiya negative handle kiya, but pls know bfs too
 #DFS
 class Codec:
     def serialdfs(self, root):
