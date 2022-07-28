@@ -5,19 +5,19 @@ class Solution:
         ans = 0 
         
         #1 ye b chal rha
-#         def dfs(root, pathmax):
-#             nonlocal ans
-#             if not root:
-#                 return 
+        def dfs(root, pathmax):
+            nonlocal ans
+            if not root:
+                return 
             
-#             if root.val >= pathmax:
-#                 ans += 1
+            if root.val >= pathmax:
+                ans += 1
             
-#             dfs(root.left, max(pathmax, root.val))
-#             dfs(root.right, max(pathmax, root.val))
+            dfs(root.left, max(pathmax, root.val))
+            dfs(root.right, max(pathmax, root.val))
         
-#         dfs(root, -inf)
-#         return ans
+        dfs(root, -inf)
+        return ans
     
         #3 ye b chal rha
         def dfs(root, pathmax):
