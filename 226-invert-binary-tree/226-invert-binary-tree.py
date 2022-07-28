@@ -9,8 +9,18 @@ class Solution:
         def dfs(root):
             if not root:
                 return 
-            root.left, root.right =root.right, root.left
+            root.left, root.right = root.right, root.left
             dfs(root.left)
             dfs(root.right)
         dfs(root)
+        return root
+    
+    
+        queue = collections.deque([(root)])
+        while queue:
+            node = queue.popleft()
+            if node:
+                node.left, node.right = node.right, node.left
+                queue.append(node.left)
+                queue.append(node.right)
         return root
