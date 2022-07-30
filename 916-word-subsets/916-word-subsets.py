@@ -1,3 +1,5 @@
+#pehle i did, same algo but mai second list k sare counter pe ek ek karke kam kar rha tha TLE, so what we have to do is make union of all map of substrings then make one counter ans process all of them.
+
 class Solution:
     def wordSubsets(self, words1: List[str], words2: List[str]) -> List[str]:
         res = []
