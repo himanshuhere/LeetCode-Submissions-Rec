@@ -5,7 +5,7 @@ class Solution:
             if i < 0 or j < 0 or i >= len(grid) or j >= len(grid[i]) or grid[i][j] == 0:
                 return 0
 
-            grid[i][j] = 0          #if 1 make 0
+            grid[i][j] = 0
 
             return 1 + dfs(i,j+1)+dfs(i,j-1)+dfs(i-1,j)+dfs(i+1,j)
         
