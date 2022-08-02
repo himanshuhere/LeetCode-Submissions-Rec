@@ -24,22 +24,21 @@ class Solution:
         def countSmaller(num):
             i, j, cnt = 0, m-1, 0
             while i < n and j >= 0:
-                if matrix[i][j] < num:
-                    cnt += j+1
+                if matrix[i][j] <= num:
+                    cnt += (j+1)
                     i += 1
                 else:
                     j -= 1
             return cnt
         
         def helper():
-            ans = -1
             lo, hi = matrix[0][0], matrix[-1][-1]
-            while lo <= hi:
-                mid = (lo + hi)//2
-                if countSmaller(mid) >= k:
-                    hi = mid-1
-                else:
+            while lo < hi:
+                mid = lo + (hi-lo)//2
+                if countSmaller(mid) < k:
                     lo = mid+1
-            return hi
+                else:
+                    hi = mid
+            return lo
         
         return helper()
