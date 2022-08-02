@@ -20,9 +20,9 @@ class Solution:
         #3 Binary search | Tc : nlogn | Space o(1)
         #not sorted for imaginary
         
-        n, m = len(matrix), len(matrix[0])
+        n = len(matrix)
         def countSmaller(num):
-            i, j, cnt = 0, m-1, 0
+            i, j, cnt = 0, n-1, 0
             while i < n and j >= 0:
                 if matrix[i][j] <= num:     #<= , = dhyan dena
                     cnt += (j+1)
