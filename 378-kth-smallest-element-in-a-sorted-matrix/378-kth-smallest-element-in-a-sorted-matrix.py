@@ -24,7 +24,7 @@ class Solution:
         def countSmaller(num):
             i, j, cnt = 0, m-1, 0
             while i < n and j >= 0:
-                if matrix[i][j] <= num:
+                if matrix[i][j] <= num:     #<= , = dhyan dena
                     cnt += (j+1)
                     i += 1
                 else:
