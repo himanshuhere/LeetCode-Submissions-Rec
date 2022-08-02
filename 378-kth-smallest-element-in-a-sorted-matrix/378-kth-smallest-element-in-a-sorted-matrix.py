@@ -7,16 +7,17 @@ class Solution:
         
         
         #2 maxheap | MlogK, M=n^n | logK
-        maxheap = []
-        for row in matrix:
-            for c in row:
-                heappush(maxheap, -c)
-                if len(maxheap) > k:
-                    heappop(maxheap)
-        return -maxheap[0]
+        def heap():
+            maxheap = []
+            for row in matrix:
+                for c in row:
+                    heappush(maxheap, -c)
+                    if len(maxheap) > k:
+                        heappop(maxheap)
+            return -maxheap[0]
         
         
-        
+        #3 Binary search | Tc : nlogn | Space o(1)
         #not sorted for imaginary
         
         n, m = len(matrix), len(matrix[0])
@@ -30,14 +31,15 @@ class Solution:
                     j -= 1
             return cnt
         
-#         def helper():
-#             lo, hi = matrix[0][0], matrix[-1][-1]
-#             while lo < hi:
-#                 mid = (lo + hi)//2
-#                 if countSmaller(mid) >= k:
-#                     hi = mid-1
-#                 else:
-#                     lo = mid+1
-#             return hi
+        def helper():
+            ans = -1
+            lo, hi = matrix[0][0], matrix[-1][-1]
+            while lo <= hi:
+                mid = (lo + hi)//2
+                if countSmaller(mid) >= k:
+                    hi = mid-1
+                else:
+                    lo = mid+1
+            return hi
         
-#         return helper()
+        return helper()
