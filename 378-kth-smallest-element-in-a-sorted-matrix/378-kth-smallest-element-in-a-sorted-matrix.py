@@ -1,12 +1,12 @@
 class Solution:
     def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
         #Ready for interview
-        #1 Sorting TC: MLOGM where M=n^n | SC: n^n
+        #1 Sorting TC: MLOGM where M=n^2 | SC: n^2
         #go throught entire matrix an dput then in a new array
         #sort array and find the kth index
         
         
-        #2 maxheap | MlogK, M=n^n | logK
+        #2 maxheap | MlogK, M=n^2 | logK
         def heap():
             maxheap = []
             for row in matrix:
