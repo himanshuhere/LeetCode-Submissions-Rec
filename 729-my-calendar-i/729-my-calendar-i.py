@@ -1,5 +1,6 @@
 class MyCalendar:
 
+    #brute workd with set, but jaha tak i know ye series sayd seg tree me hai 
     def __init__(self):
         self.bookings = set()
 
