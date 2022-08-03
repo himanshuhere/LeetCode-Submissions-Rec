@@ -15,7 +15,10 @@
     
     #2 - dekho mene dekha and socha yes ordered set ho to binary search laga sakte. but like java  we dont have any tree map. So what we ll create wese b bahot contest me bc haara hu kuki treemap nhi pata tha pythn ka aur unko complexity logn chaiye rehti this to lo template aaj.
     
-class Node:             #Python treemap
+#total time for all N queries: O(N^2) worst case, with O(NlogN) on random data.
+#total time : o(N)
+
+class Node:             #Python treemap | TC : o(n) skewed case, random elements logn
     def __init__(self, st, end):
         self.st = st
         self.end = end
