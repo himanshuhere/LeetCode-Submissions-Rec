@@ -19,6 +19,8 @@
 #total time : o(N)
 #bcs query will always == to number of elements in treemap so Q==N
 
+#remember it not self balancing tre,e we are doing anything to maintain it balace like red black etc in java treemap thus o(N) can be possible but for now thik hai 
+
 class Node:             #Python treemap | TC : o(n) skewed case, random elements logn
     def __init__(self, st, end):
         self.st = st
