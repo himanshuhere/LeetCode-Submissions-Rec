@@ -17,6 +17,7 @@
     
 #total time for all N queries: O(N^2) worst case, with O(NlogN) on random data.
 #total time : o(N)
+#bcs query will always == to number of elements in treemap so Q==N
 
 class Node:             #Python treemap | TC : o(n) skewed case, random elements logn
     def __init__(self, st, end):
