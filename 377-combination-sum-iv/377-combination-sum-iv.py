@@ -1,3 +1,6 @@
+#Dekho, #1 and #2 me bas ek difference hai 1 me i am tracking index and 2 me nhi, kuki loop is there and loop is running over valid range only we dont need index.
+#but time diff bw 1 and 2 is 500ms+ and 50ms+, see
+
 class Solution:
     def combinationSum4(self, nums: List[int], target: int) -> int:
         #Initially i did take not take, but see waha pe you go forward only and here any order combination is possible
