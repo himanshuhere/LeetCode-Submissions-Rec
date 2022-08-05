@@ -1,5 +1,5 @@
 #Dekho, #1 and #2 me bas ek difference hai 1 me i am tracking index and 2 me nhi, kuki loop is there and loop is running over valid range only we dont need index.
-#but time diff bw 1 and 2 is 500ms+ and 50ms+, see
+#but time diff bw 1 and 2 is 500ms+ and 50ms+, see beacsue in a sense that one extra param i is making that dp 2-d, jabki #2 has only one param tar, that makes it 1-D
 
 class Solution:
     def combinationSum4(self, nums: List[int], target: int) -> int:
