@@ -7,8 +7,10 @@ class Solution:
         #okay so i thought of doing same on nums then nums[::-1], but how would you eliminate duplicates okay plus there are many other issues
         #then i thought if we can chose any element after any, lets loop over entire array, means select one and then again go 0-n, then select any and again go to 0-n, but gives Recursion maximum limit exceeded, because then not take function case was not necessary, yes its a loop it handles not take case through loop itself.
         
+        #Coin change problem, only order of loop differs
+        
         @lru_cache(None)
-        def f(i, t):
+        def f(i, t):        #2d dp | TC n*t*n
             if t==0:
                 return 1
             if t < 0 or i == len(nums):
@@ -21,11 +23,11 @@ class Solution:
         #return f(0, target)
         
         #2
-        @lru_cache(None)    #dp use memo if not this else TLE
+        @lru_cache(None)    #1d dp | t*n
         def f(tar):
             if tar == 0:
                 return 1
-            if tar < 0:     #iski jagah loop k andar call se pehle >=0 cond b aa sakti
+            if tar < 0:     
                 return 0
             
             comb = 0
