@@ -15,5 +15,31 @@ class Solution:
                 ans += f(j, t-nums[j])
             return ans
         
-        return f(0, target)
+        #return f(0, target)
         
+        #2
+        @lru_cache(None)    #dp use memo if not this else TLE
+        def f(tar):
+            if tar == 0:
+                return 1
+            if tar < 0:     #iski jagah loop k andar call se pehle >=0 cond b aa sakti
+                return 0
+            
+            comb = 0
+            for j in range(0, len(nums)):
+                comb += f(tar-nums[j])
+            return comb
+        
+        return f(target)
+        
+        
+        #3
+        dp = [0 for _ in range(target+1)]
+        dp[0] = 1
+        
+        for i in range(1, target + 1):
+            for j in nums:
+                if i - j >= 0:
+                    dp[i] += dp[i - j]
+                    
+        return dp[target]
