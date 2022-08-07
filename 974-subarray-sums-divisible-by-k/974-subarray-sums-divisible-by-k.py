@@ -17,7 +17,8 @@ class Solution:
             s += e
             rem = s%k
             # if rem < 0:
-            #     rem += k
+            #     rem += k  
+            #will work for some lang but not for all, some dont store -neg rem 
             if rem in m:
                 res += m[rem]
             m[rem] = m.get(rem, 0) + 1
