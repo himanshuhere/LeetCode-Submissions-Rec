@@ -16,8 +16,8 @@ class Solution:
         for i, e in enumerate(nums):
             s += e
             rem = s%k
-            if rem < 0:
-                rem += k
+            # if rem < 0:
+            #     rem += k
             if rem in m:
                 res += m[rem]
             m[rem] = m.get(rem, 0) + 1
