@@ -24,7 +24,7 @@ class Solution:
         #me 
         @lru_cache(None)
         def fn(n, prev):
-            if n == 0:
+            if n == 0:  #if everythinh selected till here, wow 1 n len str can be made
                 return 1
                 
             ways = 0
