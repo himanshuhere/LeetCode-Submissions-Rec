@@ -1,6 +1,6 @@
 class Solution:
     def countVowelPermutation(self, n: int) -> int:
-        #smart people
+        #smart people - this is fast as we only go to needed list in inner loop using map
         map = {
             ' ': ['a', 'e', 'i', 'o', 'u'],
             'a': ['e'],
@@ -21,7 +21,7 @@ class Solution:
         return dp(n, ' ')
         
         
-        #2 me 
+        #2 me - this is slow as we try every 5 char for all levels and decide with if
         @lru_cache(None)
         def fn(n, prev):
             if n == 0:  #if everythinh selected till here, wow 1 n len str can be made
