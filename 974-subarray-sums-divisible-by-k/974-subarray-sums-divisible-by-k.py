@@ -21,6 +21,7 @@ class Solution:
             #will work for some lang but not for all, some dont store -neg rem 
             #see rem will alwys be in range [0-(k-1)] or more precise [-(k-1) to 0 to (k-1)]
             #if neg, then adding k will always made it positive
+            #so REM = (REM%K + K)%K
             if rem in m:
                 res += m[rem]
             m[rem] = m.get(rem, 0) + 1
