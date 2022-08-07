@@ -5,7 +5,7 @@ class Solution:
             ' ': ['a', 'e', 'i', 'o', 'u'],
             'a': ['e'],
             'e': ['a', 'i'],
-            'i': ['a', 'e', 'o', 'u'],
+            'i': ['a', 'e', 'o', 'u'],  #may not i but else yes
             'o': ['i', 'u'],
             'u': ['a']
         }
