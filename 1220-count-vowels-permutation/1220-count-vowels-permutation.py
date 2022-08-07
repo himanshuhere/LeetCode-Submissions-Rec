@@ -23,13 +23,13 @@ class Solution:
         
         #me 
         @lru_cache(None)
-        def fn(n, cur):
+        def fn(n, prev):
             if n == 0:
                 return 1
                 
             ways = 0
             for c in ['a', 'e', 'i', 'o', 'u']:
-                if cur == '' or (cur=='a' and c=='e') or (cur=='e' and (c=='a' or c=='i')) or (cur=='i' and not c=='i') or (cur=='o' and (c=='i' or c=='u')) or (cur=='u' and c=='a'):
+                if prev == '' or (prev=='a' and c=='e') or (prev=='e' and (c=='a' or c=='i')) or (prev=='i' and not c=='i') or (prev=='o' and (c=='i' or c=='u')) or (prev=='u' and c=='a'):
                     ways += fn(n-1, c)
             return ways
         
