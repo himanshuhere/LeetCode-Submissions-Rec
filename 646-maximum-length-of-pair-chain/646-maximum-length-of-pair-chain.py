@@ -1,5 +1,6 @@
 class Solution:
     def findLongestChain(self, nums: List[int]) -> int:
+        #pair = nums
         #LIS
         #Prerequisite - LC #300 Plz
         nums.sort()
