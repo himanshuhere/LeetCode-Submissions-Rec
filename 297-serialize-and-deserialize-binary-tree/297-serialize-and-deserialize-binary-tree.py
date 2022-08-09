@@ -11,6 +11,7 @@ class Codec:
     def desdfs(self, data):
         if data[self.i] == 'N':
             return None
+        
         root = TreeNode(data[self.i])
         
         self.i += 1
@@ -33,52 +34,52 @@ class Codec:
     
         
 #BFS
-# class Codec:
+class Codec:
 
-#     def serialize(self, root):
-#         if not root:    return ""
+    def serialize(self, root):
+        if not root:    return ""
         
-#         s, q = "",  deque([root])
-#         while q:
-#             for _ in range(len(q)):
-#                 node = q.popleft()
-#                 if node:
-#                     s += str(node.val) + "/"
-#                 else:
-#                     s += "#/"
-#                 if node:
-#                     q.append(node.left)
-#                     q.append(node.right)
-#         return s
+        s, q = "",  deque([root])
+        while q:
+            for _ in range(len(q)):
+                node = q.popleft()
+                if node:
+                    s += str(node.val) + "/"
+                else:
+                    s += "#/"
+                if node:
+                    q.append(node.left)
+                    q.append(node.right)
+        return s
         
 
-#     def deserialize(self, data):
-#         if not data:    return None
+    def deserialize(self, data):
+        if not data:    return None
         
-#         s = data.split('/')
-#         i = 0
+        s = data.split('/')
+        i = 0
         
-#         root = TreeNode(s[0])
-#         q = deque([root])
-#         while q:
-#             for _ in range(len(q)):
-#                 node = q.popleft()
+        root = TreeNode(s[0])
+        q = deque([root])
+        while q:
+            for _ in range(len(q)):
+                node = q.popleft()
 
-#                 i += 1
-#                 if s[i] == "#":
-#                     node.left = None
-#                 else:
-#                     node.left = TreeNode(s[i])
-#                     q.append(node.left)
+                i += 1
+                if s[i] == "#":
+                    node.left = None
+                else:
+                    node.left = TreeNode(s[i])
+                    q.append(node.left)
 
-#                 i+=1
-#                 if s[i] == "#":
-#                     node.right = None
-#                 else:
-#                     node.right = TreeNode(s[i])
-#                     q.append(node.right)
+                i+=1
+                if s[i] == "#":
+                    node.right = None
+                else:
+                    node.right = TreeNode(s[i])
+                    q.append(node.right)
 
-#         return root
+        return root
         
         
 
