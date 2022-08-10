@@ -12,7 +12,6 @@ class Solution:
             last = x%10
             x //= 10
             new = new*10+last
-            
         
         if neg:
             new = -new
