@@ -1,6 +1,6 @@
 class Solution:
     def racecar(self, target: int) -> int:
-        queue = collections.deque([(0, 1)])
+        queue = collections.deque([(0, 1)]) #[pos, velocity]
         moves = 0
         while queue:
             for _ in range(len(queue)):
