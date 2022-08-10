@@ -3,7 +3,7 @@ class Solution:
         ans = 0
         for _ in range(31):
             if n&1 == 1:
-                ans |= 1
+                ans |= 1        #last bit on karni hai : ans = ans OR 1 / ans += 1
                 #ans += 1
             ans <<= 1
             n >>= 1
