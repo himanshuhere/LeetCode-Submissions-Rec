@@ -1,5 +1,6 @@
 class Solution:
     def racecar(self, target: int) -> int:
+        #target*log(target)
         
         queue = deque([(0, 1)]) #[pos, velocity]
         moves = 0
