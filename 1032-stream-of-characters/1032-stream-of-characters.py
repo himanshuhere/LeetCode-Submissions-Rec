@@ -1,17 +1,14 @@
-class TrieNode():
-    def __init__(self):
-        self.children = {}
-        self.isEnd = False
 
 class Trie():
     def __init__(self):
-        self.root = TrieNode()
+        self.children = {}
+        self.isEnd = False       
     
     def insert(self, word):
-        node = self.root
+        node = self
         for char in word:
             if char not in node.children:
-                node.children[char] = TrieNode()
+                node.children[char] = Trie()
             node = node.children[char]
         node.isEnd = True
 
@@ -27,7 +24,7 @@ class StreamChecker:
         #ulta check karna h
         i = len(self.letters) - 1
         
-        node = self.trie.root
+        node = self.trie
         while i >= 0:
             if node.isEnd:
                 return True
