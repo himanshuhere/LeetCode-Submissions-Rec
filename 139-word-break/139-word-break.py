@@ -14,3 +14,6 @@ class Solution:
         n = len(s)
         dic = set(wordDict)
         return f(0, "")
+    
+    #Brute time is 2^n, as max two choices but string concat then N*2^N
+    #DP time : n*n*k, n and n for dp states and k for concat if needed
