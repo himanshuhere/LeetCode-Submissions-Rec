@@ -13,7 +13,6 @@ class Solution:
             path.pop()
             
         res = []
-        vis = set()
         dfs(0, [])
         return res
                 
