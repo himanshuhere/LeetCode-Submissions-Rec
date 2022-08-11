@@ -24,6 +24,8 @@ class Solution:
             
             if (i+1<n and (s[i] =="1" or (s[i]=="2" and s[i+1] in "0123456"))):   #two dig
                 ways += f(i+2)
+            #or if i + 1 < len(s) and int(s[i] + s[i + 1]) in range(10,  27):
+
             
             return ways
             
