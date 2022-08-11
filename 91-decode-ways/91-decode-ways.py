@@ -40,4 +40,6 @@ class Solution:
 # "110"  1
 # "23220"  2
 # "4310"  1
+
+#so our zero condition if s[i] == "0" is only for single char/our single jump dfs(i+1) and thats always invalid, and for two digit dfs(i+1), we jump 2 indices so for the case of 10, 20 we would not reach at zero but ahead and for case like 01, 02, 02 our two digit logic will not move ahead see s[i] == 1 or 2
                 
