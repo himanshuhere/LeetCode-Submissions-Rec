@@ -14,7 +14,7 @@ class Solution:
                 while new in m:
                     k += 1
                     new = name + '(' +str(k+1)+ ')'
-                m[name] = k
+                m[name] = k         #ONE LINE OPTIMIZATION
                 m[new] = 0
                 res.append(new)
         return res
