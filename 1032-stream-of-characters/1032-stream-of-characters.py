@@ -26,10 +26,10 @@ class StreamChecker:
         
         node = self.trie
         while i >= 0:
-            if node.isEnd:
-                return True
             if self.letters[i] not in node.children:
                 return False
             node = node.children[self.letters[i]]
+            if node.isEnd:
+                return True
             i -= 1
         return node.isEnd
