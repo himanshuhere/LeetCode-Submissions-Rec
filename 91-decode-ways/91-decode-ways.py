@@ -28,7 +28,8 @@ class Solution:
             return ways
             
         return f(0)
-                
+           
+#start 0, nope | anywhere in center 0 , nope | at last 0 but with 10, 20 would possible make 1
 # "06" - 0
 # "560" - 0
 # "98098" - 0
