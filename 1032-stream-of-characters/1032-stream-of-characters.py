@@ -32,4 +32,4 @@ class StreamChecker:
             if node.isEnd:
                 return True
             i -= 1
-        return node.isEnd
+        return False
