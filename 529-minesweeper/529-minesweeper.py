@@ -10,7 +10,7 @@ class Solution:
     def getAdjacentMines(self, board, x, y): 
         numMines=0
         for r in range(x-1, x+2): 
-            for c in range(y-1, y+2):
+            for c in range(y-1, y+2):   #you need to put one condition for [x, y] that r!=x and c!=y, bcs out of 9 pairs, one would again be same cell, here it is fine as cureent cell is B, else take care
                 if r >= 0 and r < len(board) and c >= 0 and c < len(board[r]) and board[r][c] == "M":
                     numMines += 1
         return numMines
@@ -28,6 +28,7 @@ class Solution:
                 board[x][y] = "B"
                 for r in range(x-1, x+2):
                     for c in range(y-1, y+2):
+                        #you need to put one condition for [x, y] that r!=x and c!=y, bcs out of 9 pairs, one would again be same cell, here it is fine as cureent cell is B, else take care
                         if r >= 0 and r < len(board) and c >= 0 and c < len(board[r]) and board[r][c] != "B":
                             self.updateBoard(board, [r, c])
         return board
