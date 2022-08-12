@@ -35,14 +35,17 @@ class NumArray:
         return root
     
     def sumrange(self, root, l, r):
-        if root.i >= l and root.j <= r:     #completly overlap/base case >,< as base case else nonetype err
+        if root.i >=l and root.j <= r:
             return root.sum
         
-        if root.i > r or root.j < l:        #disjoint, no overlap
-            return 0                        #0 for sum, -inf for range max query, +inf for range min query
+        mid = (root.i+root.j)//2
         
-        return self.sumrange(root.left, l, r) + self.sumrange(root.right, l, r) 
-    #partial overlap, let recursion handle it
+        if r <= mid:
+            return self.sumrange(root.left, l, r)
+        elif l >=mid+1:
+            return self.sumrange(root.right, l, r)
+        else:                                       #overlapping with respact to mid think
+            return self.sumrange(root.left, l, r) + self.sumrange(root.right, l, r)
     
     
     def __init__(self, nums: List[int]):
