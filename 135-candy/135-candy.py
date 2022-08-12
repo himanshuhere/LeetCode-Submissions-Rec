@@ -1,10 +1,6 @@
 class Solution:
     def candy(self, ratings: List[int]) -> int:
-        #ye pura khud se kiya, ek round me fill kiya aur second round me kuch reh gye thik kiya unko ab dekhte h solution me kya kiya hai kese kiya hai
-        #one more thing, earliar i thought DP kuki hard hai so try every possiblity but nhi related topic dekh liya wese nhi dekhna tha but sorry so greedy
-        
         def fromSolution():
-            #Wow kinda same logic, but fucking clean.
             n = len(ratings)
             if n == 1:
                 return 1
@@ -36,6 +32,10 @@ class Solution:
 
 
 
+
+#ye pura khud se kiya, ek round me fill kiya aur second round me kuch reh gye thik kiya unko ab dekhte h solution me kya kiya hai kese kiya hai
+        #one more thing, earliar i thought DP kuki hard hai so try every possiblity but nhi related topic dekh liya wese nhi dekhna tha but sorry so greedy
+        
         def selfdid():
             n = len(ratings)
             if n == 1:
