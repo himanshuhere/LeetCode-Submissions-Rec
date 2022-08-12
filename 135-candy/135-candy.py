@@ -3,6 +3,39 @@ class Solution:
         #ye pura khud se kiya, ek round me fill kiya aur second round me kuch reh gye thik kiya unko ab dekhte h solution me kya kiya hai kese kiya hai
         #one more thing, earliar i thought DP kuki hard hai so try every possiblity but nhi related topic dekh liya wese nhi dekhna tha but sorry so greedy
         
+        def fromSolution():
+            #Wow kinda same logic, but fucking clean.
+            n = len(ratings)
+            if n == 1:
+                return 1
+
+            # initial state: each kid gets one candy    
+            nums = [1] * n
+            
+            #FOR interview, make separate list for boht direction and add max candy logic without MAX(), then again traverse over both list and extract max of same index. Then for optimization, remove one list and do on same list using max at second loop
+            
+            # kids on upwards curve get candies
+            for i in range(1, n):
+                if ratings[i] > ratings[i-1]:
+                    nums[i] = nums[i-1] + 1
+
+            # kids on downwards curve get candies, upward from back
+            # if a kid on both up/down curves, i.e. a peak or a valley
+            # kid gets the maximum candies among the two.
+            for i in range(n-2, -1, -1):
+                if ratings[i] > ratings[i+1]:
+                    nums[i] = max(nums[i+1]+1, nums[i])
+
+            return sum(nums)
+
+        return fromSolution()
+    
+    
+    #Do it in two directions.
+# The first loop makes sure children with a higher rating get more candy than its left neighbor; the second loop makes sure children with a higher rating get more candy than its right neighbor.
+
+
+
         def selfdid():
             n = len(ratings)
             if n == 1:
@@ -40,33 +73,4 @@ class Solution:
             #print(coins)
             return sum(coins)
         
-        def fromSolution():
-            #Wow kinda same logic, but fucking clean.
-            n = len(ratings)
-            if n == 1:
-                return 1
-
-            # initial state: each kid gets one candy    
-            nums = [1] * n
-            
-            #FOR interview, make separate list for boht direction and add max candy logic without MAX(), then again traverse over both list and extract max of same index. Then for optimization, remove one list and do on same list using max at second loop
-            
-            # kids on upwards curve get candies
-            for i in range(1, n):
-                if ratings[i] > ratings[i-1]:
-                    nums[i] = nums[i-1] + 1
-
-            # kids on downwards curve get candies, upward from back
-            # if a kid on both up/down curves, i.e. a peak or a valley
-            # kid gets the maximum candies among the two.
-            for i in range(n-2, -1, -1):
-                if ratings[i] > ratings[i+1]:
-                    nums[i] = max(nums[i+1]+1, nums[i])
-
-            return sum(nums)
-
-        return fromSolution()
-    
-    
-    #Do it in two directions.
-# The first loop makes sure children with a higher rating get more candy than its left neighbor; the second loop makes sure children with a higher rating get more candy than its right neighbor.
+        
