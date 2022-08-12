@@ -22,3 +22,7 @@ class Solution:
                     if valid([s1,s2,s3,s4]):
                         ans.append(s1+"."+s2+"."+s3+"."+s4)
         return ans
+    
+    #substring - o(n)
+    #three loops constant so, 3^3, each loop possibility is 3 too
+    #n * 3 ^ 3 = o(n)
