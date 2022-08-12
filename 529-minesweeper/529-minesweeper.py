@@ -19,6 +19,7 @@ class Solution:
         x, y = click
         if board[x][y] == "M":
             board[x][y] = "X"
+            return board
         else:
             numMines = self.getAdjacentMines(board, x, y)
             if numMines > 0:
