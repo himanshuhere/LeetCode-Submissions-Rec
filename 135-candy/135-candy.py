@@ -49,6 +49,8 @@ class Solution:
             # initial state: each kid gets one candy    
             nums = [1] * n
             
+            #FOR interview, make separate list for boht direction and add max candy logic without MAX(), then again traverse over both list and extract max of same index. Then for optimization, remove one list and do on same list using max at second loop
+            
             # kids on upwards curve get candies
             for i in range(1, n):
                 if ratings[i] > ratings[i-1]:
