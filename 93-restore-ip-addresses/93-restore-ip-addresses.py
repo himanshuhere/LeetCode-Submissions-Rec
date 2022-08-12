@@ -9,6 +9,8 @@ class Solution:
                     return False
             return True
         
+        #each step you do three cuts, 0-255 and do it for four times (par==4), so time is 3^4 and substring cutting is max 3, o(3) = o(3^4) = around o(n) or o(1) constant
+        
         def dfs(i, cur, par):
             if i == n or par == 4:          #if any then get inside
                 if i == n and par == 4:     #if both then only right
@@ -30,21 +32,22 @@ class Solution:
         return res
             
                         
-        
-        
-#         for i in range(1, 4):           #1,2,3
-#             for j in range(i+1, i+4):
-#                 for k in range(j+1, j+4):
-#                     if k >= len(s):
-#                         break
-#                     s1 = s[:i]
-#                     s2 = s[i:j]
-#                     s3 = s[j:k]
-#                     s4 = s[k:]
+    
+    
+    #TC - O(N)    
+        for i in range(1, 4):           #1,2,3
+            for j in range(i+1, i+4):
+                for k in range(j+1, j+4):
+                    if k >= len(s):
+                        break
+                    s1 = s[:i]
+                    s2 = s[i:j]
+                    s3 = s[j:k]
+                    s4 = s[k:]
                     
-#                     if valid([s1,s2,s3,s4]):
-#                         ans.append(s1+"."+s2+"."+s3+"."+s4)
-#         return ans
+                    if valid([s1,s2,s3,s4]):
+                        ans.append(s1+"."+s2+"."+s3+"."+s4)
+        return ans
     
     #substring - o(n)
     #three loops constant so, 3^3, each loop possibility is 3 too
