@@ -14,9 +14,11 @@ class Solution:
         while maxHeap:
             cnt, chr = heapq.heappop(maxHeap)
             res += [chr]
+            cnt += 1            #maxHeap so dec means inc here
+            
             if preCnt != 0:      #maxheap so it should be neg
                 heapq.heappush(maxHeap, (preCnt, preChr))
-            cnt += 1            #maxHeap so dec means inc here
+                
             preCnt, preChr = cnt, chr
             
         res = ''.join(res)
