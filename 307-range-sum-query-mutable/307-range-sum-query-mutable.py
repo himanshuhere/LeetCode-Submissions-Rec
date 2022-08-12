@@ -35,16 +35,15 @@ class NumArray:
         return root
     
     def sumrange(self, root, l, r):
-        #completly overlap
-        if root.i >= l and root.j <= r:
+        if root.i >= l and root.j <= r:     #completly overlap/base case >,< as base case else nonetype err
             return root.sum
         
-        #disjoint, no overlap
-        if root.i > r or root.j < l:
-            return 0                    #0 for sum, -inf for range max query, +inf for range min query
+        if root.i > r or root.j < l:        #disjoint, no overlap
+            return 0                        #0 for sum, -inf for range max query, +inf for range min query
         
-        #partial overlap, let recursion handle it
-        return self.sumrange(root.left, l, r) + self.sumrange(root.right, l, r)
+        return self.sumrange(root.left, l, r) + self.sumrange(root.right, l, r) 
+    #partial overlap, let recursion handle it
+    
     
     def __init__(self, nums: List[int]):
         self.root = self.buildtree(nums, 0, len(nums)-1)
