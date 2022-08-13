@@ -1,3 +1,5 @@
+#time kind of hardto find as there are 9^(n*2) but thats worst that would not happend many times dur to prunning bcs of isvalid case
+
 class Solution:
     def solveSudoku(self, board: List[List[str]]) -> None:
     
