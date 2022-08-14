@@ -3,6 +3,7 @@ class Solution:
         #target*log(target)
         
         queue = deque([(0, 1)]) #[pos, velocity]
+        vis = set()
         moves = 0
         while queue:
             for _ in range(len(queue)):
@@ -16,11 +17,13 @@ class Solution:
                 #3. Only consider changing the direction of the car if one of the following conditions is true
                 #   i.  The car is driving away from the target.
                 #   ii. The car will pass the target in the next move.  
-                if (pos + vel > target and vel > 0):
+                if (pos + vel > target and vel > 0 and (pos, -1) not in vis):
                     queue.append((pos, -1))
+                    vis.add((pos, -1))
                 
-                if (pos + vel < target and vel < 0):
+                if (pos + vel < target and vel < 0 and (pos, 1) not in vis):
                     queue.append((pos, 1))
+                    vis.add((pos, 1))
                     
             moves += 1
             
