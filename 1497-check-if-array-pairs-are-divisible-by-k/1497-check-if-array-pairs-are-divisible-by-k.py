@@ -26,5 +26,15 @@ class Solution:
                 if curfreq != other_freq:
                     return False
         return True
+    
+    #COUNT PAIRS 
+        #since after making map, if we count we may count repitisions also so better while going left to right if found opp pair count that occurence as that many pair that ele will make with me, and last add my occu as 1 to map i mean increment
+        m = defaultdict(int)
+        for n in nums:
+            rem = n % k
+            ans += m[k-rem]
+            m[rem] += 1
+        return ans
+            
                  
                 
