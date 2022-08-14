@@ -1,5 +1,6 @@
 class Solution:
     def canArrange(self, arr: List[int], k: int) -> bool:
+        #o(n)/o(k)
         #Very imp ques - interview.
         #whenever about k divisible on array ele - think map and remainder logic
         
