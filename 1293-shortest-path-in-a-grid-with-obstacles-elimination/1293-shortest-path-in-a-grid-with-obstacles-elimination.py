@@ -1,5 +1,7 @@
 class Solution:
     def shortestPath(self, grid: List[List[int]], k: int) -> int:
+        #TC m*n*k, as k is also one factor here to add some nodes again 
+        
         m, n = len(grid), len(grid[0])
         
         q = collections.deque([[0, 0, 0]])    # row, col, num of obstables met so far
