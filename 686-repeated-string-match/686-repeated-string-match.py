@@ -27,9 +27,9 @@ class Solution:
             tmp += a
             count += 1
         
-        if isContains2(tmp, b):
+        if isContains2(tmp, b): #if completely b is submerged in a, found if not then it is on border
             return count
-        if isContains2(tmp+a, b):
+        if isContains2(tmp+a, b):   #if half on borders, adding one more will cover that, if not NOT PRESENT
             return count+1
         return -1
     
