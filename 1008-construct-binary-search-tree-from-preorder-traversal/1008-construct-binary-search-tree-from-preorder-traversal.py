@@ -16,6 +16,6 @@ class Solution:
             i += 1
     
         root.left = self.construct(preorder, l+1, i)
-        root.right = self.construct(preorder, i, r)
+        root.right = self.construct(preorder, i, r)     #r or i + (r-i)
         
         return root
