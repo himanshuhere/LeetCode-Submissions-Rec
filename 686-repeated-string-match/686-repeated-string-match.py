@@ -20,6 +20,7 @@ class Solution:
                     return True
             return False
         
+        #reach that max point which is min than B, after than one more operation and we are >= B
         tmp = ""
         count = 0
         while len(tmp) < len(b):
