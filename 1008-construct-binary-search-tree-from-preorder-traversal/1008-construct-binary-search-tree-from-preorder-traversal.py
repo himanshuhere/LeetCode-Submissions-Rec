@@ -8,8 +8,8 @@ class Solution:
     def construct(self, preorder, l, r):
         if l > r:
             return None
-        if l == r:
-            return TreeNode(preorder[l])
+        # if l == r:      #not needed btw
+        #     return TreeNode(preorder[l])
         
         root = TreeNode(preorder[l])
         i = l+1
