@@ -13,6 +13,9 @@ class Solution:
                
                 queue.append((pos + vel, 2 * vel))
                 
+                #3. Only consider changing the direction of the car if one of the following conditions is true
+                #   i.  The car is driving away from the target.
+                #   ii. The car will pass the target in the next move.  
                 if (pos + vel > target and vel > 0):
                     queue.append((pos, -1))
                 
