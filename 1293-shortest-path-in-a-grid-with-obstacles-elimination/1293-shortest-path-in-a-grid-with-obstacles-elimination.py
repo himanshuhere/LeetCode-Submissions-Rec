@@ -12,11 +12,11 @@ class Solution:
             for _ in range(size):
                 r, c, obs = q.popleft()
                 
-                if r == m - 1 and c == n - 1: 
-                    return steps
-                
                 if obs > k: 
                     continue           
+                    
+                if r == m - 1 and c == n - 1: 
+                    return steps
                 
                 for r2, c2 in [[r+1, c], [r-1, c], [r, c+1], [r, c-1]]:
                     if 0 <= r2 < m and 0 <= c2 < n:
