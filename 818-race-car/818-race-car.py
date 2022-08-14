@@ -12,7 +12,9 @@ class Solution:
                 if pos == target:
                     return moves
                
-                queue.append((pos + vel, 2 * vel))
+                if (pos + vel, 2 * vel) not in vis:
+                    queue.append((pos + vel, 2 * vel))
+                    vis.add((pos + vel, 2 * vel))
                 
                 #3. Only consider changing the direction of the car if one of the following conditions is true
                 #   i.  The car is driving away from the target.
