@@ -3,6 +3,30 @@ class Solution:
         #target*log(target)
         
         queue = deque([(0, 1)]) #[pos, velocity]
+        moves = 0
+        while queue:
+            for _ in range(len(queue)):
+                pos, vel = queue.popleft()
+                
+                if pos == target:
+                    return moves
+               
+                queue.append((pos + vel, 2 * vel))
+                
+                #3. Only consider changing the direction of the car if one of the following conditions is true
+                #   i.  The car is driving away from the target.
+                #   ii. The car will pass the target in the next move.  
+                if (pos + vel > target and vel > 0):
+                    queue.append((pos, -1))
+                
+                if (pos + vel < target and vel < 0):
+                    queue.append((pos, 1))
+                    
+            moves += 1
+        
+    
+    #with vis, memozing state
+        queue = deque([(0, 1)]) #[pos, velocity]
         vis = set()
         moves = 0
         while queue:
@@ -28,7 +52,6 @@ class Solution:
                     vis.add((pos, 1))
                     
             moves += 1
-            
             
             
 #             To know the TC, we first need to figure out V (the number of vertices in the graph) and E (the number of edges in the graph), because we know TC of BFS is O(V + E). For this question, each vertex is a (position, speed) state, and each (position, speed) state is connected to two other states (via accelerate or reverse). Therefore E is twice of V. So the TC can be simplified as O(V).
