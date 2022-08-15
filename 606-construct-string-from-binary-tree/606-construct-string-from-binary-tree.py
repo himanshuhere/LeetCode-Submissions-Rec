@@ -14,7 +14,7 @@ class Solution:
             if r.left and not r.right:
                 return str(r.val) + '('+ dfs(r.left) + ')'
             if not r.left and r.right:
-                return str(r.val) + '()('+ dfs(r.right) + ')'
+                return str(r.val) + '()('+ dfs(r.right) + ')'   #dhyan se dekho isme
 
             return str(r.val) + '('+ dfs(r.left) + ')(' + dfs(r.right) + ')'
         
