@@ -8,6 +8,7 @@
 class Codec:
 #BT serialize to o(n) preorder any order mar do
 #but BST me b pre k bad optimized INORDER
+#this is brute tho pre but i dont understand inorder me konsa time kam lag rha
 
     def serialdfs(self, root):
         if not root:
