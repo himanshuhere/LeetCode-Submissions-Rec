@@ -7,8 +7,6 @@
 class Solution:
     def tree2str(self, root: Optional[TreeNode]) -> str:
         def dfs(r):
-            if not r:
-                return ''
             if not r.left and not r.right:
                 return str(r.val)
             if r.left and not r.right:
