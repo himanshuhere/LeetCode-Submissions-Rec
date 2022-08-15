@@ -24,7 +24,7 @@ class Solution:
                 elif s[i] == '(':
                     st.append(res)
                     st.append(lsign)
-                    res = 0
+                    res = 0     #only place where res will be reset
                     lsign = '+'
                 elif s[i] == ')':
                     sign = st.pop()
