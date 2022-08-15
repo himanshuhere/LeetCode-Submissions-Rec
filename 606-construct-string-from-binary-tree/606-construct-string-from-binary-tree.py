@@ -13,6 +13,7 @@ class Solution:
                 return str(r.val) + '('+ dfs(r.left) + ')'
             if not r.left and r.right:
                 return str(r.val) + '()('+ dfs(r.right) + ')'   #dhyan se dekho isme
+            #except we cannot omit the first parenthesis pair to break the one-to-one mapping
 
             return str(r.val) + '('+ dfs(r.left) + ')(' + dfs(r.right) + ')'
         
