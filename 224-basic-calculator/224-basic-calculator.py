@@ -31,8 +31,8 @@ class Solution:
                     lastres = st.pop()
                     res = (lastres+res) if sign == '+' else (lastres-res)
                 i += 1
-                
-            return sum(st) if st else res
+            print(st, res)
+            return res
         return calc(s)
                     
         
