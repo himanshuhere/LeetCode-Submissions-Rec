@@ -1,7 +1,7 @@
 class Solution:
     def isValidSudoku(self, A: List[List[str]]) -> bool:
         #o(n^2), o(n)
-        row=set()
+        row=set()   #name this set generic any
         
         for i in range(len(A)):
             for j in range(len(A[0])):
