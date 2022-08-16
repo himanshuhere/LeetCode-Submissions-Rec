@@ -16,7 +16,7 @@ class Solution:
             dfs(root.left, max(pathmax, root.val))
             dfs(root.right, max(pathmax, root.val))
         
-        dfs(root, -inf)
+        dfs(root, root.val)
         return ans
     
         #3 ye b chal rha
