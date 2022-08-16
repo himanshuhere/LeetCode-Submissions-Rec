@@ -8,7 +8,7 @@ class Solution:
                 curr = A[i][j]
                 if(curr!='.'):
                     
-                    r = ('r', i, curr)
+                    r = ('r', i, curr)  #create 3 set for each or maybe do like this 'r', 'c' etc
                     c = ('c', j, curr)
                     b = ('b', i//3, j//3, curr)
                     
