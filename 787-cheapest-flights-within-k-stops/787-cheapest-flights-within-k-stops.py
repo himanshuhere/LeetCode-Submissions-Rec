@@ -7,15 +7,15 @@ class Solution:
         for s, d, w in flights:
             graph[s].append((d, w))
             
-        pq = [(0, src, K)]
-        vis = [0] * n
+        pq = [(0, src, 0)]
+        vis = [K] * n
         while pq:
-            w, x, k = heapq.heappop(pq)
+            w, x, stops = heapq.heappop(pq)
             if x == dst:
                 return w
-            if vis[x] > k:
+            if vis[x] < stops:
                 continue
-            vis[x] = k
+            vis[x] = stops
             for y, dw in graph[x]:
-                heapq.heappush(pq, (w+dw, y, k-1))
+                heapq.heappush(pq, (w+dw, y, stops+1))
         return -1
