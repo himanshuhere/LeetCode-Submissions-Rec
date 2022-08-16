@@ -3,7 +3,7 @@ class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         if not root:
             return False
-        if not subRoot:     #imp, kayde se ye pehle ayega 
+        if not subRoot:     #imp, kayde se ye pehle ayega , if not subtree would it be the valid subtree of tree, YES if you see leaf child thats is null and this is null this valid
             return True
         
         if self.isSame(root, subRoot):
