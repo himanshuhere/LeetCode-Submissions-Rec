@@ -3,9 +3,9 @@ class Solution:
     
         
         #bfs with pq
-        graph = collections.defaultdict(dict)
+        graph = collections.defaultdict(list)
         for s, d, w in flights:
-            graph[s][d] = w
+            graph[s].append((d, w))
             
         pq = [(0, src, K)]
         vis = [0] * n
@@ -16,6 +16,6 @@ class Solution:
             if vis[x] > k:
                 continue
             vis[x] = k
-            for y, dw in graph[x].items():
+            for y, dw in graph[x]:
                 heapq.heappush(pq, (w+dw, y, k-1))
         return -1
