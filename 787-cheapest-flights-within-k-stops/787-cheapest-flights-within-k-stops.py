@@ -9,6 +9,8 @@ class Solution:
             
         pq = [(0, src, 0)]
         vis = [K] * n
+        vis[src] = 1
+        
         while pq:
             w, x, stops = heapq.heappop(pq)
             if x == dst:
