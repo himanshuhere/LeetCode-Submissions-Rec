@@ -26,7 +26,7 @@ class Solution:
             pivot = nums[r][0]*nums[r][0]+nums[r][1]*nums[r][1]
             for j in range(l, r):
                 f = nums[j][0]*nums[j][0]+nums[j][1]*nums[j][1]                
-                if f <= pivot:
+                if f <= pivot:                                      #<= rakhna jaruri h tabhi chala
                     nums[i], nums[j] = nums[j], nums[i]
                     i += 1
             nums[i], nums[r] = nums[r], nums[i]
