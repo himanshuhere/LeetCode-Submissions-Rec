@@ -6,10 +6,13 @@ class Solution:
                 if cur in dic:
                     return True
                 return False
+            
+            cur += s[i]
+            
             if cur in dic:
-                return f(i+1, cur+s[i]) or f(i+1, s[i])
+                return f(i+1, cur) or f(i+1, "")
             else:
-                return f(i+1, cur+s[i])
+                return f(i+1, cur)
     
         n = len(s)
         dic = set(wordDict)
