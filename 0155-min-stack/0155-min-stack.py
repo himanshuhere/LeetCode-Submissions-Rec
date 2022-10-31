@@ -28,3 +28,55 @@ class MinStack:
         return self.minStack[-1]
     
 #One stack
+class MinStack:
+#One stack - ghante ka kam space woi kaam ek stack me hora same space almost khair
+#Whole idea is to maintian first and second min next to each other in stack. whenvr new val is min than mininmum then this will be second min and new will be first, so puch already having min then push val given. This way you always have second min after min in stack. Lets say you pop it turn out to be min only, so you can make one more pop and you get the new min update. Do one test will clear
+    #Approach - two stack to one stack to LinkedList
+        
+    def __init__(self): #same thing u can do with LL
+        self.st = []
+        self.mn = math.inf
+    
+    def push(self, x):
+        if x <= self.mn:
+            self.st.append(self.mn)
+            self.mn = x
+        self.st.append(x)
+            
+
+    def pop(self):
+        if self.mn == self.st.pop():
+            self.mn = self.st.pop()
+        
+    def top(self):
+        return self.st[-1]
+    
+    def getMin(self):
+        return self.mn
+    
+#Linked List
+class Node:
+    def __init__(self, val, mn, nxt):
+        self.val = val
+        self.mn = mn
+        self.next = nxt
+        
+class MinStack:
+    #Approach - two stack to one stack to LinkedList
+    def __init__(self):
+        self.head = None
+    
+    def push(self, x):
+        if not self.head:
+            self.head = Node(x, x, None)
+        else:
+            self.head = Node(x, min(x, self.head.mn), self.head)
+            
+    def pop(self):
+        self.head = self.head.next
+
+    def top(self):
+        return self.head.val
+
+    def getMin(self):
+        return self.head.mn
