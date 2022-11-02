@@ -3,9 +3,7 @@ class Solution:
         #TC m*n*k, as k is also one factor here to add some nodes again 
         
         m, n = len(grid), len(grid[0])
-        
         q = collections.deque([[0, 0, 0]])    # row, col, num of obstables met so far
-        
         visited = {(0, 0): 0}                 # row, col   =>   num of obstables met so far
         steps = 0
         
@@ -16,7 +14,6 @@ class Solution:
                 
                 if obs > k: 
                     continue           
-                    
                 if r == m - 1 and c == n - 1: 
                     return steps
                 
@@ -25,11 +22,9 @@ class Solution:
                         next_obs = obs + 1 if grid[r2][c2] == 1 else obs
                         
                         if (r2, c2) not in visited or next_obs < visited[(r2, c2)]:
-                            
                             visited[(r2, c2)] = next_obs
                             q.append([r2, c2, next_obs])
             steps += 1
-        
         return -1
     
     
